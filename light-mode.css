@@ -1,0 +1,524 @@
+:root {
+  --navbar-background: #edebeb;
+  --dropdown-background: #e4e2e2;
+  --dropdown-hover: #3399fe;
+}
+
+#navBar {
+  /* border: 1px solid black; */
+  height: calc(2.6vh + 3px);
+  background-color: var(--navbar-background);
+  font-family: Pixelify Sans;
+  width: calc(100% - 2px);
+  top: 0px;
+  position: sticky;
+  z-index: 11;
+  -webkit-user-select: none;
+  user-select: none;
+}
+#navBar p {
+  margin: 0px;
+}
+
+.navButton {
+  color: black;
+  position: absolute;
+  margin-top: 0px !important;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.navButton:hover {
+  background-color: var(--dropdown-hover);
+  border-color: var(--dropdown-hover);
+  color: white;
+}
+
+.navDropdown {
+  position: absolute;
+  text-align: left;
+  margin-top: 19px;
+  color: black;
+  z-index: 2;
+  background-color: var(--dropdown-background);
+}
+
+#fileButton {
+  text-align: center;
+}
+
+#fileDropdown.hidden {
+  display: none;
+}
+
+#selection {
+  text-align: left;
+  padding: 5px;
+}
+#selection:hover {
+  background-color: var(--dropdown-hover);
+  color: white;
+}
+
+.hidden {
+  display: none;
+}
+
+#editButton {
+  margin-left: 36px;
+}
+
+#editDropdown {
+  margin-left: 36px;
+}
+#editDropdown.hidden {
+  display: none;
+}
+
+#viewButton {
+  margin-left: 79px !important;
+}
+
+#viewDropdown {
+  margin-left: 100px;
+}
+
+#viewDropdown.hidden {
+  display: none;
+}
+
+#navBar :hover {
+  cursor: default;
+}
+
+.shortcut {
+  float: right;
+  color: lightGrey;
+}
+
+#entryMessage {
+  /* display: none; */
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: #00309c;
+  color: white;
+  top: 0px;
+  left: 0px;
+  z-index: 999999999999999999999999999;
+}
+
+#entryMessage.hidden {
+  display: none;
+  z-index: -1;
+}
+
+#window1 {
+  position: absolute;
+  top: 10px;
+  right: 270px;
+  z-index: 9;
+  background-color: #f1f1f1;
+  text-align: center;
+  height: 400px;
+  width: 400px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+#window5 {
+  position: absolute;
+  top: 40px;
+  right: 200px;
+  z-index: 9;
+  background-color: #f1f1f1;
+  text-align: center;
+  height: 400px;
+  width: 400px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+#window4 {
+  position: absolute;
+  top: 95px;
+  left: 477px;
+  z-index: 9;
+  background-color: #f1f1f1;
+  text-align: center;
+  height: 400px;
+  width: 400px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+#window1.hidden {
+  display: none;
+}
+
+#closeWindowButton2,
+#closeWindowButton3 {
+  background-image: url("assets/Exit.png");
+  background-size: cover;
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  right: 3px;
+  top: 3px;
+  cursor: default;
+}
+
+#closeWindowButton,
+#closeWindowButton4 {
+  background-image: url("assets/Exit.png");
+  background-size: cover;
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  right: 5px;
+  top: 6px;
+  cursor: default;
+}
+
+#closeWindowButton:hover,
+#closeWindowButton2:hover,
+#closeWindowButton3:hover,
+#closeWindowButton4:hover {
+  background-image: url("assets/Exit-Shaded.png");
+}
+
+#window1Drag,
+#window4Drag,
+#window5Drag {
+  cursor: move;
+  z-index: 10;
+  background-color: #2196f3;
+  background-image: linear-gradient(to top, #255dd4, #255dd4, #255dd4, #56a1ff);
+  color: #fff;
+  position: absolute;
+  top: 0;
+  width: calc(100% + 6px);
+  height: 31px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#window2Drag,
+#window3Drag {
+  cursor: move;
+  z-index: 10;
+  background-color: #2196f3;
+  background-image: linear-gradient(
+    to top,
+    #255dd4,
+    #255dd4,
+    #255dd4,
+    #255dd4,
+    #56a1ff
+  );
+  color: #fff;
+  position: absolute;
+  top: 0;
+  width: calc(100%);
+  height: 25px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#window2 {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 9;
+  background-color: #f1f1f1;
+  text-align: center;
+  height: 75px;
+  width: 227px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+#window3 {
+  position: absolute;
+  top: 130px;
+  right: 20px;
+  z-index: 9;
+  background-color: #f1f1f1;
+  text-align: center;
+  height: 85px;
+  width: 120px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.webBox {
+  border-left: 3px solid #255dd4;
+  border-bottom: 3px solid #255dd4;
+  border-right: 3px solid #255dd4;
+  overflow-y: auto;
+  overflow-x: hidden;
+  font-family: DOS;
+}
+
+#webBoxWindowOne,
+#webBoxWindowFive {
+  background-color: white;
+  color: black;
+  background-size: cover;
+  z-index: 2;
+  height: calc(100% - 32px);
+  bottom: 0px;
+  width: 100%;
+  position: absolute;
+}
+
+#webBoxWindowFour {
+  background-color: white;
+  color: black;
+  background-size: cover;
+  z-index: 2;
+  height: calc(100% - 32px);
+  bottom: 0px;
+  width: 100%;
+  position: absolute;
+  font-family: Cascadia Mono;
+  text-align: left;
+}
+
+#stupidFuckingWorkingBulletPoints {
+  list-style-position: inside;
+  margin: 0px;
+  padding-left: 0px;
+  margin-bottom: 17px;
+}
+
+#startMenuButton {
+  background-image: url("assets/start.png");
+  background-size: cover;
+}
+
+#startMenuButton:hover {
+  background-image: url("assets/start-hover.png");
+}
+
+#taskbar {
+  position: fixed;
+  width: 100%;
+  height: 35px;
+  bottom: 0px;
+  left: 0px;
+  background-color: white;
+  background-image: linear-gradient(
+    to top,
+    #255dd4,
+    #255dd4,
+    #255dd4,
+    #255dd4,
+    #56a1ff
+  );
+}
+
+#startMenu {
+  position: fixed;
+  border: 4px solid #165fc9;
+  height: 500px;
+  width: 400px;
+  bottom: 35px;
+  left: 0px;
+  background-color: white;
+  z-index: 9999999;
+}
+
+#startMenu.hidden {
+  display: none;
+}
+
+#horriblyWrongIndicator {
+  display: none;
+}
+
+html {
+  background-color: grey;
+  background-image: url("assets/windows_xp_14.jpg");
+  background-size: cover;
+  overflow: hidden;
+}
+.musicLink {
+  text-decoration: none;
+}
+
+.aboutme-text-box {
+  margin-left: 10px;
+  margin-right: 10px;
+  text-align: center;
+}
+audio::-webkit-media-controls-panel {
+  background-color: #8f8f8f;
+}
+audio {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+.centered-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.youtube-img {
+  height: 22px;
+  margin-bottom: -7px;
+}
+.spotify-img {
+  height: 15px;
+  margin-bottom: -3px;
+}
+.soundcloud-img {
+  height: 15px;
+  margin-bottom: -3px;
+  border-radius: 50%;
+}
+
+.applemusic-img {
+  height: 15px;
+  margin-bottom: -3px;
+  margin-left: 5px;
+}
+
+#bottomBlueStartMenu {
+  height: 40px;
+  width: 100%;
+  background-color: blue;
+  background-image: linear-gradient(to top, #165fc9, #165fc9, #165fc9, #4087e1);
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+
+#topBlueStartMenu {
+  height: 80px;
+  width: 100%;
+  background-image: linear-gradient(to top, #165fc9, #165fc9, #165fc9, #4087e1);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+#topBlueStartMenu #userDisplay p {
+  color: white;
+  position: absolute;
+  left: 80px;
+  top: 22px;
+  font-size: 30px;
+  margin-top: 0px;
+  font-family: Franklin Gothic Regular;
+}
+
+#topBlueStartMenu #userDisplay img {
+  border: 2px solid grey;
+  border-radius: 10px;
+  position: absolute;
+  left: 10px;
+  top: 7px;
+  height: 60px;
+}
+
+#welcomeUserLogin img {
+  top: 12%;
+  border: 2px solid grey;
+  border-radius: 10px;
+  position: absolute;
+}
+
+.desktopShortcutText {
+  text-shadow: 2px 2px 4px #000000;
+  font-family: Franklin Gothic;
+  color: white;
+}
+
+#welcomeBorder {
+  border-left: 1px solid #7394e4;
+  height: 500px;
+  position: fixed;
+  border-radius: 100%;
+}
+
+#welcomeUserLogin {
+  height: 11%;
+  width: 21%;
+  margin-top: 10px;
+  border-radius: 10px;
+  position: fixed;
+  right: 27%;
+  user-select: none;
+  cursor: pointer;
+  top: 44%;
+  opacity: 1;
+  transition: opacity 0.2s linear;
+}
+
+#welcomeUserLogin:hover img {
+  border: 2px solid yellow;
+}
+
+#welcomeSideLeft {
+  animation: opacityIncrease 0.2s linear;
+  height: 80%;
+  width: 50%;
+  position: fixed;
+  right: 0px;
+}
+
+/* Dim when hovering parent */
+#welcomeSideLeft:hover > #welcomeUserLogin {
+  opacity: 0.6;
+}
+
+/* Restore when hovering the actual login */
+#welcomeUserLogin:hover {
+  opacity: 1 !important;
+}
+
+#guestUserSettings {
+  height: 11%;
+  width: 21%;
+  margin-top: 10px;
+  border-radius: 10px;
+  position: fixed;
+  right: 27%;
+  user-select: none;
+  top: 44%;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    top 0.6s ease,
+    opacity 0.3s ease;
+}
+
+#guestUserSettings img {
+  top: 12%;
+  border: 2px solid grey;
+  border-radius: 10px;
+  position: absolute;
+}
+
+.guestUserSettingsTransition {
+  top: 16% !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+#navigationMenuBackContainment {
+  height: 100%;
+  width: 20%;
+  cursor: default;
+}
+
+#navigationMenuBackContainment:hover {
+  background-color: #cfcbb7;
+}
+
+#myDocumentsMusic:hover {
+  background-color: grey;
+}

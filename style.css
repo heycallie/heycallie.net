@@ -1,0 +1,54 @@
+@font-face {
+  font-family: "DOS";
+  src: url("assets/More Perfect DOS VGA.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Cascadia Mono";
+  src: url("assets/CascadiaMono.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Arial Narrow Bold Italic";
+  src: url("assets/arial-narrow-bold-italic.ttf") format("truetype");
+}
+
+.centered-bps {
+  display: inline-block;
+  margin: 0px;
+  padding-left: 0px;
+}
+
+@font-face {
+  font-family: "Chewy";
+  font-style: normal;
+  font-weight: 400;
+  src: url(assets/Chewy-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Mohawk";
+  src: url(assets/DeathMohawk.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Franklin Gothic Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: url("assets/FranklinGothic.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Blackbones";
+  src: url("assets/blackbones-demo.regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Pixelify Sans";
+  src: url("assets/PixelifySans-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Jetbrains Mono";
+  src: url("assets/JetBrainsMono-Regular.ttf") format("truetype");
+}

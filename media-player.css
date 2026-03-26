@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+body {
+  background-color: #1f2937;
+  font-family: "Inter", sans-serif;
+}
+a {
+  color: lightblue;
+}
+.hidden {
+  display: none;
+}
+.player {
+  width: 500px;
+  max-width: 500px;
+  margin: 0 !important;
+  background-color: black;
+  padding: 0 12px 0 18px;
+  /* border-radius: 14px; */
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  border: 1px solid white;
+}
+.player-track-meta {
+  text-align: center;
+}
+.player-track-meta p {
+  margin: 0;
+  font-size: 20px;
+  color: #0e0e0e;
+  font-weight: 700;
+}
+.player-track-meta span {
+  font-size: 16px;
+  font-weight: 400;
+  padding: 0 2px;
+  position: relative;
+  top: 1px;
+  color: #a3a3a3;
+}
+.player-controls {
+  display: flex;
+  align-items: center;
+}
+.player-icon-play {
+  height: 24px;
+  width: 24px;
+}
+.player-icon-pause {
+  margin-top: 3px;
+}
+.player-play-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+}
+.icon-container {
+  fill: transparent;
+  stroke: none;
+}
+.player-play-btn:hover {
+  fill: #444444;
+}
+.player-play-btn svg {
+  color: #0e0e0e;
+  position: relative;
+  left: 0.5px;
+  width: 36px;
+  height: 36px;
+  display: block;
+}
+.player-play-btn:hover svg {
+  color: #ffffff;
+}
+.player-timeline {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10px;
+}
+.player-progress {
+  display: flex;
+  position: relative;
+  height: 6px;
+  background: darkGrey;
+  border-radius: 25px;
+  margin: 0 5px;
+  flex: 10;
+  flex-basis: 100%;
+  overflow: hidden;
+}
+.player-progress-filled {
+  height: 6px;
+  background: #ffffff;
+  flex: 0;
+  flex-basis: 0;
+  border-radius: 25px;
+}
+.player-time {
+  padding: 2px 5px;
+  color: white;
+}

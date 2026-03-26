@@ -1,0 +1,824 @@
+<!--
+todo :
+  add the file explorer (reference in bookmarks, also just use windows xp through that website)
+  remove hidden from readme.txt and initial entry screen
+  make logout refresh page (return to welcome screen)
+  yeah yeah wtv
+-->
+
+<!doctype html>
+<html lang="en" class="fullDocument">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="caged's web adventure" />
+    <meta
+      property="og:description"
+      content="step into callie's domain, if you dare!"
+    />
+    <meta
+      property="og:image"
+      content="https://i.ibb.co/FqnS2dz2/il-800x800-7257900675-r49b.webp"
+    />
+    <meta
+      property="og:url"
+      content="https://heycallie.neocities.org/finaltest.html"
+    />
+    <meta property="og:type" content="website" />
+    <title>Desktop</title>
+    <script src="windowscript.js" defer></script>
+    <script src="dragscript.js" defer></script>
+    <script src="anotherscript.js" defer></script>
+    <script src="initentry.js" defer></script>
+    <link rel="stylesheet" href="light-mode.css" id="theme-link" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="assets/vista_info.ico" />
+    <style></style>
+  </head>
+
+  <body>
+    <!-- INITIAL ENTRY WARNING -->
+    <div id="entryMessage" style="overflow-y: hidden" class="hidden">
+      <div
+        id="entryMidBox"
+        style="
+          width: 100%;
+          background-color: #5a7edc;
+          height: 80%;
+          margin: auto;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          left: 0px;
+          position: fixed;
+          top: 10%;
+        "
+      >
+        <h1
+          style="
+            font-family: Arial Narrow Bold Italic;
+            text-shadow: 2px 2px #0839b5;
+            margin-right: 380px;
+            font-size: 40px;
+            user-select: none;
+            text-align: center;
+          "
+        >
+          welcome to heycallie
+        </h1>
+        <div id="welcomeBorder"></div>
+        <div id="welcomeSideLeft">
+          <div id="welcomeUserLogin" onclick="userChoseGuest()">
+            <img src="assets/windows_xp_147.jpg" />
+            <p
+              style="
+                font-size: 20px;
+                font-family: Arial;
+                position: absolute;
+                left: 20%;
+              "
+            >
+              Guest
+            </p>
+          </div>
+          <div id="guestUserSettings">
+            <img src="assets/windows_xp_147.jpg" />
+            <p
+              style="
+                font-size: 20px;
+                font-family: Arial;
+                position: absolute;
+                left: 20%;
+              "
+            >
+              Guest
+            </p>
+            <div style="font-family: Arial">
+              <p style="margin-top: 80px; margin-left: 0px; margin-bottom: 0px">
+                before you enter:<br />
+                this website was not built for mobile or accessibility!
+              </p>
+              <br />
+              <label
+                for="darkMode"
+                style="
+                  margin: auto;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                "
+              >
+                <input
+                  type="checkbox"
+                  id="darkMode"
+                  name="darkMode"
+                  value="yes"
+                />
+                <del
+                  >Dark Mode (this site is best experienced in light mode!)</del
+                ><br />(not yet supported)
+              </label>
+              <br />
+              <label
+                for="popupSelector"
+                style="
+                  margin: auto;
+                  display: flex;
+                  justify-content: left;
+                  align-items: center;
+                "
+                ><input
+                  type="checkbox"
+                  id="popupSelector"
+                  name="popupSelector"
+                  value="yes"
+                />No Popups</label
+              ><br />
+              <button onclick="userEntry()">enter!</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- README.TXT -->
+    <div id="window4" class="window draggable hidden">
+      <div id="window4Drag">
+        <img
+          src="assets/Notepad.png"
+          height="20px"
+          style="
+            float: left;
+            vertical-align: middle;
+            padding-top: 5px;
+            padding-left: 5px;
+          "
+        />
+        <span
+          style="
+            padding-top: 5px;
+            vertical-align: middle;
+            float: left;
+            padding-left: 6px;
+            font-family: Pixelify Sans;
+          "
+        >
+          readme.txt - Notepad
+        </span>
+        <div id="closeWindowButton4" onclick="closeTab('window4')"></div>
+      </div>
+
+      <div contenteditable="true" class="webBox" id="webBoxWindowFour">
+        <p style="padding-left: 15px; padding-right: 15px">
+          hey! welcome to my website :3<br />this is an interactive
+          webpage--most (if not all) of the things you see here, you'll be able
+          to interact with! that includes everything on the desktop, the
+          taskbar, and start menu! make sure to click around to get the full
+          experience of this website :D<br /><br />want to change your settings?
+          refresh the page! (none of your changes save, sorry!)
+
+          <span contenteditable="false"
+            ><br /><br />there's still a lot more to do! if you want to know
+            what i'm working on, check the todo on
+            <a href="/">the home page!</a></span
+          >
+        </p>
+      </div>
+    </div>
+
+    <!-- FEMTANYL MUSIC POPUP -->
+    <div id="window1" class="window draggable hidden">
+      <div id="window1Drag">
+        <img
+          src="assets/ie6.png"
+          height="20px"
+          style="
+            float: left;
+            vertical-align: middle;
+            padding-top: 5px;
+            padding-left: 3px;
+          "
+        />
+        <span
+          style="
+            padding-top: 5px;
+            vertical-align: middle;
+            float: left;
+            padding-left: 6px;
+            font-family: Pixelify Sans;
+          "
+        >
+          Music - Internet Explorer
+        </span>
+        <div id="closeWindowButton" onclick="closeTab('window1')"></div>
+      </div>
+
+      <div class="webBox" id="webBoxWindowOne">
+        <p style="padding-top: 0px; padding-left: 10px; padding-right: 10px">
+          i listen to music.
+          <a
+            href="https://www.last.fm/user/cagedwave"
+            target="_blank"
+            style="color: blue"
+            >a lot.</a
+          >
+          and i like quite a lot of artists, but my favorite one?
+        </p>
+
+        <h1 style="text-align: center; margin-bottom: 0px">
+          <!--
+          https://open.spotify.com/artist/53e9n1LucuH3guikmtv180
+          https://www.youtube.com/@Femtanyl03
+          https://femtanyl.bandcamp.com
+          https://soundcloud.com/femtanyl
+          https://music.apple.com/artist/femtanyl/1695971902
+          -->
+          <span style="font-family: Mohawk">[</span>
+          <a
+            href="https://femtanyl.bandcamp.com"
+            target="_blank"
+            style="color: black"
+          >
+            <span style="font-family: Blackbones; font-weight: lighter"
+              >f e m t a n y l</span
+            ></a
+          >
+          <span style="font-family: Mohawk">]</span>
+          <br />
+          <img src="assets/fem-2.png" style="height: 130px" />
+        </h1>
+
+        <p style="padding-left: 10px; padding-right: 10px; margin-top: 15px">
+          i love femtanyl's music so much. shes honestly my #1 artist ever of
+          all time + releases music like... somewhat often??? its pretty much
+          just noise, which like, sounds terrible, but its so great when theres
+          just a bit too much going on up there in the cranium and i need a lil
+          break :3 (it's also transgender autism music)<br />anyway yeah
+          femtanyl love femtanyl life &lt;3
+        </p>
+        <hr />
+
+        <h3 style="font-family: Times New Roman">FAVORITE SONGS OF HERS?</h3>
+        <ul id="stupidFuckingWorkingBulletPoints">
+          <li>NASTYWERKKKK!!!</li>
+          <li>DINNER!</li>
+          <li>BODY THE PISTOL</li>
+        </ul>
+
+        <hr />
+        <p>i also like lots of other kinds of music, too!</p>
+        <div style="text-align: center">
+          <ul
+            style="list-style-position: inside; margin: 0px; padding-left: 0px"
+          >
+            <li style="margin-top: 0px">
+              <u>Ballerina - Yehezkal Raz</u>
+              <a
+                href="https://open.spotify.com/track/5lm18pjbwdth6ENVllxjfl"
+                target="_blank"
+                ><img
+                  class="spotify-img"
+                  src="assets/spotify-logo.png"
+                  alt="Spotify"
+                  title="Spotify" /></a
+              ><a
+                href="https://www.youtube.com/watch?v=bDj3_B51f-U"
+                target="_blank"
+                ><img
+                  class="youtube-img"
+                  src="assets/youtube-logo.png"
+                  alt="YouTube"
+                  title="YouTube" /></a
+              ><a
+                href="https://soundcloud.com/yehezkelraz-music/ballerina"
+                target="_blank"
+                ><img
+                  class="soundcloud-img"
+                  src="assets/soundcloud-logo.png"
+                  alt="Soundcloud"
+                  title="Soundcloud" /></a
+              ><a
+                href="https://music.apple.com/us/song/ballerina/1491037827"
+                target="_blank"
+                ><img
+                  class="applemusic-img"
+                  src="assets/applemusic-logo.png"
+                  alt="Apple Music"
+                  title="Apple Music"
+              /></a>
+            </li>
+
+            <img
+              src="https://i.ibb.co/WNpNDbY5/maxresdefault.jpg"
+              alt="Ballerina Yehezkal Raz cover art"
+              class="centered-image"
+              style="margin-top: 10px"
+            />
+
+            <audio controls>
+              <source
+                src="assets/ballerina.mp3"
+                type="audio/mpeg"
+                title="Audio Player"
+              />
+              Ballerina by Yehezkal Raz.
+            </audio>
+            <br />
+            <li>
+              Frédéric Chopin
+              <a
+                href="https://open.spotify.com/artist/7y97mc3bZRFXzT2szRM4L4"
+                target="_blank"
+                ><img
+                  class="spotify-img"
+                  alt="Spotify"
+                  src="https://i.ibb.co/Q7VcxT5C/Spotify-Primary-Logo-RGB-Green.png"
+                  title="Spotify" /></a
+              ><a
+                href="https://www.youtube.com/channel/UCyTnUReB5s38R-ZKlb2wyVg"
+                target="_blank"
+                ><img
+                  class="youtube-img"
+                  src="https://i.ibb.co/qLvnvqj6/yt-icon-red-digital.png"
+                  alt="YouTube"
+                  title="YouTube"
+              /></a>
+            </li>
+            <li>
+              Pyotr Ilyich Tchaikovsky
+              <a
+                href="https://open.spotify.com/artist/3MKCzCnpzw3TjUYs2v7vDA?si=tueQgfmRROCQ7flo1i8sNg"
+                target="_blank"
+                ><img
+                  class="spotify-img"
+                  alt="Spotify"
+                  src="https://i.ibb.co/Q7VcxT5C/Spotify-Primary-Logo-RGB-Green.png"
+                  title="Spotify" /></a
+              ><a
+                href="https://www.youtube.com/channel/UC6UJm5ElaATOPzXxNkuLDJg"
+                target="_blank"
+                ><img
+                  class="youtube-img"
+                  src="https://i.ibb.co/qLvnvqj6/yt-icon-red-digital.png"
+                  alt="YouTube"
+                  title="YouTube"
+              /></a>
+            </li>
+            <li>
+              Claude Debussy
+              <a
+                href="https://open.spotify.com/artist/1Uff91EOsvd99rtAupatMP"
+                target="_blank"
+                ><img
+                  class="spotify-img"
+                  src="https://i.ibb.co/Q7VcxT5C/Spotify-Primary-Logo-RGB-Green.png"
+                  alt="Spotify"
+                  title="Spotify" /></a
+              ><a
+                href="https://www.youtube.com/channel/UCDBe28OI2PycHdECfoaIWtA"
+                target="_blank"
+                ><img
+                  class="youtube-img"
+                  src="https://i.ibb.co/qLvnvqj6/yt-icon-red-digital.png"
+                  alt="YouTube"
+                  title="YouTube"
+              /></a>
+            </li>
+            <li>
+              Ludwig Van Beethoven
+              <a
+                href="https://open.spotify.com/artist/2wOqMjp9TyABvtHdOSOTUS"
+                target="_blank"
+                ><img
+                  class="spotify-img"
+                  src="https://i.ibb.co/Q7VcxT5C/Spotify-Primary-Logo-RGB-Green.png"
+                  alt="Spotify"
+                  title="Spotify" /></a
+              ><a
+                href="https://www.youtube.com/channel/UCnsAooIr-Dsr8zJOCSadQcA"
+                target="_blank"
+                ><img
+                  class="youtube-img"
+                  src="https://i.ibb.co/qLvnvqj6/yt-icon-red-digital.png"
+                  alt="YouTube"
+                  title="YouTube"
+              /></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- CDW POPUP -->
+    <div id="cdwpopup">
+      <div id="window2" class="draggable window">
+        <div id="window2Drag">
+          <img
+            src="assets/cdw-logo-no-tag.svg"
+            height="12px"
+            style="
+              float: left;
+              vertical-align: middle;
+              padding-top: 7px;
+              padding-left: 3px;
+            "
+          />
+          <span
+            style="
+              padding-top: 3px;
+              vertical-align: middle;
+              float: left;
+              padding-left: 6px;
+              font-family: Pixelify Sans;
+            "
+          >
+            Need Help? CDW IT So...
+          </span>
+          <div id="closeWindowButton2" onclick="closeTab('window2')"></div>
+        </div>
+        <a href="https://www.cdw.com" target="_blank"
+          ><img src="assets/cdw-24.gif" style="padding-top: 25px; width: 100%"
+        /></a>
+      </div>
+    </div>
+
+    <!-- BUGLE BOY POPUP -->
+    <div id="buglepopup">
+      <div id="window3" class="draggable window">
+        <div id="window3Drag">
+          <img
+            src="assets/cropped-bugle-boy-168x150.png"
+            height="20px"
+            style="
+              float: left;
+              vertical-align: middle;
+              padding-top: 3px;
+              padding-left: 3px;
+            "
+          />
+          <span
+            style="
+              padding-top: 3px;
+              vertical-align: middle;
+              float: left;
+              padding-left: 6px;
+              font-family: Pixelify Sans;
+            "
+          >
+            Shop N...
+          </span>
+          <div id="closeWindowButton3" onclick="closeTab('window3')"></div>
+        </div>
+        <a href="https://www.bugleboy.com" target="_blank"
+          ><img
+            src="assets/bugle-boy-1.gif"
+            style="padding-top: 25px; width: 100%"
+          />
+        </a>
+      </div>
+    </div>
+
+    <!-- FILE EXPLORER -->
+    <div id="window5" class="draggable window">
+      <div id="window5Drag">
+        <img
+          src="assets/Explorer.png"
+          height="20px"
+          style="
+            float: left;
+            vertical-align: middle;
+            padding-top: 5px;
+            padding-left: 3px;
+          "
+        />
+        <span
+          style="
+            padding-top: 5px;
+            vertical-align: middle;
+            float: left;
+            padding-left: 6px;
+            font-family: Pixelify Sans;
+          "
+        >
+          File Explorer
+        </span>
+        <div id="closeWindowButton" onclick="closeTab('window5')"></div>
+      </div>
+
+      <div class="webBox" id="webBoxWindowFive">
+        <div
+          id="explorerNavigationMenu"
+          style="
+            width: 100%;
+            height: 8%;
+            border-bottom: 1px solid #cfcbb7;
+            border-top: 1px solid #cfcbb7;
+            background-color: #f2f3f0;
+            margin-top: 1px;
+            user-select: none;
+          "
+        >
+          <div id="navigationMenuBackContainment">
+            <img
+              src="assets/Back.png"
+              style="height: 20px; position: absolute; left: 4px; top: 2%"
+            />
+            <p style="float: left; margin-left: 30px; margin-top: 8px">Back</p>
+          </div>
+        </div>
+
+        <div
+          id="explorerAddressMenu"
+          style="
+            background-color: #f2f3f0;
+            background-image: linear-gradient(
+              #f2f3f0,
+              #f2f3f0,
+              #f2f3f0,
+              #f2f3f0,
+              #f2f3f0,
+              #f2f3f0,
+              #f2f3f0,
+              #f2f3f0,
+              #cfccbe
+            );
+            width: 100%;
+            height: 20px;
+            position: absolute;
+            margin-top: 1px;
+            border-bottom: 1px solid #cfcbb7;
+          "
+        >
+          <span
+            style="
+              left: 1%;
+              color: #8d8a81;
+
+              margin-left: 3px;
+              font-size: 13px;
+              position: absolute;
+              top: 15%;
+              pointer-events: none;
+            "
+            >A<u>d</u>dress</span
+          >
+
+          <div
+            id="addressAddressBox"
+            style="
+              border: 1px solid #829fbb;
+              height: calc(100% - 1px);
+              position: absolute;
+              right: 8%;
+              width: 75%;
+              background-color: white;
+            "
+          >
+            <p
+              style="
+                margin: 0px;
+                text-align: left;
+                margin-left: 4px;
+                font-size: 12px;
+                margin-top: 4px;
+              "
+            >
+              C:\
+            </p>
+          </div>
+        </div>
+
+        <div
+          id="explorerFolderMenu"
+          style="
+            height: 85%;
+            width: 35%;
+            position: absolute;
+            margin-top: calc(5% + 2px);
+            background-color: #f1f2ee;
+            border-right: 4px solid #f1f2ee;
+          "
+        >
+          <div>
+            <p
+              style="
+                margin: 0px;
+                text-align: left;
+                margin-top: 6px;
+                margin-left: 5px;
+                font-size: 14px;
+              "
+            >
+              Guest's Folders
+            </p>
+            <hr style="margin-top: 3px" />
+          </div>
+          <div>
+            <!-- Desktop and its dropdowns -->
+            <div>
+              <img
+                src="assets/Desktop.png"
+                style="height: 12px; position: absolute; left: 5px"
+              />
+              <p
+                style="
+                  margin: 0px;
+                  text-align: left;
+                  margin-top: 6px;
+                  margin-left: 20px;
+                  font-size: 12px;
+                "
+              >
+                Desktop
+              </p>
+            </div>
+          </div>
+          <div>
+            <!-- C: and its dropdowns -->
+            <div style="margin-top: 4px">
+              <img
+                src="assets/Collapse.png"
+                style="height: 12px; position: absolute; left: 5px"
+              />
+              <img
+                src="assets/My Computer.png"
+                style="height: 12px; position: absolute; left: 20px"
+              />
+              <p
+                style="
+                  margin: 0px;
+                  font-size: 12px;
+                  margin-left: 35px;
+                  text-align: left;
+                "
+              >
+                C:
+              </p>
+            </div>
+
+            <div style="margin-top: 4px">
+              <img
+                src="assets/Collapse.png"
+                style="height: 12px; position: absolute; left: 19px"
+              />
+              <img
+                src="assets/My Documents.png"
+                style="height: 12px; position: absolute; left: 33px"
+              />
+              <p style="margin: 0px; font-size: 12px; margin-left: 35px">
+                My Documents
+              </p>
+              <div
+                id="myDocumentsMusic"
+                style="
+                  margin-top: 3px;
+                  height: 4%;
+                  border: 0px solid black;
+                  width: 70%;
+                  left: 30%;
+                  position: absolute;
+                  z-index: 0;
+                "
+              ></div>
+              <div style="margin-top: 3px">
+                <img
+                  src="assets/Folder Opened.png"
+                  style="height: 12px; position: absolute; left: 47px"
+                />
+                <p
+                  style="
+                    margin: 0px;
+                    font-size: 12px;
+                    margin-left: 63px;
+                    text-align: left;
+                    z-index: 1;
+                  "
+                >
+                  Music
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          id="explorerActualNavigation"
+          style="
+            height: 85%;
+            width: 65%;
+            position: absolute;
+            margin-top: calc(5% + 1px);
+            margin-left: 35%;
+          "
+        ></div>
+      </div>
+    </div>
+
+    <!-- DESKTOP -->
+    <div>
+      <!-- MUSIC INTERNET SHORTCUT -->
+      <div
+        onclick="
+          openTab('window1');
+          bringToFront(document.getElementById('window1'));
+        "
+        style="
+          cursor: default;
+          -webkit-user-select: none;
+          user-select: none;
+          height: fit-content;
+          width: fit-content;
+          text-align: center;
+          font-family: Franklin Gothic Medium;
+        "
+      >
+        <img
+          src="assets/Internet Shortcut.png"
+          style="height: 100px; padding: 10px; padding-bottom: 0px"
+        />
+        <div
+          class="desktopShortcutText"
+          style="color: white; padding-bottom: 10px"
+        >
+          Music
+        </div>
+      </div>
+
+      <!-- README.TXT SHORTCUT -->
+      <div
+        onclick="
+          openTab('window4');
+          bringToFront(document.getElementById('window4'));
+        "
+        style="
+          cursor: default;
+          -webkit-user-select: none;
+          user-select: none;
+          height: fit-content;
+          width: fit-content;
+          text-align: center;
+        "
+      >
+        <img src="assets/Notepad.png" style="height: 100px; padding: 10px" />
+        <div class="desktopShortcutText">readme.txt</div>
+      </div>
+
+      <!-- FILE EXPLORER SHORTCUT-->
+      <div
+        onclick="
+          openTab('window5');
+          bringToFront(document.getElementById('window5'));
+        "
+        style="
+          cursor: default;
+          -webkit-user-select: none;
+          user-select: none;
+          height: fit-content;
+          width: fit-content;
+          text-align: center;
+          font-family:
+            &quot;Franklin Gothic Medium&quot;, &quot;Arial Narrow&quot;, Arial,
+            sans-serif;
+        "
+      >
+        <img src="assets/Explorer.png" style="height: 100px; padding: 10px" />
+        <div class="desktopShortcutText">File Explorer</div>
+      </div>
+    </div>
+
+    <!-- TASKBAR -->
+    <div id="taskbar">
+      <div id="startMenuButton" style="height: 35px; width: 115px"></div>
+      <div
+        id="window1TaskbarIcon"
+        style="
+          height: 34px;
+          width: 100px;
+          position: absolute;
+          bottom: 0px;
+          left: 120px;
+        "
+        onclick="
+          openTab('window1');
+          bringToFront(document.getElementById('window1'));
+        "
+      >
+        <img
+          src="assets/Internet Shortcut.png"
+          style="height: 30px; padding-top: 3px"
+        />
+      </div>
+    </div>
+
+    <!-- START MENU -->
+    <div id="startMenu" class="hidden">
+      <div id="topBlueStartMenu">
+        <div id="userDisplay">
+          <img src="assets/start.svg" />
+          <p>Guest</p>
+        </div>
+      </div>
+      <div id="bottomBlueStartMenu"></div>
+    </div>
+  </body>
+</html>
