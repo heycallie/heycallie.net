@@ -6,4 +6,4 @@ want to run this website locally? here's how i do it:
 * install Live Server (Ritwick Dey)
 * download all the code in this website
 * navigate to the website's folder in visual studio
-* click go live and navigate to ```/desktop.html```!
+* click go live, and you're done!
