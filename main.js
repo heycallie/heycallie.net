@@ -255,6 +255,9 @@ function updateTime() {
   document.getElementById("userTimeDisplay").textContent =
     `it is ${hours}:${formattedMinutes} ${ampm} :)`;
 
+  document.getElementById("taskbarUserTimeDisplay").textContent =
+    `${hours}:${formattedMinutes} ${ampm}`;
+
   const delay = 60000 - (now.getSeconds() * 1000 + now.getMilliseconds());
 
   setTimeout(updateTime, delay);

@@ -33,7 +33,7 @@ before uploading :
 
   <body>
     <!-- INITIAL ENTRY SETTINGS -->
-    <div id="entryMessage" style="overflow-y: hidden" class="hidden">
+    <div id="entryMessage" style="overflow-y: hidden" class="">
       <div
         id="entryMidBox"
         style="
@@ -137,7 +137,7 @@ before uploading :
     </div>
 
     <!-- README.TXT -->
-    <div id="window4" class="window draggable hidden">
+    <div id="window4" class="window draggable">
       <div id="window4Drag">
         <img
           src="assets/Notepad.png"
@@ -825,10 +825,26 @@ before uploading :
           style="height: 30px; padding-top: 3px"
         />
       </div>
+      <div id="taskbarTimeDisplay">
+        <div id="taskbarUserTime">
+          <span
+            id="taskbarUserTimeDisplay"
+            style="
+              position: absolute;
+              top: 28%;
+              right: 5px;
+              font-family: Franklin Gothic Regular;
+              color: white;
+              font-size: 22px;
+              user-select: none;
+            "
+          ></span>
+        </div>
+      </div>
     </div>
 
     <!-- START MENU -->
-    <div id="startMenu" class="">
+    <div id="startMenu" class="hidden">
       <div id="topBlueStartMenu">
         <div id="userDisplay">
           <img src="assets/windows_xp_147.png" />
@@ -944,6 +960,22 @@ before uploading :
         </div>
       </div>
       <div id="bottomBlueStartMenu">
+        <div id="bottomTimeDisplay">
+          <div id="userTime">
+            <span
+              id="bottomUserTimeDisplay"
+              style="
+                position: absolute;
+                top: 40%;
+                left: 20px;
+                font-family: Franklin Gothic Regular;
+                color: white;
+                font-size: 22px;
+                user-select: none;
+              "
+            ></span>
+          </div>
+        </div>
         <div id="restartIcon" onclick="reboot()"></div>
         <span
           style="
