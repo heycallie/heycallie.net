@@ -33,7 +33,7 @@ before uploading :
 
   <body>
     <!-- INITIAL ENTRY SETTINGS -->
-    <div id="entryMessage" style="overflow-y: hidden" class="">
+    <div id="entryMessage" style="overflow-y: hidden" class="hidden">
       <div
         id="entryMidBox"
         style="
@@ -137,7 +137,7 @@ before uploading :
     </div>
 
     <!-- README.TXT -->
-    <div id="window4" class="window draggable">
+    <div id="window4" class="window draggable hidden">
       <div id="window4Drag">
         <img
           src="assets/Notepad.png"
@@ -468,6 +468,136 @@ before uploading :
             style="padding-top: 25px; width: 100%"
           />
         </a>
+      </div>
+    </div>
+
+    <!-- AOL POPUP -->
+    <div id="aolpopup">
+      <div id="window7" class="draggable window">
+        <div id="window7Drag">
+          <!--<img
+            src="assets/aimlogo.png"
+            height="24px"
+            style="
+              float: left;
+              vertical-align: middle;
+              padding-top: 7px;
+              padding-left: 3px;
+            "
+          />-->
+          <span
+            style="
+              padding-top: 3px;
+              vertical-align: middle;
+              float: left;
+              padding-left: 6px;
+              font-family: Pixelify Sans;
+            "
+          >
+            AOL Inst...
+          </span>
+          <div id="closeWindowButton2" onclick="closeTab('window7')"></div>
+        </div>
+        <a href="https://www.aim.com" target="_blank"
+          ><img src="assets/aimlink.gif" style="padding-top: 25px; width: 100%"
+        /></a>
+      </div>
+    </div>
+    <!-- ANTI AOL POPUP -->
+    <div id="antiaolpopup">
+      <div id="window8" class="draggable window">
+        <div id="window8Drag">
+          <!--<img
+            src="assets/aimlogo.png"
+            height="24px"
+            style="
+              float: left;
+              vertical-align: middle;
+              padding-top: 7px;
+              padding-left: 3px;
+            "
+          />-->
+          <span
+            style="
+              padding-top: 3px;
+              vertical-align: middle;
+              float: left;
+              padding-left: 6px;
+              font-family: Pixelify Sans;
+            "
+          >
+            LEAVE AOL
+          </span>
+          <div id="closeWindowButton2" onclick="closeTab('window8')"></div>
+        </div>
+
+        <img src="assets/noaol.gif" style="padding-top: 25px; width: 100%" />
+      </div>
+    </div>
+
+    <div id="nspopup">
+      <div id="window9" class="draggable window">
+        <div id="window9Drag">
+          <img
+            src="assets/netscapelogo.png"
+            height="15px"
+            style="
+              float: left;
+              vertical-align: middle;
+              padding-top: 6px;
+              padding-left: 3px;
+            "
+          />
+          <span
+            style="
+              padding-top: 3px;
+              vertical-align: middle;
+              float: left;
+              padding-left: 6px;
+              font-family: Pixelify Sans;
+            "
+          >
+            Netscape
+          </span>
+          <div id="closeWindowButton2" onclick="closeTab('window9')"></div>
+        </div>
+        <a href="https://isp.netscape.com/" target="_blank"
+          ><img src="assets/n-as.gif" style="padding-top: 25px; width: 100%"
+        /></a>
+      </div>
+    </div>
+
+    <div id="mp3popup">
+      <div id="window10" class="draggable window">
+        <div id="window10Drag">
+          <!--<img
+            src="assets/aimlogo.png"
+            height="24px"
+            style="
+              float: left;
+              vertical-align: middle;
+              padding-top: 7px;
+              padding-left: 3px;
+            "
+          />-->
+          <span
+            style="
+              padding-top: 3px;
+              vertical-align: middle;
+              float: left;
+              padding-left: 6px;
+              font-family: Pixelify Sans;
+            "
+          >
+            dailymp3.com
+          </span>
+          <div id="closeWindowButton2" onclick="closeTab('window10')"></div>
+        </div>
+        <a href="https://dailymp3.com/" target="_blank"
+          ><img
+            src="assets/mp3button7.gif"
+            style="padding-top: 25px; width: 100%"
+        /></a>
       </div>
     </div>
 

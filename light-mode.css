@@ -221,7 +221,11 @@
 }
 
 #window2Drag,
-#window3Drag {
+#window3Drag,
+#window7Drag,
+#window8Drag,
+#window9Drag,
+#window10Drag {
   cursor: move;
   z-index: 10;
   background-color: #2196f3;
@@ -268,6 +272,59 @@
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
+
+#window7 {
+  position: absolute;
+  top: 228px;
+  right: 20px;
+  z-index: 9;
+  background-color: #f1f1f1;
+  text-align: center;
+  height: 66px;
+  width: 119px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+#window8 {
+  position: absolute;
+  top: 308px;
+  right: 20px;
+  z-index: 9;
+  background-color: #f1f1f1;
+  text-align: center;
+  height: 66px;
+  width: 119px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+#window9 {
+  position: absolute;
+  top: 388px;
+  right: 20px;
+  z-index: 9;
+  background-color: #f1f1f1;
+  text-align: center;
+  height: 70px;
+  width: 135px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+#window10 {
+  position: absolute;
+  top: 488px;
+  right: 20px;
+  z-index: 9;
+  background-color: #f1f1f1;
+  text-align: center;
+  height: 83px;
+  width: 166px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
 .webBox {
   border-left: 3px solid #255dd4;
   border-bottom: 3px solid #255dd4;
