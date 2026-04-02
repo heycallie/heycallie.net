@@ -1,3 +1,9 @@
+.centered-bps {
+  display: inline-block;
+  margin: 0px;
+  padding-left: 0px;
+}
+
 @font-face {
   font-family: "DOS";
   src: url("assets/More Perfect DOS VGA.ttf") format("truetype");
@@ -11,12 +17,6 @@
 @font-face {
   font-family: "Arial Narrow Bold Italic";
   src: url("assets/arial-narrow-bold-italic.ttf") format("truetype");
-}
-
-.centered-bps {
-  display: inline-block;
-  margin: 0px;
-  padding-left: 0px;
 }
 
 @font-face {
@@ -51,4 +51,34 @@
 @font-face {
   font-family: "Jetbrains Mono";
   src: url("assets/JetBrainsMono-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Chiron";
+  src: url("assets/ChironGoRoundTC-VariableFont_wght.ttf") format("truetype");
+}
+
+@keyframes rainbow-color-change {
+  0%,
+  100% {
+    color: #ff0000;
+  } /* Red */
+  14% {
+    color: #ff8b00;
+  } /* Orange */
+  28% {
+    color: #e8ff00;
+  } /* Yellow */
+  42% {
+    color: #5dff00;
+  } /* Green */
+  56% {
+    color: #00b9ff;
+  } /* Blue */
+  70% {
+    color: #5d00ff;
+  } /* Indigo */
+  84% {
+    color: #e800ff;
+  } /* Violet */
 }

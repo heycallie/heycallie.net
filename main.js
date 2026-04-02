@@ -165,6 +165,10 @@ function dragElement(elmnt) {
 var theme = document.querySelector("#theme-link");
 var cdwpopup = document.getElementById("cdwpopup");
 var buglepopup = document.getElementById("buglepopup");
+var aolpopup = document.getElementById("aolpopup");
+var noaolpopup = document.getElementById("antiaolpopup");
+var netscapepopup = document.getElementById("nspopup");
+var dailymp3popup = document.getElementById("mp3popup");
 
 function userEntry() {
   var darkMode = document.querySelector("#darkMode");
@@ -178,6 +182,7 @@ function userEntry() {
     popupsDisable();
   }
   updateTime();
+  entryTitleFunction();
   closeEntryMessage();
 }
 
@@ -196,9 +201,14 @@ function darkModeDisable() {
 function popupsDisable() {
   cdwpopup.classList.add("hidden");
   buglepopup.classList.add("hidden");
+  aolpopup.classList.add("hidden");
+  noaolpopup.classList.add("hidden");
+  netscapepopup.classList.add("hidden");
+  dailymp3popup.classList.add("hidden");
 }
 
 function userChoseGuest() {
+  document.getElementById("title").innerHTML = "Guest Login";
   const login = document.getElementById("welcomeUserLogin");
   const settings = document.getElementById("guestUserSettings");
   login.style.opacity = "0";
@@ -261,4 +271,22 @@ function updateTime() {
   const delay = 60000 - (now.getSeconds() * 1000 + now.getMilliseconds());
 
   setTimeout(updateTime, delay);
+}
+
+function entryTitleFunction() {
+  /* var el = document.getElementById("title");
+
+  var message = "   Welcome!!!   ";
+  var viewWidth = 20;
+  var offset = 0;
+
+  var buffer = message.repeat(50);
+
+  setInterval(function () {
+    el.innerHTML = buffer.substr(offset, viewWidth);
+
+    offset = (offset + 1) % buffer.length; // wrap across entire buffer
+  }, 120); */
+
+  document.getElementById("title").innerHTML = "Desktop";
 }

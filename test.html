@@ -1,28 +1,16 @@
-<p id="helloWorld"></p>
+<html>
+  <head></head>
+  <body>
+    <script>
+      // Source - https://stackoverflow.com/a/16873849
+      // Posted by BeNdErR, modified by community. See post 'Timeline' for change history
+      // Retrieved 2026-03-31, License - CC BY-SA 4.0
 
-<script>
-  function updateTime() {
-    const now = new Date();
-
-    let hours = now.getHours();
-    const minutes = now.getMinutes();
-    let ampm = "am";
-
-    if (hours >= 12) {
-      ampm = "pm";
-      if (hours > 12) hours -= 12;
-    }
-    if (hours === 0) hours = 12;
-
-    const formattedMinutes = minutes.toString().padStart(2, "0");
-
-    document.getElementById("helloWorld").textContent =
-      `${hours}:${formattedMinutes} ${ampm}`;
-
-    const delay = 60000 - (now.getSeconds() * 1000 + now.getMilliseconds());
-
-    setTimeout(updateTime, delay);
-  }
-
-  updateTime();
-</script>
+      console.log("HELLO");
+      setTimeout(function () {
+        console.log("THIS IS");
+      }, 2000);
+      console.log("DOG");
+    </script>
+  </body>
+</html>

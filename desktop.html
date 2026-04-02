@@ -23,7 +23,7 @@ before uploading :
       content="https://heycallie.neocities.org/desktop.html"
     />
     <meta property="og:type" content="website" />
-    <title>Desktop</title>
+    <title id="title">Welcome</title>
     <script src="main.js" defer></script>
     <link rel="stylesheet" href="light-mode.css" id="theme-link" />
     <link rel="stylesheet" href="style.css" />
@@ -33,7 +33,7 @@ before uploading :
 
   <body>
     <!-- INITIAL ENTRY SETTINGS -->
-    <div id="entryMessage" style="overflow-y: hidden" class="hidden">
+    <div id="entryMessage" style="overflow-y: hidden" class="">
       <div
         id="entryMidBox"
         style="
@@ -137,7 +137,7 @@ before uploading :
     </div>
 
     <!-- README.TXT -->
-    <div id="window4" class="window draggable hidden">
+    <div id="window4" class="window draggable">
       <div id="window4Drag">
         <img
           src="assets/Notepad.png"
@@ -182,7 +182,7 @@ before uploading :
       </div>
     </div>
 
-    <!-- FEMTANYL MUSIC POPUP -->
+    <!-- FEMTANYL MUSIC -->
     <div id="window1" class="window draggable hidden">
       <div id="window1Drag">
         <img
@@ -402,6 +402,92 @@ before uploading :
       </div>
     </div>
 
+    <!-- BLOG -->
+    <div id="window11" class="window draggable hidden">
+      <div id="window11Drag">
+        <img
+          src="assets/ie6.png"
+          height="20px"
+          style="
+            float: left;
+            vertical-align: middle;
+            padding-top: 5px;
+            padding-left: 5px;
+          "
+        />
+        <span
+          style="
+            padding-top: 5px;
+            vertical-align: middle;
+            float: left;
+            padding-left: 6px;
+            font-family: Pixelify Sans;
+          "
+        >
+          Callie's Blog &amp; More! - Internet Explorer
+        </span>
+        <div id="closeWindowButton4" onclick="closeTab('window11')"></div>
+      </div>
+
+      <div
+        class="webBox"
+        id="webBoxWindowEleven"
+        style="text-align: center; font-family: Chiron"
+      >
+        <div
+          id="updateApril22026"
+          style="
+            background-color: black;
+            color: white;
+            background-image: url(&quot;https://i.ibb.co/PGcj11Vd/starback2.gif&quot;);
+          "
+        >
+          <br />
+          <h3
+            style="
+              margin-left: 10px;
+              margin-bottom: 0px;
+              margin-right: 10px;
+              margin-top: 0px;
+            "
+          >
+            <span
+              style="
+                font-size: 30px;
+                animation: rainbow-color-change 3s linear infinite alternate;
+              "
+              >UPDATE</span
+            >
+            <br />
+            <span style="color: #6bca31">April 2, 2026</span>
+          </h3>
+          <p
+            style="
+              margin-left: 15px;
+              margin-top: 15px;
+              margin-right: 15px;
+              margin-bottom: 0px;
+            "
+          >
+            fun little update; just added this blog area and some more popups!
+            i'm planning on more popups in the future, and this window will be
+            where i journal kind of everything, as long as it isn't too personal
+            to myself.
+            <br /><br />
+            <span style="color: lightgreen; text-decoration: underline"
+              >+ blog page<br />+ blog desktop icon<br />+ AOL, anti-AOL,
+              netscape, dailymp3 popups<br />
+            </span>
+            <span style="color: lightgray; text-decoration: underline"
+              >= arranged popups</span
+            >
+            <br /><br />mistakes? contact me @ hey.callie on discord!
+          </p>
+          <br />
+        </div>
+      </div>
+    </div>
+
     <!-- CDW POPUP -->
     <div id="cdwpopup">
       <div id="window2" class="draggable window">
@@ -503,6 +589,7 @@ before uploading :
         /></a>
       </div>
     </div>
+
     <!-- ANTI AOL POPUP -->
     <div id="antiaolpopup">
       <div id="window8" class="draggable window">
@@ -535,6 +622,7 @@ before uploading :
       </div>
     </div>
 
+    <!-- NETSCAPE POPUP -->
     <div id="nspopup">
       <div id="window9" class="draggable window">
         <div id="window9Drag">
@@ -567,6 +655,7 @@ before uploading :
       </div>
     </div>
 
+    <!-- MP3 POPUP -->
     <div id="mp3popup">
       <div id="window10" class="draggable window">
         <div id="window10Drag">
@@ -909,7 +998,10 @@ before uploading :
           text-align: center;
         "
       >
-        <img src="assets/Notepad.png" style="height: 100px; padding: 10px" />
+        <img
+          src="assets/Notepad.png"
+          style="height: 100px; padding: 10px; padding-bottom: 0px"
+        />
         <div class="desktopShortcutText">readme.txt</div>
       </div>
 
@@ -928,8 +1020,32 @@ before uploading :
           text-align: center;
         "
       >
-        <img src="assets/Explorer.png" style="height: 100px; padding: 10px" />
+        <img
+          src="assets/Explorer.png"
+          style="height: 100px; padding: 10px; padding-bottom: 0px"
+        />
         <div class="desktopShortcutText">File Explorer</div>
+      </div>
+
+      <div
+        onclick="
+          openTab('window11');
+          bringToFront(document.getElementById('window11'));
+        "
+        style="
+          cursor: default;
+          -webkit-user-select: none;
+          user-select: none;
+          height: fit-content;
+          width: fit-content;
+          text-align: center;
+        "
+      >
+        <img
+          src="assets/Internet Shortcut.png"
+          style="height: 100px; padding: 10px; padding-bottom: 0px"
+        />
+        <div class="desktopShortcutText">Blog</div>
       </div>
     </div>
 
