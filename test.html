@@ -1,16 +1,47 @@
 <html>
-  <head></head>
-  <body>
-    <script>
-      // Source - https://stackoverflow.com/a/16873849
-      // Posted by BeNdErR, modified by community. See post 'Timeline' for change history
-      // Retrieved 2026-03-31, License - CC BY-SA 4.0
+  <head>
+    <style>
+      .content {
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: transform 0.3s ease;
+      }
 
-      console.log("HELLO");
-      setTimeout(function () {
-        console.log("THIS IS");
-      }, 2000);
-      console.log("DOG");
-    </script>
+      details[open] .content {
+        transform: scaleY(1);
+      }
+    </style>
+  </head>
+  <body>
+    <details>
+      <summary>Show/Hide</summary>
+      <span class="content"
+        >Your content here.Your content here.Your content here.Your content
+        here.Your content here.Your content here.Your content here.Your content
+        here.Your content here.Your content here.Your content here.Your content
+        here.Your content here.Your content here.Your content here.Your content
+        here.Your content here.Your content here.Your content here.Your content
+        here.Your content here.Your content here.Your content here.Your content
+        here.Your content here.Your content here.Your content here.Your content
+        here.Your content here.Your content here.Your content here.Your content
+        here.Your content here.Your content here.Your content here.Your content
+        here.Your content here.Your content here.Your content here.Your content
+        here.Your content here.Your content here.Your content here.Your content
+        here.Your content here.v</span
+      >
+    </details>
+    <p>
+      Your content here.Your content here.Your content here.Your content
+      here.Your content here.Your content here.Your content here.Your content
+      here.Your content here.Your content here.Your content here.Your content
+      here.Your content here.Your content here.Your content here.Your content
+      here.Your content here.Your content here.Your content here.Your content
+      here.Your content here.Your content here.Your content here.Your content
+      here.Your content here.Your content here.Your content here.Your content
+      here.Your content here.Your content here.Your content here.Your content
+      here.Your content here.Your content here.Your content here.Your content
+      here.Your content here.Your content here.Your content here.Your content
+      here.
+    </p>
   </body>
 </html>

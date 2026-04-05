@@ -153,8 +153,8 @@
 
 #window11 {
   position: absolute;
-  top: 355px;
-  left: 208px;
+  top: 111px; /* originally 355 */
+  left: 422px; /* originally 208 */
   z-index: 9;
   background-color: #f1f1f1;
   text-align: center;
@@ -690,4 +690,12 @@ audio {
   position: absolute;
   font-family: Cascadia Mono;
   text-align: left;
+}
+
+.blogh3 {
+  margin-left: 10px;
+  margin-bottom: 0px;
+  margin-right: 10px;
+  margin-top: 0px;
+  font-size: 30px;
 }

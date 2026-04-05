@@ -58,6 +58,11 @@
   src: url("assets/ChironGoRoundTC-Regular.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "Interstellar";
+  src: url("assets/LinotypeDidotBold.otf") format ("opentype");
+}
+
 @keyframes rainbow-color-change {
   0%,
   100% {
