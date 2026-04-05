@@ -1,0 +1,200 @@
+<!doctype html>
+
+<html>
+  <head>
+    <title>Verse 1</title>
+    <style>
+      html {
+        background-image: url(cloverbackground.jpeg);
+        background-color: darkgreen;
+        background-repeat: repeat;
+      }
+      h1 {
+        text-align: center;
+        font-size: 100px;
+        color: grey;
+        margin-top: 15%;
+      }
+
+      .hidden {
+        display: none !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <audio id="track" src="Verse1.mp3" autoplay></audio>
+
+    <h1 style="margin-top: 25%">
+      <span id="1">I </span>
+      <span id="2">saw </span>
+      <span id="3">some </span>
+      <span id="4">guy </span>
+      <span id="5">on </span>
+      <span id="6">the </span>
+      <span id="7">docks</span>
+    </h1>
+
+    <h1>
+      <span id="8">Look</span><span id="9">in' </span>
+      <span id="10">for </span>
+      <span id="11">some</span><span id="12">thing </span>
+      <span id="13">he </span>
+      <span id="14">lost </span>
+    </h1>
+
+    <h1>
+      <span id="15">Which</span>
+      <span id="16">made </span>
+      <span id="17">me </span>
+      <span id="18">think</span>
+      <span id="19">of </span>
+      <span id="20">you </span>
+    </h1>
+
+    <h1 style="margin-bottom: 0px">
+      <span id="21">When</span>
+      <span id="22">I </span>
+      <span id="23">took </span>
+      <span id="24">your</span>
+    </h1>
+
+    <h1 style="margin-top: 0px">
+      <span id="25" class="hidden" style="color: red; font-size: 140px"
+        >WHAT</span
+      ><span id="26" class="hidden" style="color: red; font-size: 140px"
+        >CHA</span
+      ><br />
+
+      <span
+        id="27"
+        class="hidden"
+        style="
+          color: red;
+          font-size: 140px;
+          display: inline-block;
+          transform: translateY(-50px);
+        "
+      >
+        CALL </span
+      ><br />
+
+      <span
+        id="28"
+        class="hidden"
+        style="
+          color: red;
+          font-size: 140px;
+          display: inline-block;
+          transform: translateY(-100px);
+        "
+      >
+        ITS </span
+      ><br />
+
+      <span
+        id="29"
+        class="hidden"
+        style="
+          color: red;
+          font-size: 140px;
+          display: inline-block;
+          transform: translateY(-150px);
+        "
+      >
+        NAME
+      </span>
+    </h1>
+
+    <script>
+      window.scrollTo(0, 0);
+
+      const audio = document.getElementById("track");
+
+      // ===== PRO-LEVEL OFFSET (visual delay compensation) =====
+      const OFFSET = 0.05; // 50ms
+
+      function setColor(id) {
+        document.getElementById(id).style.color = "white";
+      }
+
+      function show(id) {
+        document.getElementById(id).classList.remove("hidden");
+      }
+
+      function scroll(multiplier) {
+        window.scrollBy({
+          top: window.innerHeight * multiplier,
+          left: 0,
+          behavior: "instant", // 🔥 instant for perfect sync
+        });
+      }
+
+      // ===== TIMELINE (adjust using captured timestamps) =====
+      const events = [
+        { time: 0.2 + OFFSET, action: () => setColor("1") },
+        { time: 0.25 + OFFSET, action: () => setColor("2") },
+        { time: 0.55 + OFFSET, action: () => setColor("3") },
+        { time: 0.85 + OFFSET, action: () => setColor("4") },
+        { time: 1.15 + OFFSET, action: () => setColor("5") },
+        { time: 1.2 + OFFSET, action: () => setColor("6") },
+        { time: 1.6 + OFFSET, action: () => setColor("7") },
+
+        { time: 2.0 + OFFSET, action: () => scroll(0.32) },
+
+        { time: 2.12 + OFFSET, action: () => setColor("8") },
+        { time: 2.22 + OFFSET, action: () => setColor("9") },
+        { time: 2.47 + OFFSET, action: () => setColor("10") },
+        { time: 2.67 + OFFSET, action: () => setColor("11") },
+        { time: 2.88 + OFFSET, action: () => setColor("12") },
+        { time: 2.95 + OFFSET, action: () => setColor("13") },
+        { time: 3.45 + OFFSET, action: () => setColor("14") },
+
+        { time: 3.75 + OFFSET, action: () => scroll(0.32) },
+
+        { time: 4.2 + OFFSET, action: () => setColor("15") },
+        { time: 4.4 + OFFSET, action: () => setColor("16") },
+        { time: 4.6 + OFFSET, action: () => setColor("17") },
+        { time: 4.9 + OFFSET, action: () => setColor("18") },
+        { time: 4.95 + OFFSET, action: () => setColor("19") },
+        { time: 5.25 + OFFSET, action: () => setColor("20") },
+
+        { time: 5.7 + OFFSET, action: () => scroll(0.32) },
+
+        { time: 6.0 + OFFSET, action: () => setColor("21") },
+        { time: 6.15 + OFFSET, action: () => setColor("22") },
+        { time: 6.35 + OFFSET, action: () => setColor("23") },
+        { time: 6.53 + OFFSET, action: () => setColor("24") },
+
+        { time: 6.73 + OFFSET, action: () => show("25") },
+        { time: 6.88 + OFFSET, action: () => show("26") },
+        { time: 7.03 + OFFSET, action: () => show("27") },
+        { time: 7.23 + OFFSET, action: () => show("28") },
+        { time: 7.43 + OFFSET, action: () => show("29") },
+      ];
+
+      let index = 0;
+
+      function sync() {
+        const t = audio.currentTime;
+
+        while (index < events.length && t >= events[index].time) {
+          events[index].action();
+          index++;
+        }
+
+        requestAnimationFrame(sync);
+      }
+
+      // ===== SPACEBAR TIMESTAMP CAPTURE =====
+      window.addEventListener("keydown", (e) => {
+        if (e.code === "Space") {
+          e.preventDefault();
+          console.log("Timestamp:", audio.currentTime.toFixed(3));
+        }
+      });
+
+      sync();
+    </script>
+  </body>
+</html>
