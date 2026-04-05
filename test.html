@@ -1,47 +1,38 @@
 <html>
   <head>
     <style>
-      .content {
-        transform: scaleY(0);
-        transform-origin: top;
-        transition: transform 0.3s ease;
+      p {
+        margin-top: 400px;
+        margin-bottom: 400px;
+        font-size: 50px;
       }
-
-      details[open] .content {
-        transform: scaleY(1);
+      html {
+        text-align: center;
       }
     </style>
   </head>
   <body>
-    <details>
-      <summary>Show/Hide</summary>
-      <span class="content"
-        >Your content here.Your content here.Your content here.Your content
-        here.Your content here.Your content here.Your content here.Your content
-        here.Your content here.Your content here.Your content here.Your content
-        here.Your content here.Your content here.Your content here.Your content
-        here.Your content here.Your content here.Your content here.Your content
-        here.Your content here.Your content here.Your content here.Your content
-        here.Your content here.Your content here.Your content here.Your content
-        here.Your content here.Your content here.Your content here.Your content
-        here.Your content here.Your content here.Your content here.Your content
-        here.Your content here.Your content here.Your content here.Your content
-        here.Your content here.Your content here.Your content here.Your content
-        here.Your content here.v</span
-      >
-    </details>
-    <p>
-      Your content here.Your content here.Your content here.Your content
-      here.Your content here.Your content here.Your content here.Your content
-      here.Your content here.Your content here.Your content here.Your content
-      here.Your content here.Your content here.Your content here.Your content
-      here.Your content here.Your content here.Your content here.Your content
-      here.Your content here.Your content here.Your content here.Your content
-      here.Your content here.Your content here.Your content here.Your content
-      here.Your content here.Your content here.Your content here.Your content
-      here.Your content here.Your content here.Your content here.Your content
-      here.Your content here.Your content here.Your content here.Your content
-      here.
-    </p>
+    <span id="text">Click me</span>
+    <p>I saw some guy on the docks</p>
+    <p>Looking for somethin' he lost</p>
+    <p>Which made me think of you</p>
+
+    <script>
+      function sleep(ms) {
+        return new Promise((resolve) => setTimeout(resolve, ms));
+      }
+
+      async function stagedScroll() {
+        window.scrollBy(0, 100);
+        await sleep(200);
+
+        window.scrollBy(0, 200);
+        await sleep(200);
+
+        window.scrollBy(0, 100);
+      }
+
+      document.getElementById("text").addEventListener("click", stagedScroll);
+    </script>
   </body>
 </html>
