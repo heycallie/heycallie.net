@@ -12,7 +12,7 @@
       h1 {
         text-align: center;
         font-size: 8vh;
-        color: rgb(53, 53, 53);
+        color: #797b79;
         margin-top: 35vh;
       }
 
@@ -142,10 +142,17 @@
       <span id="41">back </span>
       <span id="42">to</span><span id="43">day?</span>
     </h1>
-    <a href="/verse2">
+    <a href="/whatchacallitsname/verse2/">
       <div
         id="arrow"
-        style="height: 19vh; width: 25vh; background-repeat: no-repeat"
+        style="
+          height: 18vh;
+          width: 21vh;
+          background-repeat: no-repeat;
+          margin-left: auto;
+          margin-right: auto;
+          display: block;
+        "
       ></div
     ></a>
 
@@ -160,7 +167,7 @@
       const OFFSET = 0.05; // 50ms
 
       function setColor(id) {
-        document.getElementById(id).style.color = "white";
+        document.getElementById(id).style.color = "#E3E6CB";
       }
 
       function show(id) {
@@ -175,7 +182,7 @@
         window.scrollBy({
           top: window.innerHeight * multiplier,
           left: 0,
-          behavior: "instant",
+          behavior: "smooth",
         });
       }
 
