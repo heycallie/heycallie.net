@@ -11,13 +11,19 @@
       }
       h1 {
         text-align: center;
-        font-size: 100px;
-        color: grey;
-        margin-top: 15%;
+        font-size: 8vh;
+        color: rgb(53, 53, 53);
+        margin-top: 35vh;
       }
 
       .hidden {
         display: none !important;
+      }
+
+      img {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
       }
     </style>
   </head>
@@ -60,9 +66,9 @@
     </h1>
 
     <h1 style="margin-top: 0px">
-      <span id="25" class="hidden" style="color: red; font-size: 140px"
+      <span id="25" class="hidden" style="color: red; font-size: 11vh"
         >WHAT</span
-      ><span id="26" class="hidden" style="color: red; font-size: 140px"
+      ><span id="26" class="hidden" style="color: red; font-size: 11vh"
         >CHA</span
       ><br />
 
@@ -71,7 +77,7 @@
         class="hidden"
         style="
           color: red;
-          font-size: 140px;
+          font-size: 11vh;
           display: inline-block;
           transform: translateY(-50px);
         "
@@ -84,7 +90,7 @@
         class="hidden"
         style="
           color: red;
-          font-size: 140px;
+          font-size: 11vh;
           display: inline-block;
           transform: translateY(-100px);
         "
@@ -97,13 +103,33 @@
         class="hidden"
         style="
           color: red;
-          font-size: 140px;
+          font-size: 11vh;
           display: inline-block;
           transform: translateY(-150px);
         "
       >
         NAME
       </span>
+    </h1>
+    <div id="breaks"><br /><br /><br /><br /><br /><br /><br /><br /></div>
+    <h1 style="margin-top: 14vh">
+      <span id="30">I </span>
+      <span id="31">ne</span><span id="32">ver </span>
+      <span id="33">gave </span>
+      <span id="34">it </span>
+      <span id="35">back</span>
+    </h1>
+
+    <img src="Webmaster_Think.gif" height="400vh" style="margin-top: 35vh" />
+
+    <h1 style="margin-top: 3vh">
+      <span>What </span>
+      <span>if </span>
+      <span>I </span>
+      <span>give </span>
+      <span>it </span>
+      <span>back </span>
+      <span>today? </span>
     </h1>
 
     <script>
@@ -122,55 +148,69 @@
         document.getElementById(id).classList.remove("hidden");
       }
 
+      function hide(id) {
+        document.getElementById(id).classList.add("hidden");
+      }
+
       function scroll(multiplier) {
         window.scrollBy({
           top: window.innerHeight * multiplier,
           left: 0,
-          behavior: "instant", // 🔥 instant for perfect sync
+          behavior: "instant",
         });
       }
 
       // ===== TIMELINE (adjust using captured timestamps) =====
       const events = [
-        { time: 0.2 + OFFSET, action: () => setColor("1") },
-        { time: 0.25 + OFFSET, action: () => setColor("2") },
-        { time: 0.55 + OFFSET, action: () => setColor("3") },
-        { time: 0.85 + OFFSET, action: () => setColor("4") },
-        { time: 1.15 + OFFSET, action: () => setColor("5") },
-        { time: 1.2 + OFFSET, action: () => setColor("6") },
-        { time: 1.6 + OFFSET, action: () => setColor("7") },
+        { time: 0.258 + OFFSET, action: () => setColor("1") },
+        { time: 0.383 + OFFSET, action: () => setColor("2") },
+        { time: 0.673 + OFFSET, action: () => setColor("3") },
+        { time: 0.96 + OFFSET, action: () => setColor("4") },
+        { time: 1.164 + OFFSET, action: () => setColor("5") },
+        { time: 1.286 + OFFSET, action: () => setColor("6") },
+        { time: 1.572 + OFFSET, action: () => setColor("7") },
 
-        { time: 2.0 + OFFSET, action: () => scroll(0.32) },
+        { time: 2.0 + OFFSET, action: () => scroll(0.45) },
 
-        { time: 2.12 + OFFSET, action: () => setColor("8") },
-        { time: 2.22 + OFFSET, action: () => setColor("9") },
-        { time: 2.47 + OFFSET, action: () => setColor("10") },
-        { time: 2.67 + OFFSET, action: () => setColor("11") },
-        { time: 2.88 + OFFSET, action: () => setColor("12") },
-        { time: 2.95 + OFFSET, action: () => setColor("13") },
-        { time: 3.45 + OFFSET, action: () => setColor("14") },
+        { time: 2.295 + OFFSET, action: () => setColor("8") },
+        { time: 2.418 + OFFSET, action: () => setColor("9") },
+        { time: 2.539 + OFFSET, action: () => setColor("10") },
+        { time: 2.826 + OFFSET, action: () => setColor("11") },
+        { time: 3.118 + OFFSET, action: () => setColor("12") },
+        { time: 3.224 + OFFSET, action: () => setColor("13") },
+        { time: 3.614 + OFFSET, action: () => setColor("14") },
 
-        { time: 3.75 + OFFSET, action: () => scroll(0.32) },
+        { time: 4 + OFFSET, action: () => scroll(0.45) },
 
-        { time: 4.2 + OFFSET, action: () => setColor("15") },
-        { time: 4.4 + OFFSET, action: () => setColor("16") },
-        { time: 4.6 + OFFSET, action: () => setColor("17") },
-        { time: 4.9 + OFFSET, action: () => setColor("18") },
-        { time: 4.95 + OFFSET, action: () => setColor("19") },
-        { time: 5.25 + OFFSET, action: () => setColor("20") },
+        { time: 4.274 + OFFSET, action: () => setColor("15") },
+        { time: 4.561 + OFFSET, action: () => setColor("16") },
+        { time: 4.806 + OFFSET, action: () => setColor("17") },
+        { time: 5.092 + OFFSET, action: () => setColor("18") },
+        { time: 5.174 + OFFSET, action: () => setColor("19") },
+        { time: 5.463 + OFFSET, action: () => setColor("20") },
 
-        { time: 5.7 + OFFSET, action: () => scroll(0.32) },
+        { time: 5.95 + OFFSET, action: () => scroll(0.65) },
 
-        { time: 6.0 + OFFSET, action: () => setColor("21") },
-        { time: 6.15 + OFFSET, action: () => setColor("22") },
-        { time: 6.35 + OFFSET, action: () => setColor("23") },
-        { time: 6.53 + OFFSET, action: () => setColor("24") },
+        { time: 6.081 + OFFSET, action: () => setColor("21") },
+        { time: 6.204 + OFFSET, action: () => setColor("22") },
+        { time: 6.534 + OFFSET, action: () => setColor("23") },
+        { time: 6.802 + OFFSET, action: () => setColor("24") },
 
-        { time: 6.73 + OFFSET, action: () => show("25") },
-        { time: 6.88 + OFFSET, action: () => show("26") },
-        { time: 7.03 + OFFSET, action: () => show("27") },
-        { time: 7.23 + OFFSET, action: () => show("28") },
-        { time: 7.43 + OFFSET, action: () => show("29") },
+        { time: 7.071 + OFFSET, action: () => show("25") },
+        { time: 7.276 + OFFSET, action: () => show("26") },
+        { time: 7.403 + OFFSET, action: () => show("27") },
+        { time: 7.649 + OFFSET, action: () => show("28") },
+        { time: 7.72 + OFFSET, action: () => show("29") },
+        { time: 7.72 + OFFSET, action: () => hide("breaks") },
+
+        { time: 8 + OFFSET, action: () => scroll(0.65) },
+
+        { time: 8.262 + OFFSET, action: () => setColor("30") },
+        { time: 8.467 + OFFSET, action: () => setColor("31") },
+        { time: 8.705 + OFFSET, action: () => setColor("32") },
+        { time: 8.983 + OFFSET, action: () => setColor("33") },
+        { time: 9.065 + OFFSET, action: () => setColor("34") },
+        { time: 9.351 + OFFSET, action: () => setColor("35") },
       ];
 
       let index = 0;
