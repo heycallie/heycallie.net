@@ -3,28 +3,252 @@
   <head>
     <title>Verse 2</title>
     <style>
-      .text {
+      html {
+        background-image: url("background.jpg");
+        background-color: teal;
+        font-family: "Times New Roman", Times, serif;
+        font-size: 2.5vh;
+      }
+
+      .border {
         display: block;
         margin-left: auto;
         margin-right: auto;
-        border-left: 4px solid black;
-        border-top: 4px solid black;
-        border-bottom: 4px solid grey;
-        border-right: 4px solid grey;
-        background-color: lightGrey;
+        border-left: 1vh solid #b3b0b0;
+        border-top: 1vh solid #b3b0b0;
+        border-bottom: 1vh solid #474b4c;
+        border-right: 1vh solid #474b4c;
+        background-color: white;
         height: 12vh;
         width: 30vw;
         text-align: center;
-        line-height: 12vh;
+        line-height: 9vh;
+        margin-top: 35vh;
+      }
+      .border h1 {
+        margin: 0px;
+        color: #d0ccc7;
       }
 
-      .text h1 {
-        margin: 0px;
+      /* color for unsung text: #D0CCC7 */
+      /* color for sung text: #35ceb9 */
+
+      .inner-border {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-left: 0.5vh solid #585835;
+        border-top: 0.5vh solid #585835;
+        border-bottom: 0.5vh solid #c9ccab;
+        border-right: 0.5vh solid #c9ccab;
+        height: 9vh;
+        width: 28vw;
+        margin-top: 1vh;
+      }
+
+      div#leftfish div {
+        height: 15vh;
+        width: 15vw;
+        background-image: url("fish-flip.gif");
+        background-repeat: no-repeat;
+        position: absolute;
+        left: 0px;
+      }
+
+      div#rightfish div {
+        height: 15vh;
+        width: 12vw;
+        background-image: url("fish.gif");
+        background-repeat: no-repeat;
+        position: absolute;
+        right: 0px;
       }
     </style>
   </head>
 
   <body>
-    <div class="text"><h1>Hello world!</h1></div>
+    <audio id="track" src="Verse2.mp3" autoplay></audio>
+
+    <div id="leftfish">
+      <div style="top: 0px"></div>
+      <div style="top: calc(30vh)"></div>
+      <div style="top: calc(60vh)"></div>
+      <div style="top: calc(90vh)"></div>
+      <div style="top: calc(120vh)"></div>
+      <div style="top: calc(150vh)"></div>
+      <div style="top: calc(180vh)"></div>
+      <div style="top: calc(210vh)"></div>
+      <div style="top: calc(240vh)"></div>
+    </div>
+    <div id="rightfish">
+      <div style="top: 0px"></div>
+      <div style="top: calc(30vh)"></div>
+      <div style="top: calc(60vh)"></div>
+      <div style="top: calc(90vh)"></div>
+      <div style="top: calc(120vh)"></div>
+      <div style="top: calc(150vh)"></div>
+      <div style="top: calc(180vh)"></div>
+      <div style="top: calc(210vh)"></div>
+      <div style="top: calc(240vh)"></div>
+    </div>
+    <div class="border">
+      <div class="inner-border">
+        <h1>
+          <span id="1">It's </span>
+          <span id="2">awk</span><span id="3">ward </span>
+          <span id="4">to </span>
+          <span id="5">ad</span><span id="6">mit</span>
+        </h1>
+      </div>
+    </div>
+
+    <div class="border" style="width: 35vw">
+      <div class="inner-border" style="width: 33vw">
+        <h1>
+          <span>I </span>
+          <span>ne</span><span>ver </span>
+          <span>asked </span>
+          <span>to </span>
+          <span>bor</span><span>row </span>
+          <span>it</span>
+        </h1>
+      </div>
+    </div>
+
+    <div class="border">
+      <div class="inner-border">
+        <h1>So I didn't say a thing</h1>
+      </div>
+    </div>
+
+    <div class="border" style="height: 21vh">
+      <div class="inner-border" style="line-height: 9vh; height: 18vh">
+        <h1>When you thought you<br />dropped it in the lake</h1>
+      </div>
+    </div>
+
+    <div class="border">
+      <div class="inner-border">
+        <h1>I meant to give it back</h1>
+      </div>
+    </div>
+
+    <script>
+      window.scrollTo(0, 0);
+
+      const audio = document.getElementById("track");
+
+      // ===== PRO-LEVEL OFFSET (visual delay compensation) =====
+      const OFFSET = 0.05; // 50ms
+
+      function setColor(id) {
+        document.getElementById(id).style.color = "#E3E6CB";
+      }
+
+      function show(id) {
+        document.getElementById(id).classList.remove("hidden");
+      }
+
+      function hide(id) {
+        document.getElementById(id).classList.add("hidden");
+      }
+
+      function scroll(multiplier) {
+        window.scrollBy({
+          top: window.innerHeight * multiplier,
+          left: 0,
+          behavior: "smooth",
+        });
+      }
+
+      // ===== TIMELINE (adjust using captured timestamps) =====
+      const events = [
+        { time: 0.258 + OFFSET, action: () => setColor("1") },
+        { time: 0.383 + OFFSET, action: () => setColor("2") },
+        { time: 0.673 + OFFSET, action: () => setColor("3") },
+        { time: 0.96 + OFFSET, action: () => setColor("4") },
+        { time: 1.164 + OFFSET, action: () => setColor("5") },
+        { time: 1.286 + OFFSET, action: () => setColor("6") },
+        { time: 1.572 + OFFSET, action: () => setColor("7") },
+
+        { time: 2.0 + OFFSET, action: () => scroll(0.45) },
+
+        { time: 2.295 + OFFSET, action: () => setColor("8") },
+        { time: 2.418 + OFFSET, action: () => setColor("9") },
+        { time: 2.539 + OFFSET, action: () => setColor("10") },
+        { time: 2.826 + OFFSET, action: () => setColor("11") },
+        { time: 3.118 + OFFSET, action: () => setColor("12") },
+        { time: 3.224 + OFFSET, action: () => setColor("13") },
+        { time: 3.614 + OFFSET, action: () => setColor("14") },
+
+        { time: 4 + OFFSET, action: () => scroll(0.45) },
+
+        { time: 4.274 + OFFSET, action: () => setColor("15") },
+        { time: 4.561 + OFFSET, action: () => setColor("16") },
+        { time: 4.806 + OFFSET, action: () => setColor("17") },
+        { time: 5.092 + OFFSET, action: () => setColor("18") },
+        { time: 5.174 + OFFSET, action: () => setColor("19") },
+        { time: 5.463 + OFFSET, action: () => setColor("20") },
+
+        { time: 5.95 + OFFSET, action: () => scroll(0.65) },
+
+        { time: 6.081 + OFFSET, action: () => setColor("21") },
+        { time: 6.204 + OFFSET, action: () => setColor("22") },
+        { time: 6.534 + OFFSET, action: () => setColor("23") },
+        { time: 6.802 + OFFSET, action: () => setColor("24") },
+
+        { time: 7.071 + OFFSET, action: () => show("25") },
+        { time: 7.276 + OFFSET, action: () => show("26") },
+        { time: 7.403 + OFFSET, action: () => show("27") },
+        { time: 7.649 + OFFSET, action: () => show("28") },
+        { time: 7.72 + OFFSET, action: () => show("29") },
+        { time: 7.72 + OFFSET, action: () => hide("breaks") },
+
+        { time: 8 + OFFSET, action: () => scroll(0.65) },
+
+        { time: 8.262 + OFFSET, action: () => setColor("30") },
+        { time: 8.467 + OFFSET, action: () => setColor("31") },
+        { time: 8.705 + OFFSET, action: () => setColor("32") },
+        { time: 8.983 + OFFSET, action: () => setColor("33") },
+        { time: 9.065 + OFFSET, action: () => setColor("34") },
+        { time: 9.351 + OFFSET, action: () => setColor("35") },
+
+        { time: 9.5 + OFFSET, action: () => scroll(0.75) },
+
+        { time: 10.09 + OFFSET, action: () => setColor("36") },
+        { time: 10.418 + OFFSET, action: () => setColor("37") },
+        { time: 10.628 + OFFSET, action: () => setColor("38") },
+        { time: 10.914 + OFFSET, action: () => setColor("39") },
+        { time: 11.077 + OFFSET, action: () => setColor("40") },
+        { time: 11.365 + OFFSET, action: () => setColor("41") },
+        { time: 11.726 + OFFSET, action: () => setColor("42") },
+        { time: 11.809 + OFFSET, action: () => setColor("43") },
+
+        { time: 11.809 + OFFSET, action: () => scrollTo(0, 9999999) },
+      ];
+
+      let index = 0;
+
+      function sync() {
+        const t = audio.currentTime;
+
+        while (index < events.length && t >= events[index].time) {
+          events[index].action();
+          index++;
+        }
+
+        requestAnimationFrame(sync);
+      }
+
+      // ===== SPACEBAR TIMESTAMP CAPTURE =====
+      window.addEventListener("keydown", (e) => {
+        if (e.code === "Space") {
+          e.preventDefault();
+          console.log("Timestamp:", audio.currentTime.toFixed(3));
+        }
+      });
+
+      sync();
+    </script>
   </body>
 </html>
