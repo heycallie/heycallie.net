@@ -47,8 +47,8 @@
       }
 
       div#leftfish div {
-        height: 25vh;
-        width: 19vw;
+        height: 28vh;
+        width: 21vw;
         background-image: url("fish-flip.gif");
         background-repeat: no-repeat;
         position: absolute;
@@ -56,8 +56,8 @@
       }
 
       div#rightfish div {
-        height: 25vh;
-        width: 19vw;
+        height: 28vh;
+        width: 21vw;
         background-image: url("fish.gif");
         background-repeat: no-repeat;
         position: absolute;
@@ -106,33 +106,59 @@
     <div class="border" style="width: 35vw">
       <div class="inner-border" style="width: 33vw">
         <h1>
-          <span>I </span>
-          <span>ne</span><span>ver </span>
-          <span>asked </span>
-          <span>to </span>
-          <span>bor</span><span>row </span>
-          <span>it</span>
+          <span id="7">I </span>
+          <span id="8">ne</span><span id="9">ver </span>
+          <span id="10">asked </span>
+          <span id="11">to </span>
+          <span id="12">bor</span><span id="13">row </span>
+          <span id="14">it</span>
         </h1>
       </div>
     </div>
 
     <div class="border">
       <div class="inner-border">
-        <h1>So I didn't say a thing</h1>
+        <h1>
+          <span id="15">So </span>
+          <span id="16">I </span>
+          <span id="17">didn't </span>
+          <span id="18">say </span>
+          <span id="19">a </span>
+          <span id="20">thing</span>
+        </h1>
       </div>
     </div>
 
     <div class="border" style="height: 21vh">
       <div class="inner-border" style="line-height: 9vh; height: 18vh">
-        <h1>When you thought you<br />dropped it in the lake</h1>
+        <h1>
+          <span id="21">When </span>
+          <span id="22">you </span>
+          <span id="23">thought </span>
+          <span id="24">you </span>
+          <span id="25">dropped</span>
+          <span id="26">it </span>
+          <span id="27">in </span>
+          <span id="28">the </span>
+          <span id="29">lake</span>
+        </h1>
       </div>
     </div>
 
     <div class="border">
       <div class="inner-border">
-        <h1>I meant to give it back</h1>
+        <h1>
+          <span id="30">I </span>
+          <span id="31">meant </span>
+          <span id="32">to </span>
+          <span id="33">give </span>
+          <span id="34">it </span>
+          <span id="35">back</span>
+        </h1>
       </div>
     </div>
+
+    <!-- i guess it slipped my mind until today -->
 
     <script>
       window.scrollTo(0, 0);
@@ -156,66 +182,56 @@
 
       // ===== TIMELINE (adjust using captured timestamps) =====
       const events = [
-        { time: 0.258 + OFFSET, action: () => setColor("1") },
-        { time: 0.383 + OFFSET, action: () => setColor("2") },
-        { time: 0.673 + OFFSET, action: () => setColor("3") },
-        { time: 0.96 + OFFSET, action: () => setColor("4") },
-        { time: 1.164 + OFFSET, action: () => setColor("5") },
-        { time: 1.286 + OFFSET, action: () => setColor("6") },
-        { time: 1.572 + OFFSET, action: () => setColor("7") },
+        { time: 0.239 + OFFSET, action: () => setColor("1") },
+        { time: 0.341 + OFFSET, action: () => setColor("2") },
+        { time: 0.593 + OFFSET, action: () => setColor("3") },
+        { time: 0.845 + OFFSET, action: () => setColor("4") },
+        { time: 0.969 + OFFSET, action: () => setColor("5") },
+        { time: 1.38 + OFFSET, action: () => setColor("6") },
+        { time: 1.925 + OFFSET, action: () => setColor("7") },
 
-        { time: 2.0 + OFFSET, action: () => scroll(0.45) },
+        // { time: 2.0 + OFFSET, action: () => scroll(0.45) },
 
-        { time: 2.295 + OFFSET, action: () => setColor("8") },
-        { time: 2.418 + OFFSET, action: () => setColor("9") },
-        { time: 2.539 + OFFSET, action: () => setColor("10") },
-        { time: 2.826 + OFFSET, action: () => setColor("11") },
-        { time: 3.118 + OFFSET, action: () => setColor("12") },
-        { time: 3.224 + OFFSET, action: () => setColor("13") },
-        { time: 3.614 + OFFSET, action: () => setColor("14") },
+        { time: 2.048 + OFFSET, action: () => setColor("8") },
+        { time: 2.171 + OFFSET, action: () => setColor("9") },
+        { time: 2.532 + OFFSET, action: () => setColor("10") },
+        { time: 2.739 + OFFSET, action: () => setColor("11") },
+        { time: 2.943 + OFFSET, action: () => setColor("12") },
+        { time: 3.066 + OFFSET, action: () => setColor("13") },
+        { time: 3.352 + OFFSET, action: () => setColor("14") },
 
-        { time: 4 + OFFSET, action: () => scroll(0.45) },
+        { time: 4.415 + OFFSET, action: () => setColor("15") },
+        { time: 4.661 + OFFSET, action: () => setColor("16") },
+        { time: 4.865 + OFFSET, action: () => setColor("17") },
+        { time: 4.988 + OFFSET, action: () => setColor("18") },
+        { time: 5.232 + OFFSET, action: () => setColor("19") },
+        { time: 5.933 + OFFSET, action: () => setColor("20") },
 
-        { time: 4.274 + OFFSET, action: () => setColor("15") },
-        { time: 4.561 + OFFSET, action: () => setColor("16") },
-        { time: 4.806 + OFFSET, action: () => setColor("17") },
-        { time: 5.092 + OFFSET, action: () => setColor("18") },
-        { time: 5.174 + OFFSET, action: () => setColor("19") },
-        { time: 5.463 + OFFSET, action: () => setColor("20") },
+        { time: 6.056 + OFFSET, action: () => setColor("21") },
+        { time: 6.343 + OFFSET, action: () => setColor("22") },
+        { time: 6.547 + OFFSET, action: () => setColor("23") },
+        { time: 6.794 + OFFSET, action: () => setColor("24") },
 
-        { time: 5.95 + OFFSET, action: () => scroll(0.65) },
+        { time: 7.04 + OFFSET, action: () => setColor("25") },
+        { time: 7.2 + OFFSET, action: () => setColor("26") },
+        { time: 7.446 + OFFSET, action: () => setColor("27") },
+        { time: 7.568 + OFFSET, action: () => setColor("28") },
+        { time: 8.017 + OFFSET, action: () => setColor("29") },
 
-        { time: 6.081 + OFFSET, action: () => setColor("21") },
-        { time: 6.204 + OFFSET, action: () => setColor("22") },
-        { time: 6.534 + OFFSET, action: () => setColor("23") },
-        { time: 6.802 + OFFSET, action: () => setColor("24") },
+        { time: 8.342 + OFFSET, action: () => setColor("30") },
+        { time: 8.583 + OFFSET, action: () => setColor("31") },
+        { time: 8.787 + OFFSET, action: () => setColor("32") },
+        { time: 8.909 + OFFSET, action: () => setColor("33") },
+        { time: 9.155 + OFFSET, action: () => setColor("34") },
+        { time: 9.892 + OFFSET, action: () => setColor("35") },
 
-        { time: 7.071 + OFFSET, action: () => show("25") },
-        { time: 7.276 + OFFSET, action: () => show("26") },
-        { time: 7.403 + OFFSET, action: () => show("27") },
-        { time: 7.649 + OFFSET, action: () => show("28") },
-        { time: 7.72 + OFFSET, action: () => show("29") },
-        { time: 7.72 + OFFSET, action: () => hide("breaks") },
-
-        { time: 8 + OFFSET, action: () => scroll(0.65) },
-
-        { time: 8.262 + OFFSET, action: () => setColor("30") },
-        { time: 8.467 + OFFSET, action: () => setColor("31") },
-        { time: 8.705 + OFFSET, action: () => setColor("32") },
-        { time: 8.983 + OFFSET, action: () => setColor("33") },
-        { time: 9.065 + OFFSET, action: () => setColor("34") },
-        { time: 9.351 + OFFSET, action: () => setColor("35") },
-
-        { time: 9.5 + OFFSET, action: () => scroll(0.75) },
-
-        { time: 10.09 + OFFSET, action: () => setColor("36") },
-        { time: 10.418 + OFFSET, action: () => setColor("37") },
-        { time: 10.628 + OFFSET, action: () => setColor("38") },
-        { time: 10.914 + OFFSET, action: () => setColor("39") },
-        { time: 11.077 + OFFSET, action: () => setColor("40") },
-        { time: 11.365 + OFFSET, action: () => setColor("41") },
-        { time: 11.726 + OFFSET, action: () => setColor("42") },
-        { time: 11.809 + OFFSET, action: () => setColor("43") },
+        { time: 10.047 + OFFSET, action: () => setColor("36") },
+        { time: 10.169 + OFFSET, action: () => setColor("37") },
+        { time: 10.5 + OFFSET, action: () => setColor("38") },
+        { time: 10.745 + OFFSET, action: () => setColor("39") },
+        { time: 10.99 + OFFSET, action: () => setColor("40") },
+        { time: 11.112 + OFFSET, action: () => setColor("41") },
+        { time: 11.439 + OFFSET, action: () => setColor("42") },
 
         { time: 11.809 + OFFSET, action: () => scrollTo(0, 9999999) },
       ];
