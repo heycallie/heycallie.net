@@ -1,38 +1,17 @@
 <html>
   <head>
-    <style>
-      p {
-        margin-top: 400px;
-        margin-bottom: 400px;
-        font-size: 50px;
-      }
-      html {
-        text-align: center;
-      }
-    </style>
+    <script src="https://iframe.chat/scripts/main.min.js"></script>
+    <script>
+      chattable.initialize({
+        stylesheet: "chattable.css",
+      });
+    </script>
   </head>
   <body>
-    <span id="text">Click me</span>
-    <p>I saw some guy on the docks</p>
-    <p>Looking for somethin' he lost</p>
-    <p>Which made me think of you</p>
-
-    <script>
-      function sleep(ms) {
-        return new Promise((resolve) => setTimeout(resolve, ms));
-      }
-
-      async function stagedScroll() {
-        window.scrollBy(0, 100);
-        await sleep(200);
-
-        window.scrollBy(0, 200);
-        await sleep(200);
-
-        window.scrollBy(0, 100);
-      }
-
-      document.getElementById("text").addEventListener("click", stagedScroll);
-    </script>
+    <iframe
+      src="https://iframe.chat/embed?chat=29427634"
+      id="chattable"
+      style="width: 500px; height: 500px"
+    ></iframe>
   </body>
 </html>
