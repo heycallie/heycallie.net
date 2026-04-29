@@ -57,7 +57,7 @@
 
       div#rightfish div {
         height: 28vh;
-        width: 21vw;
+        width: 22vw;
         background-image: url("fish.gif");
         background-repeat: no-repeat;
         position: absolute;
@@ -92,8 +92,8 @@
       <div style="top: calc(240vh)"></div>
     </div>
 
-    <div class="border" style="margin-top: 45vh">
-      <div class="inner-border">
+    <div class="border" style="margin-top: 45vh; width: 34vw">
+      <div class="inner-border" style="width: 31vw">
         <h1>
           <span id="1">It's </span>
           <span id="2">awk</span><span id="3">ward </span>
@@ -103,8 +103,8 @@
       </div>
     </div>
 
-    <div class="border" style="width: 35vw">
-      <div class="inner-border" style="width: 33vw">
+    <div class="border" style="width: 39vw">
+      <div class="inner-border" style="width: 36vw">
         <h1>
           <span id="7">I </span>
           <span id="8">ne</span><span id="9">ver </span>
@@ -116,8 +116,8 @@
       </div>
     </div>
 
-    <div class="border">
-      <div class="inner-border">
+    <div class="border" style="width: 34vw">
+      <div class="inner-border" style="width: 31vw">
         <h1>
           <span id="15">So </span>
           <span id="16">I </span>
@@ -129,8 +129,11 @@
       </div>
     </div>
 
-    <div class="border" style="height: 21vh">
-      <div class="inner-border" style="line-height: 9vh; height: 18vh">
+    <div class="border" style="height: 21vh; width: 35vw">
+      <div
+        class="inner-border"
+        style="line-height: 9vh; height: 18vh; width: 32vw"
+      >
         <h1>
           <span id="21">When </span>
           <span id="22">you </span>
@@ -158,8 +161,8 @@
       </div>
     </div>
 
-    <div class="border">
-      <div class="inner-border">
+    <div class="border" style="width: 48vw">
+      <div class="inner-border" style="width: 46vw">
         <h1>
           <span id="36">I </span>
           <span id="37">guess </span>
@@ -168,7 +171,7 @@
           <span id="40">my </span>
           <span id="41">mind </span>
           <span id="42">un</span><span id="43">til </span>
-          <span id="44">to</span> <span id="45">day </span>
+          <span id="44">to</span><span id="45">day </span>
         </h1>
       </div>
     </div>
@@ -179,7 +182,7 @@
       const audio = document.getElementById("track");
 
       // ===== PRO-LEVEL OFFSET (visual delay compensation) =====
-      const OFFSET = 0.05; // 50ms
+      const OFFSET = 0.0; // 50ms
 
       function setColor(id) {
         document.getElementById(id).style.color = "#35ceb9";
@@ -201,37 +204,36 @@
         { time: 0.845 + OFFSET, action: () => setColor("4") },
         { time: 0.969 + OFFSET, action: () => setColor("5") },
         { time: 1.38 + OFFSET, action: () => setColor("6") },
-        { time: 1.925 + OFFSET, action: () => setColor("7") },
 
-        // { time: 2.0 + OFFSET, action: () => scroll(0.45) },
+        //  { time: 1.965 + OFFSET, action: () => scroll(0.45) },
 
-        { time: 2.048 + OFFSET, action: () => setColor("8") },
-        { time: 2.171 + OFFSET, action: () => setColor("9") },
-        { time: 2.532 + OFFSET, action: () => setColor("10") },
-        { time: 2.739 + OFFSET, action: () => setColor("11") },
-        { time: 2.943 + OFFSET, action: () => setColor("12") },
-        { time: 3.066 + OFFSET, action: () => setColor("13") },
-        { time: 3.352 + OFFSET, action: () => setColor("14") },
+        { time: 2.022 + OFFSET, action: () => setColor("7") },
+        { time: 2.148 + OFFSET, action: () => setColor("8") },
+        { time: 2.276 + OFFSET, action: () => setColor("9") },
+        { time: 2.413 + OFFSET, action: () => setColor("10") },
+        { time: 2.712 + OFFSET, action: () => setColor("11") },
+        { time: 2.921 + OFFSET, action: () => setColor("12") },
+        { time: 3.051 + OFFSET, action: () => setColor("13") },
+        { time: 3.346 + OFFSET, action: () => setColor("14") },
 
-        { time: 4.415 + OFFSET, action: () => setColor("15") },
-        { time: 4.661 + OFFSET, action: () => setColor("16") },
-        { time: 4.865 + OFFSET, action: () => setColor("17") },
-        { time: 4.988 + OFFSET, action: () => setColor("18") },
-        { time: 5.232 + OFFSET, action: () => setColor("19") },
-        { time: 5.933 + OFFSET, action: () => setColor("20") },
+        { time: 3.892 + OFFSET, action: () => setColor("15") },
+        { time: 4.071 + OFFSET, action: () => setColor("16") },
+        { time: 4.322 + OFFSET, action: () => setColor("17") },
+        { time: 4.752 + OFFSET, action: () => setColor("18") },
+        { time: 4.883 + OFFSET, action: () => setColor("19") },
+        { time: 5.235 + OFFSET, action: () => setColor("20") },
 
-        { time: 6.056 + OFFSET, action: () => setColor("21") },
-        { time: 6.343 + OFFSET, action: () => setColor("22") },
-        { time: 6.547 + OFFSET, action: () => setColor("23") },
-        { time: 6.794 + OFFSET, action: () => setColor("24") },
+        { time: 5.934 + OFFSET, action: () => setColor("21") },
+        { time: 6.056 + OFFSET, action: () => setColor("22") },
+        { time: 6.343 + OFFSET, action: () => setColor("23") },
+        { time: 6.547 + OFFSET, action: () => setColor("24") },
+        { time: 6.794 + OFFSET, action: () => setColor("25") },
+        { time: 7.04 + OFFSET, action: () => setColor("26") },
+        { time: 7.2 + OFFSET, action: () => setColor("27") },
+        { time: 7.446 + OFFSET, action: () => setColor("28") },
+        { time: 7.568 + OFFSET, action: () => setColor("29") },
+        { time: 8.017 + OFFSET, action: () => setColor("30") },
 
-        { time: 7.04 + OFFSET, action: () => setColor("25") },
-        { time: 7.2 + OFFSET, action: () => setColor("26") },
-        { time: 7.446 + OFFSET, action: () => setColor("27") },
-        { time: 7.568 + OFFSET, action: () => setColor("28") },
-        { time: 8.017 + OFFSET, action: () => setColor("29") },
-
-        { time: 8.342 + OFFSET, action: () => setColor("30") },
         { time: 8.583 + OFFSET, action: () => setColor("31") },
         { time: 8.787 + OFFSET, action: () => setColor("32") },
         { time: 8.909 + OFFSET, action: () => setColor("33") },
@@ -245,8 +247,11 @@
         { time: 10.99 + OFFSET, action: () => setColor("40") },
         { time: 11.112 + OFFSET, action: () => setColor("41") },
         { time: 11.439 + OFFSET, action: () => setColor("42") },
+        { time: 11.439 + OFFSET, action: () => setColor("43") },
+        { time: 11.439 + OFFSET, action: () => setColor("44") },
+        { time: 11.439 + OFFSET, action: () => setColor("45") },
 
-        { time: 11.809 + OFFSET, action: () => scrollTo(0, 9999999) },
+        // { time: 11.809 + OFFSET, action: () => scrollTo(0, 9999999) },
       ];
 
       let index = 0;

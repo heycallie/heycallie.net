@@ -104,7 +104,7 @@
           color: red;
           font-size: 11vh;
           display: inline-block;
-          transform: translateY(-14vh);
+          transform: translateY(-8vh);
         "
       >
         ITS </span
@@ -117,7 +117,7 @@
           color: red;
           font-size: 11vh;
           display: inline-block;
-          transform: translateY(-21vh);
+          transform: translateY(-12vh);
         "
       >
         NAME
@@ -164,8 +164,7 @@
 
       const audio = document.getElementById("track");
 
-      // ===== PRO-LEVEL OFFSET (visual delay compensation) =====
-      const OFFSET = 0.05; // 50ms
+      const OFFSET = 0.0; // in ms
 
       function setColor(id) {
         document.getElementById(id).style.color = "#E3E6CB";
@@ -187,27 +186,26 @@
         });
       }
 
-      // ===== TIMELINE (adjust using captured timestamps) =====
       const events = [
-        { time: 0.258 + OFFSET, action: () => setColor("1") },
-        { time: 0.383 + OFFSET, action: () => setColor("2") },
-        { time: 0.673 + OFFSET, action: () => setColor("3") },
-        { time: 0.96 + OFFSET, action: () => setColor("4") },
-        { time: 1.164 + OFFSET, action: () => setColor("5") },
-        { time: 1.286 + OFFSET, action: () => setColor("6") },
-        { time: 1.572 + OFFSET, action: () => setColor("7") },
+        { time: 0.246 + OFFSET, action: () => setColor("1") },
+        { time: 0.374 + OFFSET, action: () => setColor("2") },
+        { time: 0.675 + OFFSET, action: () => setColor("3") },
+        { time: 0.936 + OFFSET, action: () => setColor("4") },
+        { time: 1.15 + OFFSET, action: () => setColor("5") },
+        { time: 1.275 + OFFSET, action: () => setColor("6") },
+        { time: 1.577 + OFFSET, action: () => setColor("7") },
 
-        { time: 2.0 + OFFSET, action: () => scroll(0.45) },
+        { time: 1.953 + OFFSET, action: () => scroll(0.4) },
 
-        { time: 2.295 + OFFSET, action: () => setColor("8") },
-        { time: 2.418 + OFFSET, action: () => setColor("9") },
-        { time: 2.539 + OFFSET, action: () => setColor("10") },
-        { time: 2.826 + OFFSET, action: () => setColor("11") },
-        { time: 3.118 + OFFSET, action: () => setColor("12") },
-        { time: 3.224 + OFFSET, action: () => setColor("13") },
-        { time: 3.614 + OFFSET, action: () => setColor("14") },
+        { time: 2.294 + OFFSET, action: () => setColor("8") },
+        { time: 2.422 + OFFSET, action: () => setColor("9") },
+        { time: 2.719 + OFFSET, action: () => setColor("10") },
+        { time: 3.021 + OFFSET, action: () => setColor("11") },
+        { time: 3.121 + OFFSET, action: () => setColor("12") },
+        { time: 3.252 + OFFSET, action: () => setColor("13") },
+        { time: 3.59 + OFFSET, action: () => setColor("14") },
 
-        { time: 4 + OFFSET, action: () => scroll(0.45) },
+        { time: 3.881 + OFFSET, action: () => scroll(0.4) },
 
         { time: 4.274 + OFFSET, action: () => setColor("15") },
         { time: 4.561 + OFFSET, action: () => setColor("16") },
@@ -216,7 +214,7 @@
         { time: 5.174 + OFFSET, action: () => setColor("19") },
         { time: 5.463 + OFFSET, action: () => setColor("20") },
 
-        { time: 5.95 + OFFSET, action: () => scroll(0.65) },
+        { time: 5.909 + OFFSET, action: () => scroll(0.65) },
 
         { time: 6.081 + OFFSET, action: () => setColor("21") },
         { time: 6.204 + OFFSET, action: () => setColor("22") },
@@ -230,7 +228,7 @@
         { time: 7.72 + OFFSET, action: () => show("29") },
         { time: 7.72 + OFFSET, action: () => hide("breaks") },
 
-        { time: 8 + OFFSET, action: () => scroll(0.65) },
+        { time: 7.89 + OFFSET, action: () => scroll(0.6) },
 
         { time: 8.262 + OFFSET, action: () => setColor("30") },
         { time: 8.467 + OFFSET, action: () => setColor("31") },
@@ -239,7 +237,7 @@
         { time: 9.065 + OFFSET, action: () => setColor("34") },
         { time: 9.351 + OFFSET, action: () => setColor("35") },
 
-        { time: 9.5 + OFFSET, action: () => scroll(0.75) },
+        { time: 9.856 + OFFSET, action: () => scroll(0.75) },
 
         { time: 10.09 + OFFSET, action: () => setColor("36") },
         { time: 10.418 + OFFSET, action: () => setColor("37") },
@@ -250,7 +248,7 @@
         { time: 11.726 + OFFSET, action: () => setColor("42") },
         { time: 11.809 + OFFSET, action: () => setColor("43") },
 
-        { time: 11.809 + OFFSET, action: () => scrollTo(0, 9999999) },
+        { time: 11.839 + OFFSET, action: () => scroll(1) },
       ];
 
       let index = 0;
@@ -266,7 +264,7 @@
         requestAnimationFrame(sync);
       }
 
-      // ===== SPACEBAR TIMESTAMP CAPTURE =====
+      // SPACEBAR TIMESTAMP CAPTURE
       window.addEventListener("keydown", (e) => {
         if (e.code === "Space") {
           e.preventDefault();
