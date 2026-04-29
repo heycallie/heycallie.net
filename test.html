@@ -1,3 +1,4 @@
+<!doctype html>
 <html>
   <head>
     <script src="https://iframe.chat/scripts/main.min.js"></script>
@@ -5,6 +6,31 @@
       chattable.initialize({
         stylesheet: "chattable.css",
       });
+
+      function requestFullScreen(element) {
+        if (element.requestFullscreen) {
+          element.requestFullscreen();
+        } else if (element.webkitRequestFullscreen) {
+          element.webkitRequestFullscreen();
+        } else if (element.msRequestFullscreen) {
+          element.msRequestFullscreen();
+        }
+      }
+
+      function checkFullscreen() {
+        if (document.fullscreenElement) {
+          console.log("User is in fullscreen.");
+        } else {
+          if (confirm("Activate fullscreen?")) {
+            // User clicked "OK" (Yes)
+            requestFullScreen(document.documentElement);
+          } else {
+            // User clicked "Cancel" (No)
+            console.log("User declined");
+          }
+        }
+      }
+      checkFullscreen();
     </script>
   </head>
   <body>
@@ -13,5 +39,9 @@
       id="chattable"
       style="width: 500px; height: 500px"
     ></iframe>
+
+    <button onclick="requestFullScreen(document.documentElement)">
+      fullscreen
+    </button>
   </body>
 </html>
