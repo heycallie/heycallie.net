@@ -152,8 +152,8 @@
       </div>
     </div>
 
-    <div class="border">
-      <div class="inner-border">
+    <div class="border" style="width: 34vw">
+      <div class="inner-border" style="width: 31vw">
         <h1>
           <span id="30">I </span>
           <span id="31">meant </span>
@@ -165,8 +165,8 @@
       </div>
     </div>
 
-    <div class="border" style="width: 48vw">
-      <div class="inner-border" style="width: 46vw">
+    <div class="border" style="width: 53vw">
+      <div class="inner-border" style="width: 51vw">
         <h1>
           <span id="36">I </span>
           <span id="37">guess </span>
@@ -202,6 +202,8 @@
 
       // ===== TIMELINE (adjust using captured timestamps) =====
       const events = [
+        { time: 0 + OFFSET, action: () => scrollTo(0, 0) },
+
         { time: 0.239 + OFFSET, action: () => setColor("1") },
         { time: 0.341 + OFFSET, action: () => setColor("2") },
         { time: 0.593 + OFFSET, action: () => setColor("3") },
@@ -209,7 +211,7 @@
         { time: 0.969 + OFFSET, action: () => setColor("5") },
         { time: 1.38 + OFFSET, action: () => setColor("6") },
 
-        { time: 1.78 + OFFSET, action: () => scroll(0.45) },
+        { time: 1.78 + OFFSET, action: () => scroll(0.5) },
 
         { time: 2.022 + OFFSET, action: () => setColor("7") },
         { time: 2.148 + OFFSET, action: () => setColor("8") },
@@ -220,7 +222,7 @@
         { time: 3.051 + OFFSET, action: () => setColor("13") },
         { time: 3.346 + OFFSET, action: () => setColor("14") },
 
-        { time: 3.823 + OFFSET, action: () => scroll(0.45) },
+        { time: 3.823 + OFFSET, action: () => scroll(0.5) },
 
         { time: 3.892 + OFFSET, action: () => setColor("15") },
         { time: 4.071 + OFFSET, action: () => setColor("16") },
@@ -229,7 +231,7 @@
         { time: 4.883 + OFFSET, action: () => setColor("19") },
         { time: 5.235 + OFFSET, action: () => setColor("20") },
 
-        { time: 5.715 + OFFSET, action: () => scroll(0.45) },
+        { time: 5.715 + OFFSET, action: () => scroll(0.5) },
 
         { time: 5.934 + OFFSET, action: () => setColor("21") },
         { time: 6.056 + OFFSET, action: () => setColor("22") },
@@ -241,29 +243,29 @@
         { time: 7.446 + OFFSET, action: () => setColor("28") },
         { time: 7.568 + OFFSET, action: () => setColor("29") },
 
-        { time: 7.746 + OFFSET, action: () => scroll(0.45) },
+        { time: 7.746 + OFFSET, action: () => scroll(0.5) },
 
-        { time: 8.017 + OFFSET, action: () => setColor("30") },
-        { time: 8.583 + OFFSET, action: () => setColor("31") },
-        { time: 8.787 + OFFSET, action: () => setColor("32") },
-        { time: 8.909 + OFFSET, action: () => setColor("33") },
-        { time: 9.155 + OFFSET, action: () => setColor("34") },
-        { time: 9.892 + OFFSET, action: () => setColor("35") },
+        { time: 7.923 + OFFSET, action: () => setColor("30") },
+        { time: 8.306 + OFFSET, action: () => setColor("31") },
+        { time: 8.514 + OFFSET, action: () => setColor("32") },
+        { time: 8.773 + OFFSET, action: () => setColor("33") },
+        { time: 8.9 + OFFSET, action: () => setColor("34") },
+        { time: 9.156 + OFFSET, action: () => setColor("35") },
 
-        { time: 9.57 + OFFSET, action: () => scroll(0.45) },
+        { time: 9.57 + OFFSET, action: () => scroll(0.5) },
 
-        { time: 10.047 + OFFSET, action: () => setColor("36") },
-        { time: 10.169 + OFFSET, action: () => setColor("37") },
-        { time: 10.5 + OFFSET, action: () => setColor("38") },
-        { time: 10.745 + OFFSET, action: () => setColor("39") },
-        { time: 10.99 + OFFSET, action: () => setColor("40") },
-        { time: 11.112 + OFFSET, action: () => setColor("41") },
-        { time: 11.439 + OFFSET, action: () => setColor("42") },
-        { time: 11.439 + OFFSET, action: () => setColor("43") },
-        { time: 11.439 + OFFSET, action: () => setColor("44") },
-        { time: 11.439 + OFFSET, action: () => setColor("45") },
+        { time: 9.919 + OFFSET, action: () => setColor("36") },
+        { time: 10.048 + OFFSET, action: () => setColor("37") },
+        { time: 10.174 + OFFSET, action: () => setColor("38") },
+        { time: 10.483 + OFFSET, action: () => setColor("39") },
+        { time: 10.74 + OFFSET, action: () => setColor("40") },
+        { time: 10.995 + OFFSET, action: () => setColor("41") },
+        { time: 11.085 + OFFSET, action: () => setColor("42") },
+        { time: 11.118 + OFFSET, action: () => setColor("43") },
+        { time: 11.415 + OFFSET, action: () => setColor("44") },
+        { time: 11.578 + OFFSET, action: () => setColor("45") },
 
-        // { time: 11.809 + OFFSET, action: () => scrollTo(0, 9999999) },
+        { time: 11.809 + OFFSET, action: () => scrollTo(0, 9999999) },
       ];
 
       let index = 0;
@@ -279,7 +281,7 @@
         requestAnimationFrame(sync);
       }
 
-      // ===== SPACEBAR TIMESTAMP CAPTURE =====
+      // SPACEBAR TIMESTAMP CAPTURE
       window.addEventListener("keydown", (e) => {
         if (e.code === "Space") {
           e.preventDefault();
