@@ -239,6 +239,19 @@ function regFileMusicStaticClick() {
   mediaPlayeriFrame.src =
     "https://www.youtube.com/embed/KlTNKOnfXFk?si=N1fmvjAxYjO3welF&amp;controls=1&amp;autoplay=1";
   mediaPlayeriFrame.title = "Static ft. Hatsune Miku";
+  mediaplayer.style.height = "371px";
+}
+
+function regFileMusicWhatchaClick() {
+  var mediaplayer = document.getElementById("window6");
+  mediaplayer.classList.remove("hidden");
+  bringToFront(mediaplayer);
+  document.getElementById("mediaPlayerWindowName").innerHTML =
+    "WhatchaCallItsName.mp4";
+  mediaPlayeriFrame.src =
+    "https://www.youtube.com/embed/bzWs0VpYftE?si=GEMuFtMBL7f-b9Zw&amp;controls=1&amp;autoplay=1";
+  mediaPlayeriFrame.title = "WhatchaCallItsName";
+  mediaplayer.style.height = "483px";
 }
 
 function stopMediaPlayerPlaying() {
@@ -292,3 +305,15 @@ function entryTitleFunction() {
 
   document.getElementById("title").innerHTML = "Desktop";
 }
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+
+// document.getElementById("window9").style.top = getRandomInt(86) + "vh";
+// document.getElementById("window9").style.left = getRandomInt(91) + "vw";
+
+document.querySelectorAll(".popup").forEach(function (el) {
+  el.style.left = getRandomInt(91) + "vw";
+  el.style.top = getRandomInt(86) + "vh";
+});

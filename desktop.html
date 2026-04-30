@@ -39,7 +39,7 @@ before uploading :
 
   <body>
     <!-- INITIAL ENTRY SETTINGS -->
-    <div id="entryMessage" style="overflow-y: hidden" class="">
+    <div id="entryMessage" style="overflow-y: hidden" class="hidden">
       <div
         id="entryMidBox"
         style="
@@ -143,7 +143,7 @@ before uploading :
     </div>
 
     <!-- README.TXT -->
-    <div id="window4" class="window draggable">
+    <div id="window4" class="window draggable hidden">
       <div id="window4Drag">
         <img
           src="assets/Notepad.png"
@@ -714,7 +714,7 @@ before uploading :
 
     <!-- ANTI AOL POPUP -->
     <div id="antiaolpopup">
-      <div id="window8" class="draggable window">
+      <div id="window8" class="draggable window popup">
         <div id="window8Drag">
           <!--<img
             src="assets/aimlogo.png"
@@ -746,7 +746,7 @@ before uploading :
 
     <!-- NETSCAPE POPUP -->
     <div id="nspopup">
-      <div id="window9" class="draggable window">
+      <div id="window9" class="draggable window popup">
         <div id="window9Drag">
           <img
             src="assets/netscapelogo.png"
@@ -1009,7 +1009,7 @@ before uploading :
           "
         >
           <div id="cMyDocumentsMusicFiles" class="hidden">
-            <div id="fileMusicSweden" onclick="regFileMusicStaticClick()">
+            <div id="fileMusicStatic" onclick="regFileMusicStaticClick()">
               <img
                 src="assets/WMV.png"
                 style="height: 36px; position: absolute; top: 10px; left: 17px"
@@ -1023,6 +1023,22 @@ before uploading :
                   font-size: 12px;
                 "
                 >Static.mp4</span
+              >
+            </div>
+            <div id="fileMusicWhatcha" onclick="regFileMusicWhatchaClick()">
+              <img
+                src="assets/WMV.png"
+                style="height: 36px; position: absolute; top: 10px; left: 102px"
+              />
+              <span
+                style="
+                  position: absolute;
+                  text-align: center;
+                  left: 90px;
+                  top: 50px;
+                  font-size: 12px;
+                "
+                >Whatcha.mp4</span
               >
             </div>
           </div>
