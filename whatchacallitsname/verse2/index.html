@@ -185,8 +185,7 @@
 
       const audio = document.getElementById("track");
 
-      // ===== PRO-LEVEL OFFSET (visual delay compensation) =====
-      const OFFSET = 0.0; // 50ms
+      const OFFSET = 0.0; // in ms
 
       function setColor(id) {
         document.getElementById(id).style.color = "#35ceb9";
@@ -200,72 +199,87 @@
         });
       }
 
-      // ===== TIMELINE (adjust using captured timestamps) =====
+      function fishUp() {
+        document.querySelectorAll("#leftfish > div").forEach((div) => {
+          div.style.backgroundImage = 'url("fish-flip-up.gif")';
+        });
+        document.querySelectorAll("#rightfish > div").forEach((div) => {
+          div.style.backgroundImage = 'url("fish-up.gif")';
+        });
+      }
+
+      function fishDown() {
+        document.querySelectorAll("#leftfish > div").forEach((div) => {
+          div.style.backgroundImage = 'url("fish-flip-down.gif")';
+        });
+        document.querySelectorAll("#rightfish > div").forEach((div) => {
+          div.style.backgroundImage = 'url("fish-down.gif")';
+        });
+      }
+
       const events = [
         { time: 0 + OFFSET, action: () => scrollTo(0, 0) },
 
-        { time: 0.239 + OFFSET, action: () => setColor("1") },
-        { time: 0.341 + OFFSET, action: () => setColor("2") },
-        { time: 0.593 + OFFSET, action: () => setColor("3") },
-        { time: 0.845 + OFFSET, action: () => setColor("4") },
-        { time: 0.969 + OFFSET, action: () => setColor("5") },
-        { time: 1.38 + OFFSET, action: () => setColor("6") },
-
+        { time: 0.239 + OFFSET, action: () => setColor("1") }, // It's
+        { time: 0.341 + OFFSET, action: () => setColor("2") }, // awk
+        { time: 0.593 + OFFSET, action: () => setColor("3") }, // ward
+        { time: 0.845 + OFFSET, action: () => setColor("4") }, // to
+        { time: 0.969 + OFFSET, action: () => setColor("5") }, // ad
+        { time: 1.38 + OFFSET, action: () => setColor("6") }, // mit
         { time: 1.78 + OFFSET, action: () => scroll(0.5) },
 
-        { time: 2.022 + OFFSET, action: () => setColor("7") },
-        { time: 2.148 + OFFSET, action: () => setColor("8") },
-        { time: 2.276 + OFFSET, action: () => setColor("9") },
-        { time: 2.413 + OFFSET, action: () => setColor("10") },
-        { time: 2.712 + OFFSET, action: () => setColor("11") },
-        { time: 2.921 + OFFSET, action: () => setColor("12") },
-        { time: 3.051 + OFFSET, action: () => setColor("13") },
-        { time: 3.346 + OFFSET, action: () => setColor("14") },
-
+        { time: 2.022 + OFFSET, action: () => setColor("7") }, // I
+        { time: 2.148 + OFFSET, action: () => setColor("8") }, // ne
+        { time: 2.276 + OFFSET, action: () => setColor("9") }, // ver
+        { time: 2.413 + OFFSET, action: () => setColor("10") }, // asked
+        { time: 2.712 + OFFSET, action: () => setColor("11") }, // to
+        { time: 2.921 + OFFSET, action: () => setColor("12") }, // bor
+        { time: 3.051 + OFFSET, action: () => setColor("13") }, // row
+        { time: 3.346 + OFFSET, action: () => setColor("14") }, // it
         { time: 3.823 + OFFSET, action: () => scroll(0.5) },
 
-        { time: 3.892 + OFFSET, action: () => setColor("15") },
-        { time: 4.071 + OFFSET, action: () => setColor("16") },
-        { time: 4.322 + OFFSET, action: () => setColor("17") },
-        { time: 4.752 + OFFSET, action: () => setColor("18") },
-        { time: 4.883 + OFFSET, action: () => setColor("19") },
-        { time: 5.235 + OFFSET, action: () => setColor("20") },
-
+        { time: 3.892 + OFFSET, action: () => setColor("15") }, // So
+        { time: 4.071 + OFFSET, action: () => setColor("16") }, // I
+        { time: 4.322 + OFFSET, action: () => setColor("17") }, // didn't
+        { time: 4.752 + OFFSET, action: () => setColor("18") }, // say
+        { time: 4.883 + OFFSET, action: () => setColor("19") }, // a
+        { time: 5.235 + OFFSET, action: () => setColor("20") }, // thing
         { time: 5.715 + OFFSET, action: () => scroll(0.5) },
 
-        { time: 5.934 + OFFSET, action: () => setColor("21") },
-        { time: 6.056 + OFFSET, action: () => setColor("22") },
-        { time: 6.343 + OFFSET, action: () => setColor("23") },
-        { time: 6.547 + OFFSET, action: () => setColor("24") },
-        { time: 6.794 + OFFSET, action: () => setColor("25") },
-        { time: 7.04 + OFFSET, action: () => setColor("26") },
-        { time: 7.2 + OFFSET, action: () => setColor("27") },
-        { time: 7.446 + OFFSET, action: () => setColor("28") },
-        { time: 7.568 + OFFSET, action: () => setColor("29") },
-
+        { time: 5.934 + OFFSET, action: () => setColor("21") }, // When
+        { time: 6.056 + OFFSET, action: () => setColor("22") }, // you
+        { time: 6.343 + OFFSET, action: () => setColor("23") }, // thought
+        { time: 6.547 + OFFSET, action: () => setColor("24") }, // you
+        { time: 6.794 + OFFSET, action: () => setColor("25") }, // dropped
+        { time: 7.04 + OFFSET, action: () => setColor("26") }, // it
+        { time: 7.2 + OFFSET, action: () => setColor("27") }, // in
+        { time: 7.446 + OFFSET, action: () => setColor("28") }, // the
+        { time: 7.568 + OFFSET, action: () => setColor("29") }, // lake
         { time: 7.746 + OFFSET, action: () => scroll(0.5) },
 
-        { time: 7.923 + OFFSET, action: () => setColor("30") },
-        { time: 8.306 + OFFSET, action: () => setColor("31") },
-        { time: 8.514 + OFFSET, action: () => setColor("32") },
-        { time: 8.773 + OFFSET, action: () => setColor("33") },
-        { time: 8.9 + OFFSET, action: () => setColor("34") },
-        { time: 9.156 + OFFSET, action: () => setColor("35") },
-
+        { time: 7.923 + OFFSET, action: () => setColor("30") }, // I
+        { time: 8.306 + OFFSET, action: () => setColor("31") }, // meant
+        { time: 8.514 + OFFSET, action: () => setColor("32") }, // to
+        { time: 8.773 + OFFSET, action: () => setColor("33") }, // give
+        { time: 8.9 + OFFSET, action: () => setColor("34") }, // it
+        { time: 9.156 + OFFSET, action: () => setColor("35") }, // back
         { time: 9.57 + OFFSET, action: () => scroll(0.5) },
 
-        { time: 9.919 + OFFSET, action: () => setColor("36") },
-        { time: 10.048 + OFFSET, action: () => setColor("37") },
-        { time: 10.174 + OFFSET, action: () => setColor("38") },
-        { time: 10.483 + OFFSET, action: () => setColor("39") },
-        { time: 10.74 + OFFSET, action: () => setColor("40") },
-        { time: 10.995 + OFFSET, action: () => setColor("41") },
-        { time: 11.085 + OFFSET, action: () => setColor("42") },
-        { time: 11.118 + OFFSET, action: () => setColor("43") },
-        { time: 11.415 + OFFSET, action: () => setColor("44") },
-        { time: 11.578 + OFFSET, action: () => setColor("45") },
+        { time: 9.919 + OFFSET, action: () => setColor("36") }, // I
+        { time: 10.048 + OFFSET, action: () => setColor("37") }, // guess
+        { time: 10.174 + OFFSET, action: () => setColor("38") }, // it
+        { time: 10.483 + OFFSET, action: () => setColor("39") }, // slipped
+        { time: 10.74 + OFFSET, action: () => setColor("40") }, // my
+        { time: 10.995 + OFFSET, action: () => setColor("41") }, // mind
+        { time: 11.085 + OFFSET, action: () => setColor("42") }, // un
+        { time: 11.118 + OFFSET, action: () => setColor("43") }, // til
+        { time: 11.415 + OFFSET, action: () => setColor("44") }, // to
+        { time: 11.578 + OFFSET, action: () => setColor("45") }, // day
 
         { time: 11.809 + OFFSET, action: () => scrollTo(0, 9999999) },
+
+        { time: 15.635 + OFFSET, action: () => fishUp() },
+        { time: 17.54 + OFFSET, action: () => fishDown() },
       ];
 
       let index = 0;
@@ -281,7 +295,7 @@
         requestAnimationFrame(sync);
       }
 
-      // SPACEBAR TIMESTAMP CAPTURE
+      // TIMESTAMP CAPTURE
       window.addEventListener("keydown", (e) => {
         if (e.code === "Space") {
           e.preventDefault();
