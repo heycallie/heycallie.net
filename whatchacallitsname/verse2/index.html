@@ -81,6 +81,8 @@
       <div style="top: calc(240vh)"></div>
       <div style="top: calc(270vh)"></div>
       <div style="top: calc(300vh)"></div>
+      <div style="top: calc(330vh)"></div>
+      <div style="top: calc(360vh)"></div>
     </div>
     <div id="rightfish">
       <div style="top: 0px"></div>
@@ -94,6 +96,8 @@
       <div style="top: calc(240vh)"></div>
       <div style="top: calc(270vh)"></div>
       <div style="top: calc(300vh)"></div>
+      <div style="top: calc(330vh)"></div>
+      <div style="top: calc(360vh)"></div>
     </div>
 
     <div class="border" style="margin-top: 45vh; width: 34vw">
@@ -165,20 +169,27 @@
       </div>
     </div>
 
-    <div class="border" style="width: 53vw">
-      <div class="inner-border" style="width: 51vw">
-        <h1>
-          <span id="36">I </span>
-          <span id="37">guess </span>
-          <span id="38">it </span>
-          <span id="39">slipped </span>
-          <span id="40">my </span>
-          <span id="41">mind </span>
-          <span id="42">un</span><span id="43">til </span>
-          <span id="44">to</span><span id="45">day </span>
-        </h1>
+    <div>
+      <img
+        src="teto-scratch.gif"
+        style="position: relative; left: 34vw; height: 50vh; margin-top: 35vh"
+      />
+      <div class="border" style="width: 53vw; margin-top: 0vh">
+        <div class="inner-border" style="width: 51vw">
+          <h1>
+            <span id="36">I </span>
+            <span id="37">guess </span>
+            <span id="38">it </span>
+            <span id="39">slipped </span>
+            <span id="40">my </span>
+            <span id="41">mind </span>
+            <span id="42">un</span><span id="43">til </span>
+            <span id="44">to</span><span id="45">day </span>
+          </h1>
+        </div>
       </div>
     </div>
+    <br style="margin-top: 15vh" />
 
     <script>
       window.scrollTo(0, 0);
@@ -263,7 +274,7 @@
         { time: 8.773 + OFFSET, action: () => setColor("33") }, // give
         { time: 8.9 + OFFSET, action: () => setColor("34") }, // it
         { time: 9.156 + OFFSET, action: () => setColor("35") }, // back
-        { time: 9.57 + OFFSET, action: () => scroll(0.5) },
+        { time: 9.57 + OFFSET, action: () => scroll(1.5) },
 
         { time: 9.919 + OFFSET, action: () => setColor("36") }, // I
         { time: 10.048 + OFFSET, action: () => setColor("37") }, // guess
@@ -278,8 +289,13 @@
 
         { time: 11.809 + OFFSET, action: () => scrollTo(0, 9999999) },
 
-        { time: 15.635 + OFFSET, action: () => fishUp() },
-        { time: 17.54 + OFFSET, action: () => fishDown() },
+        {
+          time: 12 + OFFSET,
+          action: () => window.location.replace("/whatchacallitsname/BASS"),
+        },
+
+        // { time: 15.635 + OFFSET, action: () => fishUp() },
+        // { time: 17.54 + OFFSET, action: () => fishDown() },
       ];
 
       let index = 0;
