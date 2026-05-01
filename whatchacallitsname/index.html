@@ -3,24 +3,19 @@
   <head>
     <title>Welcome!</title>
     <!-- <link rel="icon" href="start2.png" /> -->
-    <script type="text/javascript">
-      function autoplay() {
-        alert("Make sure autoplay is allowed and you're in fullscreen!");
-      }
-      window.onload = autoplay;
+    <script>
+      window.onload = alert(
+        "Make sure autoplay is allowed and you're in fullscreen!",
+      );
     </script>
-
     <!-- creds:
 https://web.archive.org/web/20010404075543/http://www.geocities.com/MadisonAvenue/8855/karpan.gif
 teto things from decoyman's patreon
 obviously decoyman themselves
-
-    
-    
     -->
     <style>
       html {
-        background-image: url(trees\ background.jpg);
+        background-image: url(trees-background.jpg);
         background-color: lightGreen;
         background-size: cover;
         background-repeat: no-repeat;
@@ -99,8 +94,9 @@ obviously decoyman themselves
           user-select: none;
         "
       >
-        Main Page<br />Journal<br />Travel Photos<br />Geek Stuff<br />Clip
-        Art<br />Wisconsin Rants<br />
+        <a href="/" style="user-select: all">Main Page</a
+        ><br />Journal<br />Travel Photos<br />Geek Stuff<br />Clip Art<br />Wisconsin
+        Rants<br />
       </p>
       <a href="verse1/" alt="Link to Verse 1" title="Link to Verse 1"
         ><div id="startButton"></div
@@ -218,7 +214,7 @@ obviously decoyman themselves
         well, what better way is there to freely express myself? If your second
         thought is, "why the heck is Teto some Random Nature Guy," or even "how
         does nature have anything to do with Teto, the <i>virtual</i> utauloid,"
-        well... can't a girl have hobbies?
+        well... can't I have hobbies?
       </p>
     </div>
   </body>
