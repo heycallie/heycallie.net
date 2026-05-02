@@ -448,6 +448,10 @@ html {
   background-image: url("assets/windows_xp_14.jpg");
   background-size: cover;
   overflow: hidden;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0;
+  height: 100%;
 }
 .musicLink {
   text-decoration: none;

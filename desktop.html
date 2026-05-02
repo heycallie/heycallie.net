@@ -2,6 +2,12 @@
 before uploading :
   remove hidden from readme.txt and initial entry screen
   hide all windows except readme.txt
+
+  current additions:
+  * whatchacallitsname
+  * fixed desktop background not stretching
+  * added a chatroom
+  * randomized popup placement
 -->
 
 <!doctype html>
@@ -39,7 +45,7 @@ before uploading :
 
   <body>
     <!-- INITIAL ENTRY SETTINGS -->
-    <div id="entryMessage" style="overflow-y: hidden" class="">
+    <div id="entryMessage" style="overflow-y: hidden" class="hidden">
       <div
         id="entryMidBox"
         style="
@@ -143,7 +149,7 @@ before uploading :
     </div>
 
     <!-- README.TXT -->
-    <div id="window4" class="window draggable">
+    <div id="window4" class="window draggable hidden">
       <div id="window4Drag">
         <img
           src="assets/Notepad.png"
@@ -210,7 +216,7 @@ before uploading :
             font-family: Pixelify Sans;
           "
         >
-          Music - Internet Explorer
+          Music - Microsoft Internet Explorer
         </span>
         <div id="closeWindowButton" onclick="closeTab('window1')"></div>
       </div>
@@ -409,7 +415,7 @@ before uploading :
     </div>
 
     <!-- BLOG -->
-    <div id="window11" class="window draggable hidden">
+    <div id="window11" class="window draggable">
       <div id="window11Drag">
         <img
           src="assets/ie6.png"
@@ -430,7 +436,7 @@ before uploading :
             font-family: Pixelify Sans;
           "
         >
-          Callie's Blog &amp; More! - Internet Explorer
+          Callie's Blog &amp; More! - Microsoft Internet Explorer
         </span>
         <div id="closeWindowButton4" onclick="closeTab('window11')"></div>
       </div>
@@ -444,6 +450,57 @@ before uploading :
           background-color: black;
         "
       >
+        <div
+          id="updateMay22026"
+          style="
+            background-color: black;
+            color: white;
+            background-image: url(&quot;https://i.ibb.co/PGcj11Vd/starback2.gif&quot;);
+          "
+        >
+          <br />
+          <h3 class="blogh3">
+            <span
+              style="
+                animation: rainbow-color-change 3s linear infinite alternate;
+              "
+              >UPDATE 1.1.0</span
+            >
+            <br />
+            <span style="color: #6bca31">May 2, 2026</span>
+          </h3>
+          <p
+            style="
+              margin-left: 15px;
+              margin-top: 15px;
+              margin-right: 15px;
+              margin-bottom: 0px;
+            "
+          >
+            still needs some work but oh my GOODNESS, this is coming together
+            ^_^ !!! it'll be a couple more updates before whatchacallitsname is
+            out, and i do have a LOT more on my todo list... but its alright !!!
+            <br /><br />
+            <span style="color: lightgreen; text-decoration: underline"
+              >+ WHATCHACALLITSNAME (verse 1 &amp; 2)<br />+ added a chatroom to
+              index (will add to desktop later)<br />
+            </span>
+            <span style="color: lightgray; text-decoration: underline"
+              >= randomized popup location<br />= fixed desktop wallpaper not
+              filling certain resolutions</span
+            >
+            <br /><br />mistakes? contact me @ hey.callie on discord!
+          </p>
+          <br />
+        </div>
+        <hr
+          style="
+            border: none;
+            height: 3px;
+            background-color: white;
+            margin: 0px;
+          "
+        />
         <div
           id="blogApril262026"
           style="
@@ -742,7 +799,7 @@ before uploading :
 
     <!-- CDW POPUP -->
     <div id="cdwpopup">
-      <div id="window2" class="draggable window">
+      <div id="window2" class="draggable window popup">
         <div id="window2Drag">
           <img
             src="assets/cdw-logo-no-tag.svg"
@@ -775,7 +832,7 @@ before uploading :
 
     <!-- BUGLE BOY POPUP -->
     <div id="buglepopup">
-      <div id="window3" class="draggable window">
+      <div id="window3" class="draggable window popup">
         <div id="window3Drag">
           <img
             src="assets/cropped-bugle-boy-168x150.png"
@@ -811,7 +868,7 @@ before uploading :
 
     <!-- AOL POPUP -->
     <div id="aolpopup">
-      <div id="window7" class="draggable window">
+      <div id="window7" class="draggable window popup">
         <div id="window7Drag">
           <!--<img
             src="assets/aimlogo.png"
@@ -844,7 +901,7 @@ before uploading :
 
     <!-- ANTI AOL POPUP -->
     <div id="antiaolpopup">
-      <div id="window8" class="draggable window">
+      <div id="window8" class="draggable window popup">
         <div id="window8Drag">
           <!--<img
             src="assets/aimlogo.png"
@@ -876,7 +933,7 @@ before uploading :
 
     <!-- NETSCAPE POPUP -->
     <div id="nspopup">
-      <div id="window9" class="draggable window">
+      <div id="window9" class="draggable window popup">
         <div id="window9Drag">
           <img
             src="assets/netscapelogo.png"
@@ -909,7 +966,7 @@ before uploading :
 
     <!-- MP3 POPUP -->
     <div id="mp3popup">
-      <div id="window10" class="draggable window">
+      <div id="window10" class="draggable window popup">
         <div id="window10Drag">
           <!--<img
             src="assets/aimlogo.png"
@@ -1139,7 +1196,7 @@ before uploading :
           "
         >
           <div id="cMyDocumentsMusicFiles" class="hidden">
-            <div id="fileMusicSweden" onclick="regFileMusicStaticClick()">
+            <div id="fileMusicStatic" onclick="regFileMusicStaticClick()">
               <img
                 src="assets/WMV.png"
                 style="height: 36px; position: absolute; top: 10px; left: 17px"
@@ -1153,6 +1210,22 @@ before uploading :
                   font-size: 12px;
                 "
                 >Static.mp4</span
+              >
+            </div>
+            <div id="fileMusicWhatcha" onclick="regFileMusicWhatchaClick()">
+              <img
+                src="assets/WMV.png"
+                style="height: 36px; position: absolute; top: 10px; left: 102px"
+              />
+              <span
+                style="
+                  position: absolute;
+                  text-align: center;
+                  left: 90px;
+                  top: 50px;
+                  font-size: 12px;
+                "
+                >Whatcha.mp4</span
               >
             </div>
           </div>

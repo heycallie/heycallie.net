@@ -1,47 +1,47 @@
+<!doctype html>
 <html>
   <head>
-    <style>
-      .content {
-        transform: scaleY(0);
-        transform-origin: top;
-        transition: transform 0.3s ease;
+    <script src="https://iframe.chat/scripts/main.min.js"></script>
+    <script>
+      chattable.initialize({
+        stylesheet: "chattable.css",
+      });
+
+      function requestFullScreen(element) {
+        if (element.requestFullscreen) {
+          element.requestFullscreen();
+        } else if (element.webkitRequestFullscreen) {
+          element.webkitRequestFullscreen();
+        } else if (element.msRequestFullscreen) {
+          element.msRequestFullscreen();
+        }
       }
 
-      details[open] .content {
-        transform: scaleY(1);
+      function checkFullscreen() {
+        if (document.fullscreenElement) {
+          console.log("User is in fullscreen.");
+        } else {
+          if (confirm("Activate fullscreen?")) {
+            // User clicked "OK" (Yes)
+            requestFullScreen(document.documentElement);
+          } else {
+            // User clicked "Cancel" (No)
+            console.log("User declined");
+          }
+        }
       }
-    </style>
+      checkFullscreen();
+    </script>
   </head>
   <body>
-    <details>
-      <summary>Show/Hide</summary>
-      <span class="content"
-        >Your content here.Your content here.Your content here.Your content
-        here.Your content here.Your content here.Your content here.Your content
-        here.Your content here.Your content here.Your content here.Your content
-        here.Your content here.Your content here.Your content here.Your content
-        here.Your content here.Your content here.Your content here.Your content
-        here.Your content here.Your content here.Your content here.Your content
-        here.Your content here.Your content here.Your content here.Your content
-        here.Your content here.Your content here.Your content here.Your content
-        here.Your content here.Your content here.Your content here.Your content
-        here.Your content here.Your content here.Your content here.Your content
-        here.Your content here.Your content here.Your content here.Your content
-        here.Your content here.v</span
-      >
-    </details>
-    <p>
-      Your content here.Your content here.Your content here.Your content
-      here.Your content here.Your content here.Your content here.Your content
-      here.Your content here.Your content here.Your content here.Your content
-      here.Your content here.Your content here.Your content here.Your content
-      here.Your content here.Your content here.Your content here.Your content
-      here.Your content here.Your content here.Your content here.Your content
-      here.Your content here.Your content here.Your content here.Your content
-      here.Your content here.Your content here.Your content here.Your content
-      here.Your content here.Your content here.Your content here.Your content
-      here.Your content here.Your content here.Your content here.Your content
-      here.
-    </p>
+    <iframe
+      src="https://iframe.chat/embed?chat=29427634"
+      id="chattable"
+      style="width: 500px; height: 500px"
+    ></iframe>
+
+    <button onclick="requestFullScreen(document.documentElement)">
+      fullscreen
+    </button>
   </body>
 </html>
