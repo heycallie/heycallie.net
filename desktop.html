@@ -2,12 +2,6 @@
 before uploading :
   remove hidden from readme.txt and initial entry screen
   hide all windows except readme.txt
-
-  current additions:
-  * whatchacallitsname
-  * fixed desktop background not stretching
-  * added a chatroom
-  * randomized popup placement
 -->
 
 <!doctype html>
@@ -45,7 +39,7 @@ before uploading :
 
   <body>
     <!-- INITIAL ENTRY SETTINGS -->
-    <div id="entryMessage" style="overflow-y: hidden" class="hidden">
+    <div id="entryMessage" style="overflow-y: hidden" class="">
       <div
         id="entryMidBox"
         style="
@@ -149,7 +143,7 @@ before uploading :
     </div>
 
     <!-- README.TXT -->
-    <div id="window4" class="window draggable hidden">
+    <div id="window4" class="window draggable">
       <div id="window4Drag">
         <img
           src="assets/Notepad.png"
@@ -415,7 +409,7 @@ before uploading :
     </div>
 
     <!-- BLOG -->
-    <div id="window11" class="window draggable">
+    <div id="window11" class="window draggable hidden">
       <div id="window11Drag">
         <img
           src="assets/ie6.png"
@@ -483,7 +477,7 @@ before uploading :
             <br /><br />
             <span style="color: lightgreen; text-decoration: underline"
               >+ WHATCHACALLITSNAME (verse 1 &amp; 2)<br />+ added a chatroom to
-              index (will add to desktop later)<br />
+              the landing (will add to desktop later)<br />
             </span>
             <span style="color: lightgray; text-decoration: underline"
               >= randomized popup location<br />= fixed desktop wallpaper not

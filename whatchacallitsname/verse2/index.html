@@ -210,22 +210,10 @@
         });
       }
 
-      function fishUp() {
-        document.querySelectorAll("#leftfish > div").forEach((div) => {
-          div.style.backgroundImage = 'url("fish-flip-up.gif")';
-        });
-        document.querySelectorAll("#rightfish > div").forEach((div) => {
-          div.style.backgroundImage = 'url("fish-up.gif")';
-        });
-      }
-
-      function fishDown() {
-        document.querySelectorAll("#leftfish > div").forEach((div) => {
-          div.style.backgroundImage = 'url("fish-flip-down.gif")';
-        });
-        document.querySelectorAll("#rightfish > div").forEach((div) => {
-          div.style.backgroundImage = 'url("fish-down.gif")';
-        });
+      function fin() {
+        alert("finished, for now...");
+        // window.location.replace("/whatchacallitsname/BASS"),
+        window.location.replace("/");
       }
 
       const events = [
@@ -291,11 +279,8 @@
 
         {
           time: 15.569 + OFFSET,
-          action: () => window.location.replace("/whatchacallitsname/BASS"),
+          action: () => fin(),
         },
-
-        // { time: 15.635 + OFFSET, action: () => fishUp() },
-        // { time: 17.54 + OFFSET, action: () => fishDown() },
       ];
 
       let index = 0;
