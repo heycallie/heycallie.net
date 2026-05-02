@@ -39,7 +39,7 @@ before uploading :
 
   <body>
     <!-- INITIAL ENTRY SETTINGS -->
-    <div id="entryMessage" style="overflow-y: hidden" class="">
+    <div id="entryMessage" style="overflow-y: hidden" class="hidden">
       <div
         id="entryMidBox"
         style="
@@ -143,7 +143,7 @@ before uploading :
     </div>
 
     <!-- README.TXT -->
-    <div id="window4" class="window draggable">
+    <div id="window4" class="window draggable hidden">
       <div id="window4Drag">
         <img
           src="assets/Notepad.png"
@@ -1118,7 +1118,7 @@ before uploading :
           </div>
           <div>
             <!-- Desktop and its dropdowns -->
-            <div>
+            <!-- <div>
               <img
                 src="assets/Desktop.png"
                 style="height: 12px; position: absolute; left: 5px"
@@ -1134,7 +1134,7 @@ before uploading :
               >
                 Desktop
               </p>
-            </div>
+            </div> -->
           </div>
           <div>
             <!-- C: and its dropdowns -->
@@ -1171,10 +1171,58 @@ before uploading :
               <p style="margin: 0px; font-size: 12px; margin-left: 35px">
                 My Documents
               </p>
-              <div id="myDocumentsMusic"></div>
+              <div id="myDocumentsMusic">
+                <div class="musicRow" onclick="regFileExploreMusicClick()">
+                  <img src="assets/Folder Opened.png" />
+                  <p>Vocaloid</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top: 22px">
+            <img
+              src="assets/Collapse.png"
+              style="height: 12px; position: absolute; left: 5px"
+            />
+            <img
+              src="assets/My Computer.png"
+              style="height: 12px; position: absolute; left: 20px"
+            />
+            <p
+              style="
+                margin: 0px;
+                font-size: 12px;
+                margin-left: 35px;
+                text-align: left;
+              "
+            >
+              IPOD
+            </p>
+          </div>
+          <div style="margin-top: 4px">
+            <img
+              src="assets/Collapse.png"
+              style="height: 12px; position: absolute; left: 19px"
+            />
+            <img
+              src="assets/Folder Opened.png"
+              style="height: 12px; position: absolute; left: 33px"
+            />
+            <p
+              style="
+                margin: 0px;
+                font-size: 12px;
+                margin-left: 47px;
+                text-align: left;
+              "
+            >
+              Music
+            </p>
+            <div id="myDocumentsMusic">
               <div class="musicRow" onclick="regFileExploreMusicClick()">
                 <img src="assets/Folder Opened.png" />
-                <p>Music</p>
+                <p>Vocaloid</p>
               </div>
             </div>
           </div>

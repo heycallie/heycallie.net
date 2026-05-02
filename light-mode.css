@@ -127,8 +127,8 @@
 
 #window5 {
   position: absolute;
-  top: 262px;
-  left: 945px;
+  top: 36vh;
+  left: 14vw;
   z-index: 9;
   background-color: #f1f1f1;
   text-align: center;
@@ -153,12 +153,12 @@
 
 #window11 {
   position: absolute;
-  top: 111px; /* originally 355 */
-  left: 422px; /* originally 208 */
+  top: 20vh;
+  left: 30vw;
   z-index: 9;
   background-color: #f1f1f1;
   text-align: center;
-  height: 370px; /* change to 500 when blog gets longer */
+  height: 500px; /* change to 500 when blog gets longer */
   width: 500px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -631,11 +631,11 @@ audio {
 .musicRow {
   position: absolute;
   left: 47px;
-  top: 85px; /* adjust to match your layout */
+  top: 69px; /* adjust to match your layout */
   display: flex;
   align-items: center;
   height: 16px;
-  width: 50px;
+  width: 72px;
   z-index: 1;
 }
 
@@ -650,7 +650,7 @@ audio {
 }
 
 .musicRow:hover {
-  background-color: grey;
+  background-color: rgb(202, 202, 202);
 }
 
 #bottomBlueStartMenu #restartIcon {
