@@ -138,6 +138,19 @@
   border-top-right-radius: 5px;
 }
 
+#window12 {
+  position: absolute;
+  top: 36vh;
+  left: 14vw;
+  z-index: 9;
+  background-color: #f1f1f1;
+  text-align: center;
+  height: 400px;
+  width: 400px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
 #window4 {
   position: absolute;
   top: 86px;
@@ -218,7 +231,8 @@
 #window4Drag,
 #window5Drag,
 #window6Drag,
-#window11Drag {
+#window11Drag,
+#window12Drag {
   cursor: move;
   z-index: 10;
   background-color: #2196f3;
@@ -365,6 +379,19 @@
 }
 
 #webBoxWindowFour {
+  background-color: white;
+  color: black;
+  background-size: cover;
+  z-index: 2;
+  height: calc(100% - 32px);
+  bottom: 0px;
+  width: 100%;
+  position: absolute;
+  font-family: Cascadia Mono;
+  text-align: left;
+}
+
+#webBoxWindowTwelve {
   background-color: white;
   color: black;
   background-size: cover;

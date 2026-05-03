@@ -30,11 +30,11 @@ before uploading :
     <link rel="icon" href="assets/vista_info.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="https://beta.iframe.chat/scripts/main.min.js"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@200..900&display=swap"
       rel="stylesheet"
     />
-    <style></style>
   </head>
 
   <body>
@@ -185,6 +185,46 @@ before uploading :
             <a href="/" contenteditable="false">the home page!</a></span
           ><br /><br />all credit goes to my one swedish friend
         </p>
+      </div>
+    </div>
+
+    <!-- CHATROOM -->
+    <div id="window12" class="window draggable hidden">
+      <div id="window12Drag" style="width: 100%">
+        <img
+          src="assets/ie6.png"
+          height="20px"
+          style="
+            float: left;
+            vertical-align: middle;
+            padding-top: 5px;
+            padding-left: 3px;
+          "
+        />
+        <span
+          style="
+            padding-top: 5px;
+            vertical-align: middle;
+            float: left;
+            padding-left: 6px;
+            font-family: Pixelify Sans;
+          "
+        >
+          Chatroom
+        </span>
+        <div id="closeWindowButton" onclick="closeTab('window12')"></div>
+      </div>
+
+      <div
+        class="webBox"
+        id="webBoxWindowTwelve"
+        style="overflow: hidden; width: calc(98% + 2px)"
+      >
+        <iframe
+          src="https://beta.iframe.chat/embed?chat=27979055"
+          id="chattable"
+          style="width: 100%; height: 100%; position: relative; left: -2px"
+        ></iframe>
       </div>
     </div>
 
@@ -995,7 +1035,7 @@ before uploading :
     </div>
 
     <!-- FILE EXPLORER -->
-    <div id="window5" class="draggable window">
+    <div id="window5" class="draggable window hidden">
       <div id="window5Drag">
         <img
           src="assets/Explorer.png"
@@ -1303,43 +1343,9 @@ before uploading :
             </div> -->
           </div>
 
-          <div id="eMusicfemtanyl" class="hidden">
-            <!-- <div id="fileMusicPrettyboy" onclick="regFileMusicPrettyboyClick()">
-              <img
-                src="assets/WMV.png"
-                style="height: 36px; position: absolute; top: 10px; left: 17px"
-              />
-              <span
-                style="
-                  position: absolute;
-                  text-align: center;
-                  left: 7px;
-                  top: 50px;
-                  font-size: 12px;
-                "
-                >Pretty Boy.mp4</span
-              >
-            </div> -->
-          </div>
+          <div id="eMusicfemtanyl" class="hidden"></div>
 
-          <div id="eMusicLovejoy" class="hidden">
-            <!-- <div id="fileMusicPrettyboy" onclick="regFileMusicPrettyboyClick()">
-              <img
-                src="assets/WMV.png"
-                style="height: 36px; position: absolute; top: 10px; left: 17px"
-              />
-              <span
-                style="
-                  position: absolute;
-                  text-align: center;
-                  left: 7px;
-                  top: 50px;
-                  font-size: 12px;
-                "
-                >Pretty Boy.mp4</span
-              >
-            </div> -->
-          </div>
+          <div id="eMusicLovejoy" class="hidden"></div>
         </div>
       </div>
     </div>
@@ -1388,7 +1394,7 @@ before uploading :
       </div>
     </div>
     <!-- DESKTOP -->
-    <div>
+    <div style="width: 134px">
       <!-- MUSIC INTERNET SHORTCUT -->
       <div
         onclick="
@@ -1474,6 +1480,39 @@ before uploading :
           style="height: 100px; padding: 10px; padding-bottom: 0px"
         />
         <div class="desktopShortcutText">Blog</div>
+      </div>
+    </div>
+
+    <div
+      style="
+        left: 134px;
+        position: absolute;
+        top: 8px;
+        width: 134px;
+        height: 100%;
+      "
+    >
+      <!-- CHATROOM SHORTCUT -->
+      <div
+        onclick="
+          openTab('window12');
+          bringToFront(document.getElementById('window12'));
+        "
+        style="
+          cursor: default;
+          -webkit-user-select: none;
+          user-select: none;
+          height: fit-content;
+          width: fit-content;
+          text-align: center;
+          position: relative;
+        "
+      >
+        <img
+          src="assets/Internet Shortcut.png"
+          style="height: 100px; padding: 10px; padding-bottom: 0px"
+        />
+        <div class="desktopShortcutText">Chatroom</div>
       </div>
     </div>
 
@@ -1665,5 +1704,11 @@ before uploading :
         >
       </div>
     </div>
+
+    <script>
+      chattable.initialize({
+        stylesheet: "chattable.css",
+      });
+    </script>
   </body>
 </html>

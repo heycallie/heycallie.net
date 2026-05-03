@@ -347,3 +347,5 @@ document.querySelectorAll(".popup").forEach(function (el) {
   el.style.left = getRandomInt(91) + "vw";
   el.style.top = getRandomInt(86) + "vh";
 });
+
+stopMediaPlayerPlaying();
