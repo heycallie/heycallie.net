@@ -1,47 +1,80 @@
 <!doctype html>
 <html>
   <head>
-    <script src="https://iframe.chat/scripts/main.min.js"></script>
-    <script>
-      chattable.initialize({
-        stylesheet: "chattable.css",
-      });
-
-      function requestFullScreen(element) {
-        if (element.requestFullscreen) {
-          element.requestFullscreen();
-        } else if (element.webkitRequestFullscreen) {
-          element.webkitRequestFullscreen();
-        } else if (element.msRequestFullscreen) {
-          element.msRequestFullscreen();
-        }
+    <style>
+      details.music summary {
+        cursor: pointer;
+        list-style: none;
+        position: relative;
+        padding-left: 24px;
+        user-select: none;
       }
 
-      function checkFullscreen() {
-        if (document.fullscreenElement) {
-          console.log("User is in fullscreen.");
-        } else {
-          if (confirm("Activate fullscreen?")) {
-            // User clicked "OK" (Yes)
-            requestFullScreen(document.documentElement);
-          } else {
-            // User clicked "Cancel" (No)
-            console.log("User declined");
-          }
-        }
+      details.music summary::-webkit-details-marker {
+        display: none;
       }
-      checkFullscreen();
-    </script>
+
+      details.music summary::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 1px;
+        width: 16px;
+        height: 16px;
+        background-image: url("assets/Expand.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+
+      details[open].music summary::before {
+        background-image: url("assets/Collapse.png");
+      }
+
+      .musicRow {
+        position: relative;
+        left: 30px;
+        cursor: default;
+        padding-left: 6px;
+        width: 82px;
+        user-select: none;
+      }
+
+      .musicRow img {
+        height: 15px;
+        top: 3px;
+        position: relative;
+      }
+
+      .musicRow p {
+        margin: 0;
+      }
+
+      .musicRow:hover {
+        background-color: rgb(202, 202, 202);
+      }
+    </style>
   </head>
-  <body>
-    <iframe
-      src="https://iframe.chat/embed?chat=29427634"
-      id="chattable"
-      style="width: 500px; height: 500px"
-    ></iframe>
 
-    <button onclick="requestFullScreen(document.documentElement)">
-      fullscreen
-    </button>
+  <body>
+    <details class="music">
+      <summary>
+        <img
+          src="assets/Folder Opened.png"
+          style="height: 15px; top: 2px; position: relative"
+        />Music
+      </summary>
+
+      <div id="Music">
+        <div class="musicRow" onclick="">
+          <p><img src="assets/Folder Opened.png" />TV Girl</p>
+        </div>
+        <div class="musicRow" onclick="">
+          <p><img src="assets/Folder Opened.png" />femtanyl</p>
+        </div>
+        <div class="musicRow" onclick="">
+          <p><img src="assets/Folder Opened.png" />Lovejoy</p>
+        </div>
+      </div>
+    </details>
   </body>
 </html>

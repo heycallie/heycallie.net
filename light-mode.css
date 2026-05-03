@@ -649,6 +649,64 @@ audio {
   font-size: 12px;
 }
 
+.dropMusicRow:hover {
+  background-color: rgb(202, 202, 202);
+}
+
+.music {
+  text-align: left !important;
+  position: relative;
+  left: 10px;
+}
+
+details.music summary {
+  cursor: pointer;
+  list-style: none;
+  position: relative;
+  padding-left: 24px;
+  user-select: none;
+}
+
+details.music summary::-webkit-details-marker {
+  display: none;
+}
+
+details.music summary::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 2px;
+  width: 12px;
+  height: 12px;
+  background-image: url("assets/Expand.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+details[open].music summary::before {
+  background-image: url("assets/Collapse.png");
+}
+
+.dropMusicRow {
+  position: relative;
+  left: 30px;
+  cursor: default;
+  padding-left: 6px;
+  width: 82px;
+  user-select: none;
+}
+
+.dropMusicRow img {
+  height: 12px;
+  top: 3px;
+  position: relative;
+}
+
+.dropMusicRow p {
+  margin: 0;
+  font-size: 12px;
+}
+
 .musicRow:hover {
   background-color: rgb(202, 202, 202);
 }

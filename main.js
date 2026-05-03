@@ -216,11 +216,41 @@ function userChoseGuest() {
   settings.classList.add("guestUserSettingsTransition");
 }
 
-function regFileExploreMusicClick() {
+function fileExplorerHideAll() {
+  document.getElementById("cMyDocumentsMusicFiles").classList.add("hidden");
+  document.getElementById("eMusicTVGirl").classList.add("hidden");
+}
+
+function regFileExploreVocaloidClick() {
   document.getElementById("addressAddressBoxText").innerHTML =
-    "C:&#92;Users&#92;Guest&#92;My Documents&#92;Music";
+    "C:&#92;Users&#92;Guest&#92;My Documents&#92;Vocaloid";
+  fileExplorerHideAll();
   document.getElementById("cMyDocumentsMusicFiles").classList.remove("hidden");
-  document.getElementById("window5Name").innerHTML = "Music - File Explorer";
+  document.getElementById("window5Name").innerHTML = "Vocaloid - File Explorer";
+}
+
+function regFileExploreTVGirlClick() {
+  document.getElementById("addressAddressBoxText").innerHTML =
+    "E:&#92;Music&#92;TV Girl";
+  fileExplorerHideAll();
+  document.getElementById("eMusicTVGirl").classList.remove("hidden");
+  document.getElementById("window5Name").innerHTML = "TV Girl - File Explorer";
+}
+
+function regFileExplorefemtanylClick() {
+  document.getElementById("addressAddressBoxText").innerHTML =
+    "E:&#92;Music&#92;femtanyl";
+  fileExplorerHideAll();
+  document.getElementById("eMusicfemtanyl").classList.remove("hidden");
+  document.getElementById("window5Name").innerHTML = "femtanyl - File Explorer";
+}
+
+function regFileExploreLovejoyClick() {
+  document.getElementById("addressAddressBoxText").innerHTML =
+    "E:&#92;Music&#92;Lovejoy";
+  fileExplorerHideAll();
+  document.getElementById("eMusicLovejoy").classList.remove("hidden");
+  document.getElementById("window5Name").innerHTML = "Lovejoy - File Explorer";
 }
 
 function resetAddressNavigation() {

@@ -995,7 +995,7 @@ before uploading :
     </div>
 
     <!-- FILE EXPLORER -->
-    <div id="window5" class="draggable window hidden">
+    <div id="window5" class="draggable window">
       <div id="window5Drag">
         <img
           src="assets/Explorer.png"
@@ -1112,7 +1112,7 @@ before uploading :
                 font-size: 14px;
               "
             >
-              Guest's Folders
+              Your Folders
             </p>
             <hr style="margin-top: 3px" />
           </div>
@@ -1172,7 +1172,7 @@ before uploading :
                 My Documents
               </p>
               <div id="myDocumentsMusic">
-                <div class="musicRow" onclick="regFileExploreMusicClick()">
+                <div class="musicRow" onclick="regFileExploreVocaloidClick()">
                   <img src="assets/Folder Opened.png" />
                   <p>Vocaloid</p>
                 </div>
@@ -1186,7 +1186,7 @@ before uploading :
               style="height: 12px; position: absolute; left: 5px"
             />
             <img
-              src="assets/My Computer.png"
+              src="assets/Removable Media.png"
               style="height: 12px; position: absolute; left: 20px"
             />
             <p
@@ -1200,32 +1200,43 @@ before uploading :
               IPOD
             </p>
           </div>
-          <div style="margin-top: 4px">
-            <img
-              src="assets/Collapse.png"
-              style="height: 12px; position: absolute; left: 19px"
-            />
-            <img
-              src="assets/Folder Opened.png"
-              style="height: 12px; position: absolute; left: 33px"
-            />
-            <p
-              style="
-                margin: 0px;
-                font-size: 12px;
-                margin-left: 47px;
-                text-align: left;
-              "
-            >
-              Music
-            </p>
-            <div id="myDocumentsMusic">
-              <div class="musicRow" onclick="regFileExploreMusicClick()">
-                <img src="assets/Folder Opened.png" />
-                <p>Vocaloid</p>
+          <details class="music">
+            <summary style="font-size: 12px">
+              <img
+                src="assets/Folder Opened.png"
+                style="
+                  height: 12px;
+                  top: 2px;
+                  position: relative;
+                  margin-right: 2px;
+                "
+              />Music
+            </summary>
+
+            <div id="Music">
+              <div
+                class="dropMusicRow"
+                onclick="regFileExploreTVGirlClick()"
+                style="width: 67px"
+              >
+                <p><img src="assets/Folder Opened.png" />TV Girl</p>
+              </div>
+              <div
+                class="dropMusicRow"
+                onclick="regFileExplorefemtanylClick()"
+                style="width: 73px"
+              >
+                <p><img src="assets/Folder Opened.png" />femtanyl</p>
+              </div>
+              <div
+                class="dropMusicRow"
+                onclick="regFileExploreLovejoyClick()"
+                style="width: 68px"
+              >
+                <p><img src="assets/Folder Opened.png" />Lovejoy</p>
               </div>
             </div>
-          </div>
+          </details>
         </div>
 
         <div
@@ -1272,6 +1283,63 @@ before uploading :
               >
             </div>
           </div>
+
+          <div id="eMusicTVGirl" class="hidden">
+            <!-- <div id="fileMusicPrettyboy" onclick="regFileMusicPrettyboyClick()">
+              <img
+                src="assets/WMV.png"
+                style="height: 36px; position: absolute; top: 10px; left: 17px"
+              />
+              <span
+                style="
+                  position: absolute;
+                  text-align: center;
+                  left: 7px;
+                  top: 50px;
+                  font-size: 12px;
+                "
+                >Pretty Boy.mp4</span
+              >
+            </div> -->
+          </div>
+
+          <div id="eMusicfemtanyl" class="hidden">
+            <!-- <div id="fileMusicPrettyboy" onclick="regFileMusicPrettyboyClick()">
+              <img
+                src="assets/WMV.png"
+                style="height: 36px; position: absolute; top: 10px; left: 17px"
+              />
+              <span
+                style="
+                  position: absolute;
+                  text-align: center;
+                  left: 7px;
+                  top: 50px;
+                  font-size: 12px;
+                "
+                >Pretty Boy.mp4</span
+              >
+            </div> -->
+          </div>
+
+          <div id="eMusicLovejoy" class="hidden">
+            <!-- <div id="fileMusicPrettyboy" onclick="regFileMusicPrettyboyClick()">
+              <img
+                src="assets/WMV.png"
+                style="height: 36px; position: absolute; top: 10px; left: 17px"
+              />
+              <span
+                style="
+                  position: absolute;
+                  text-align: center;
+                  left: 7px;
+                  top: 50px;
+                  font-size: 12px;
+                "
+                >Pretty Boy.mp4</span
+              >
+            </div> -->
+          </div>
         </div>
       </div>
     </div>
@@ -1312,15 +1380,6 @@ before uploading :
           src=""
           title=""
           frameborder="0"
-          allow="
-            accelerometer;
-            autoplay;
-            clipboard-write;
-            encrypted-media;
-            gyroscope;
-            picture-in-picture;
-            web-share;
-          "
           id="mediaPlayeriFrame"
           style="height: 100%; width: 100%; position: absolute; bottom: 0px"
           referrerpolicy="strict-origin-when-cross-origin"
