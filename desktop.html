@@ -35,7 +35,7 @@ before uploading :
 
   <body>
     <!-- INITIAL ENTRY SETTINGS -->
-    <div id="entryMessage" style="overflow-y: hidden" class="">
+    <div id="entryMessage" style="overflow-y: hidden" class="hidden">
       <div
         id="entryMidBox"
         style="
@@ -270,7 +270,7 @@ before uploading :
     </div>
 
     <!-- BLOG -->
-    <div id="window11" class="window draggable hidden">
+    <div id="window11" class="window draggable">
       <div id="window11Drag">
         <img
           src="assets/ie6.png"
@@ -298,7 +298,7 @@ before uploading :
 
       <div
         class="webBox"
-        id="webBoxWindowEleven"
+        id="todoListWindowEleven"
         style="
           text-align: center;
           font-family: Chiron GoRound TC;
@@ -306,22 +306,95 @@ before uploading :
           color: white;
         "
       >
-        text text text text text text text text text text text
+        <div style="position: sticky; top: 0; z-index: 99; height: 0">
+          <button
+            style="position: absolute; right: 0; top: 0"
+            onclick="normBlog()"
+          >
+            return to blog
+          </button>
+        </div>
+
+        <ul style="padding-left: 5vw; padding-right: 5vw" class="centered-bps">
+          <li>
+            WHATCHACALLITSNAME Web Music Video
+            <ul>
+              <li style="text-decoration: line-through">Verse 1</li>
+              <li><del>Verse 2</del></li>
+              <li><span style="background-color: yellow">BASS</span></li>
+              <li>Verse 3</li>
+              <li>Verse 4</li>
+              <li>Bridge</li>
+              <li>Fin</li>
+            </ul>
+          </li>
+          <li>
+            decorate desktop page
+            <ul>
+              <li>add apps to start menu (?)</li>
+              <li>
+                create more popups
+                <ul>
+                  <li>six done and arranged</li>
+                </ul>
+              </li>
+              <li>
+                add more to taskbar
+                <ul>
+                  <li><del>time</del></li>
+                  <li>more icons</li>
+                </ul>
+              </li>
+              <li>
+                arrange windows and desktop icons so that they fit on all
+                screens
+              </li>
+              <li>add a chatroom window</li>
+            </ul>
+          </li>
+          <li>decorate the credits page</li>
+          <li>find more blinkies / stamps</li>
+          <li>
+            ideally, decorate this landing page? i'm not sure if i'm actually
+            gonna keep it in the end or delete it, but might as well.
+          </li>
+
+          <li>test for screenreader accessibility</li>
+          <li>create a mobile version</li>
+          <li>update page not found page</li>
+          <li>
+            dark mode version of the site
+            <ul>
+              <li><del>create a light/dark toggle</del></li>
+            </ul>
+          </li>
+          <li>custom cursorzzz!!!</li>
+          <li>
+            validate everything using
+            <a href="https://www.w3.org/developers/tools/">w3.org</a> to make
+            sure it's squeaky clean!
+          </li>
+          <li>
+            give neocities my life savings ( $5 ) if i care about this website
+            enough
+          </li>
+          <li><del>add a commenting system for the blog</del></li>
+        </ul>
       </div>
 
       <div
         class="webBox"
-        id="webBoxWindowEleven todoHideMe"
+        id="webBoxWindowEleven"
         style="
           text-align: center;
           font-family: Chiron GoRound TC;
           background-color: black;
         "
       >
-        <div id="todoList">
+        <div style="position: sticky; top: 0; z-index: 99; height: 0">
           <button
-            style="position: absolute; top: 0px; right: 0px; z-index: 99"
-            onclick="normBlog()"
+            style="position: absolute; right: 0; top: 0"
+            onclick="todoList()"
           >
             to-do list
           </button>

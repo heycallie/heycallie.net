@@ -351,9 +351,9 @@ document.querySelectorAll(".popup").forEach(function (el) {
 stopMediaPlayerPlaying();
 
 function todoList() {
-  document.getElementById("todoHideMe").classList.add("hidden");
+  document.getElementById("webBoxWindowEleven").classList.add("hidden");
 }
 
 function normBlog() {
-  document.getElementById("todoHideMe").classList.remove("hidden");
+  document.getElementById("webBoxWindowEleven").classList.remove("hidden");
 }
