@@ -1,3 +1,13 @@
+function mobileCheck() {
+  return /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(
+    navigator.userAgent,
+  );
+}
+
+if (mobileCheck() === true) {
+  window.location = "https://mobile.heycallie.net";
+}
+
 document
   .getElementById("startMenuButton")
   .addEventListener("mousedown", regStartMenuPress);
