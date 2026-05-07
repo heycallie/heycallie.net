@@ -8,6 +8,8 @@ if (mobileCheck() === true) {
   window.location = "https://mobile.heycallie.net";
 }
 
+mobileCheck();
+
 document
   .getElementById("startMenuButton")
   .addEventListener("mousedown", regStartMenuPress);
