@@ -186,6 +186,14 @@
         });
       }
 
+      function redirect() {
+        window.location = "/whatchacallitsname/verse2";
+      }
+
+      function print() {
+        console.log("This worked!");
+      }
+
       const events = [
         { time: 0.246 + OFFSET, action: () => setColor("1") },
         { time: 0.374 + OFFSET, action: () => setColor("2") },
@@ -249,6 +257,8 @@
         { time: 11.809 + OFFSET, action: () => setColor("43") },
 
         { time: 11.839 + OFFSET, action: () => scroll(1) },
+
+        { time: 15.93, action: () => redirect() },
       ];
 
       let index = 0;
