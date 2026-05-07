@@ -1,4 +1,4 @@
-# heycallie.neocities.org
+# heycallie.net
 
 want to run this website locally? here's how i do it:
 * install <a href="https://apps.microsoft.com/detail/xp9khm4bk9fz7q?ocid=webpdpshare" target="_blank">microsoft visual studio 2017</a>
