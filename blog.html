@@ -4,7 +4,7 @@
     <link href="style.css" rel="stylesheet" type="text/css" media="all" />
     <link rel="stylesheet" href="light-mode.css" id="theme-link" />
     <link rel="icon" href="assets/vista_info.ico" />
-    <script src="main.js" defer></script>
+    <!-- <script src="main.js" defer></script> -->
 
     <style>
       .webBox {
@@ -42,6 +42,18 @@
         text-align: left;
       }
     </style>
+
+    <script>
+      function todoList() {
+        document.getElementById("webBoxWindowEleven").classList.add("hidden");
+      }
+
+      function normBlog() {
+        document
+          .getElementById("webBoxWindowEleven")
+          .classList.remove("hidden");
+      }
+    </script>
   </head>
 
   <body>
