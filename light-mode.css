@@ -786,7 +786,7 @@ details[open].music summary::before {
   color: black;
   background-size: cover;
   z-index: 2;
-  height: calc(100% - 32px);
+  height: 100%;
   bottom: 0px;
   width: 100%;
   position: absolute;
