@@ -219,6 +219,9 @@ function userChoseGuest() {
 function fileExplorerHideAll() {
   document.getElementById("cMyDocumentsMusicFiles").classList.add("hidden");
   document.getElementById("eMusicTVGirl").classList.add("hidden");
+  document.getElementById("eMusicfemtanyl").classList.add("hidden");
+  document.getElementById("eMusicLovejoy").classList.add("hidden");
+  document.getElementById("eMusicsmeeer").classList.add("hidden");
 }
 
 function regFileExploreVocaloidClick() {
@@ -253,6 +256,14 @@ function regFileExploreLovejoyClick() {
   document.getElementById("window5Name").innerHTML = "Lovejoy - File Explorer";
 }
 
+function regFileExploresmeeerClick() {
+  document.getElementById("addressAddressBoxText").innerHTML =
+    "E:&#92;Music&#92;smeeer";
+  fileExplorerHideAll();
+  document.getElementById("eMusicsmeeer").classList.remove("hidden");
+  document.getElementById("window5Name").innerHTML = "smeeer - File Explorer";
+}
+
 function resetAddressNavigation() {
   document.getElementById("addressAddressBoxText").innerHTML = "C:&#92;";
   document.getElementById("cMyDocumentsMusicFiles").classList.add("hidden");
@@ -282,6 +293,30 @@ function regFileMusicWhatchaClick() {
     "https://www.youtube.com/embed/bzWs0VpYftE?si=GEMuFtMBL7f-b9Zw&amp;controls=1&amp;autoplay=1";
   mediaPlayeriFrame.title = "WhatchaCallItsName";
   mediaplayer.style.height = "483px";
+}
+
+function regFileMusicteoeawkiClick() {
+  var mediaplayer = document.getElementById("window6");
+  mediaplayer.classList.remove("hidden");
+  bringToFront(mediaplayer);
+  document.getElementById("mediaPlayerWindowName").innerHTML =
+    "the end of everything as we know it..mp4";
+  mediaPlayeriFrame.src =
+    "https://www.youtube.com/embed/asMmwVf3LrQ?si=0z2IUagryPmkw2Py&amp;controls=1&amp;autoplay=1";
+  mediaPlayeriFrame.title = "the end of everything as we know it.";
+  mediaplayer.style.height = "371px";
+}
+
+function regFileMusiccollapseClick() {
+  var mediaplayer = document.getElementById("window6");
+  mediaplayer.classList.remove("hidden");
+  bringToFront(mediaplayer);
+  document.getElementById("mediaPlayerWindowName").innerHTML =
+    "collapse of unity.mp4";
+  mediaPlayeriFrame.src =
+    "https://www.youtube.com/embed/9HdgY3PiQYg?si=cEFA1qPMnjp5hvhP&amp;controls=1&amp;autoplay=1";
+  mediaPlayeriFrame.title = "collapse of unity";
+  mediaplayer.style.height = "371px";
 }
 
 function stopMediaPlayerPlaying() {
