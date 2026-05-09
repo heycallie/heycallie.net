@@ -37,7 +37,8 @@ before uploading :
 
     <script>
       function mobileCheck() {
-        return /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(
+        // does not include iPad because its dimensions are computer-like
+        return /Android|iPhone|iPod|Opera Mini|IEMobile|WPDesktop/i.test(
           navigator.userAgent,
         );
       }
@@ -107,7 +108,7 @@ before uploading :
             <div style="font-family: Arial">
               <p style="margin-top: 80px; margin-left: 0px; margin-bottom: 0px">
                 before you enter:<br />
-                this website was not built for mobile or accessibility!
+                this website was not built for accessibility!
               </p>
               <br />
               <label
