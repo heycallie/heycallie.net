@@ -87,7 +87,7 @@
 }
 
 #navBar :hover {
-  cursor: default;
+  cursor: url("assets/cursors/w98normal.cur"), default;
 }
 
 .shortcut {
@@ -203,7 +203,7 @@
   position: absolute;
   right: 3px;
   top: 3px;
-  cursor: default;
+  cursor: url("assets/cursors/w98normal.cur"), default;
 }
 
 #closeWindowButton,
@@ -216,7 +216,7 @@
   position: absolute;
   right: 5px;
   top: 6px;
-  cursor: default;
+  cursor: url("assets/cursors/w98normal.cur"), default;
 }
 
 #closeWindowButton:hover,
@@ -233,7 +233,7 @@
 #window6Drag,
 #window11Drag,
 #window12Drag {
-  cursor: move;
+  cursor: url("assets/cursors/w98move.cur"), move;
   z-index: 10;
   background-color: #2196f3;
   background-image: linear-gradient(to top, #255dd4, #255dd4, #255dd4, #56a1ff);
@@ -254,7 +254,7 @@
 #window8Drag,
 #window9Drag,
 #window10Drag {
-  cursor: move;
+  cursor: url("assets/cursors/w98move.cur"), move;
   z-index: 10;
   background-color: #2196f3;
   background-image: linear-gradient(
@@ -588,7 +588,7 @@ audio {
   position: fixed;
   right: 27%;
   user-select: none;
-  cursor: pointer;
+  cursor: url("assets/cursors/w98hand.cur"), pointer;
   top: 44%;
   opacity: 1;
   transition: opacity 0.2s linear;
@@ -648,7 +648,7 @@ audio {
 #navigationMenuBackContainment {
   height: 100%;
   width: 20%;
-  cursor: default;
+  cursor: url("assets/cursors/w98normal.cur"), default;
 }
 
 #navigationMenuBackContainment:hover {
@@ -687,7 +687,7 @@ audio {
 }
 
 details.music summary {
-  cursor: pointer;
+  cursor: url("assets/cursors/w98hand.cur"), pointer;
   list-style: none;
   position: relative;
   padding-left: 24px;
@@ -717,7 +717,7 @@ details[open].music summary::before {
 .dropMusicRow {
   position: relative;
   left: 30px;
-  cursor: default;
+  cursor: url("assets/cursors/w98normal.cur"), default;
   padding-left: 6px;
   width: 82px;
   user-select: none;
@@ -800,4 +800,18 @@ details[open].music summary::before {
   margin-right: 10px;
   margin-top: 0px;
   font-size: 30px;
+}
+
+a,
+button,
+summary,
+label,
+input,
+[role="button"] {
+  cursor: url("assets/cursors/w98hand.cur"), pointer !important;
+}
+
+textarea,
+[contenteditable="true"] {
+  cursor: url("assets/cursors/w98text.cur"), text;
 }
