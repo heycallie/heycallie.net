@@ -234,7 +234,20 @@ before uploading :
           <span
             ><br /><br />there's still a lot more to do! if you want to know
             what i'm working on, check the todo on
-            <a href="/" contenteditable="false">the home page!</a></span
+            <span
+              onclick="
+                (openTab('window11'),
+                  bringToFront(document.getElementById('window11')),
+                  alsoTodoList())
+              "
+              contenteditable="false"
+              style="
+                text-decoration: underline;
+                cursor: pointer;
+                user-select: none;
+              "
+              >the blog!</span
+            ></span
           ><br /><br />all credit goes to my one swedish friend
         </p>
       </div>
@@ -353,6 +366,7 @@ before uploading :
       </div>
 
       <iframe
+        id="blogiFrame"
         src="/blog.html"
         style="
           height: 100%;

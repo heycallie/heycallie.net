@@ -444,6 +444,13 @@ function todoList() {
   document.getElementById("webBoxWindowEleven").classList.add("hidden");
 }
 
+function alsoTodoList() {
+  document
+    .getElementById("blogiFrame")
+    .contentWindow.document.getElementById("webBoxWindowEleven")
+    .classList.add("hidden");
+}
+
 function normBlog() {
   document.getElementById("webBoxWindowEleven").classList.remove("hidden");
 }
