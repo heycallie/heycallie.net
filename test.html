@@ -1,80 +1,147 @@
 <!doctype html>
 <html>
   <head>
-    <style>
-      details.music summary {
-        cursor: pointer;
-        list-style: none;
-        position: relative;
-        padding-left: 24px;
-        user-select: none;
+    <script>
+      function showContextMenu(e) {
+        e.preventDefault();
+        const menu = document.getElementById("contextMenu");
+        menu.style.animation = "";
+        menu.classList.remove("hidden");
+        menu.style.position = "absolute";
+        menu.style.left = `${e.pageX}px`;
+        menu.style.top = `${e.pageY}px`;
       }
 
-      details.music summary::-webkit-details-marker {
+      function hideContextMenu() {
+        document.getElementById("contextMenu").style.animation =
+          "fadeOut 0.25s linear 1";
+
+        setTimeout(function () {
+          document.getElementById("contextMenu").classList.add("hidden");
+        }, 250);
+      }
+
+      function handleContextMenu(e) {
+        showContextMenu(e);
+      }
+
+      function disableContextMenuListener() {
+        document.removeEventListener("contextmenu", handleContextMenu, false);
+      }
+
+      function enableContextMenuListener() {
+        document.addEventListener("contextmenu", handleContextMenu, false);
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        enableContextMenuListener();
+
+        document.addEventListener(
+          "click",
+          function (e) {
+            const menu = document.getElementById("contextMenu");
+            if (!menu.contains(e.target)) {
+              hideContextMenu();
+            }
+          },
+          false,
+        );
+      });
+
+      function enableNormalContextMenu() {
+        hideContextMenu();
+        showContextMenu = function () {
+          console.log("Custom context menu disabled!");
+        };
+      }
+
+      function enableCustomContextMenu() {
+        showContextMenu = function (e) {
+          e.preventDefault();
+          const menu = document.getElementById("contextMenu");
+          menu.style.animation = "";
+          menu.classList.remove("hidden");
+          menu.style.position = "absolute";
+          menu.style.left = `${e.pageX}px`;
+          menu.style.top = `${e.pageY}px`;
+        };
+      }
+    </script>
+    <style>
+      body {
+        background-color: #165fc9;
+      }
+      .hidden {
         display: none;
       }
 
-      details.music summary::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 1px;
-        width: 16px;
-        height: 16px;
-        background-image: url("assets/Expand.png");
-        background-size: contain;
-        background-repeat: no-repeat;
+      #contextMenu {
+        background-color: rgb(188, 188, 188);
+        height: fit-content;
+        width: fit-content;
+        position: fixed;
+        border-top: 1px solid white;
+        border-left: 1px solid white;
+        border-right: 2px solid black;
+        border-bottom: 2px solid black;
       }
 
-      details[open].music summary::before {
-        background-image: url("assets/Collapse.png");
+      @keyframes fadeOut {
+        60% {
+          opacity: 50%;
+        }
+
+        100% {
+          opacity: 0%;
+        }
       }
 
-      .musicRow {
-        position: relative;
-        left: 30px;
-        cursor: default;
-        padding-left: 6px;
-        width: 82px;
+      .option {
+        width: 100%;
         user-select: none;
-      }
-
-      .musicRow img {
-        height: 15px;
-        top: 3px;
         position: relative;
+        border-bottom: 1px solid grey;
+        border-top: 1px solid white;
       }
 
-      .musicRow p {
-        margin: 0;
+      .topOption {
+        width: 100%;
+        user-select: none;
+        position: relative;
+        border-bottom: 1px solid grey;
       }
 
-      .musicRow:hover {
-        background-color: rgb(202, 202, 202);
+      .bottomOption {
+        width: 100%;
+        user-select: none;
+        position: relative;
+        border-top: 1px solid white;
+      }
+
+      .option:hover,
+      .topOption:hover,
+      .bottomOption:hover {
+        background-color: rgb(157, 157, 157);
       }
     </style>
   </head>
 
   <body>
-    <details class="music">
-      <summary>
-        <img
-          src="assets/Folder Opened.png"
-          style="height: 15px; top: 2px; position: relative"
-        />Music
-      </summary>
-
-      <div id="Music">
-        <div class="musicRow" onclick="">
-          <p><img src="assets/Folder Opened.png" />TV Girl</p>
-        </div>
-        <div class="musicRow" onclick="">
-          <p><img src="assets/Folder Opened.png" />femtanyl</p>
-        </div>
-        <div class="musicRow" onclick="">
-          <p><img src="assets/Folder Opened.png" />Lovejoy</p>
-        </div>
+    <button onclick="enableCustomContextMenu()">enable custom menu</button>
+    <div id="contextMenu" class="hidden">
+      <div onclick="enableNormalContextMenu()" class="topOption">
+        &NonBreakingSpace;
+        <span style="text-decoration: underline">D</span>isable this
+        menu&ThickSpace;
       </div>
-    </details>
+      <!-- <div onclick="enableNormalContextMenu()" class="option">
+        &NonBreakingSpace; <span style="text-decoration: underline">C</span>lick
+        Me!
+      </div>
+      <div onclick="enableNormalContextMenu()" class="bottomOption">
+        &NonBreakingSpace; <span style="text-decoration: underline">C</span>lick
+        Me!
+      </div> -->
+    </div>
   </body>
 </html>

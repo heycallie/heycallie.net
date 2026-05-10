@@ -1,3 +1,5 @@
+enableNormalContextMenu();
+
 document
   .getElementById("startMenuButton")
   .addEventListener("mousedown", regStartMenuPress);
@@ -173,6 +175,7 @@ var dailymp3popup = document.getElementById("mp3popup");
 function userEntry() {
   var darkMode = document.querySelector("#darkMode");
   var popups = document.querySelector("#popupSelector");
+  var context = document.querySelector("#contextMenuCheckbox");
   if (darkMode.checked == true) {
     console.error("dark mode doesn't work by the way");
     darkModeEnable();
@@ -180,6 +183,9 @@ function userEntry() {
   darkModeDisable();
   if (popups.checked == true) {
     popupsDisable();
+  }
+  if (context.checked == false) {
+    enableCustomContextMenu();
   }
   updateTime();
   entryTitleFunction();
@@ -206,6 +212,8 @@ function popupsDisable() {
   netscapepopup.classList.add("hidden");
   dailymp3popup.classList.add("hidden");
 }
+
+function contextDisable() {}
 
 function userChoseGuest() {
   document.getElementById("title").innerHTML = "Guest Login";
@@ -258,10 +266,10 @@ function regFileExploreLovejoyClick() {
 
 function regFileExploresmeeerClick() {
   document.getElementById("addressAddressBoxText").innerHTML =
-    "E:&#92;Music&#92;smeeer";
+    "E:&#92;Music&#92;Ennui";
   fileExplorerHideAll();
   document.getElementById("eMusicsmeeer").classList.remove("hidden");
-  document.getElementById("window5Name").innerHTML = "smeeer - File Explorer";
+  document.getElementById("window5Name").innerHTML = "Ennui - File Explorer";
 }
 
 function resetAddressNavigation() {
@@ -319,6 +327,53 @@ function regFileMusiccollapseClick() {
   mediaplayer.style.height = "371px";
 }
 
+function regFileMusicjoyClick() {
+  var mediaplayer = document.getElementById("window6");
+  mediaplayer.classList.remove("hidden");
+  bringToFront(mediaplayer);
+  document.getElementById("mediaPlayerWindowName").innerHTML =
+    "a piece of joy.mp4";
+  mediaPlayeriFrame.src =
+    "https://www.youtube.com/embed/SoV4uR0dMeY?si=guctAc3fq2SAWJ-w&amp;controls=1&amp;autoplay=1";
+  mediaPlayeriFrame.title = "a piece of joy";
+  mediaplayer.style.height = "371px";
+}
+
+function regFileMusickollekClick() {
+  var mediaplayer = document.getElementById("window6");
+  mediaplayer.classList.remove("hidden");
+  bringToFront(mediaplayer);
+  document.getElementById("mediaPlayerWindowName").innerHTML = "Kollektivt.mp4";
+  mediaPlayeriFrame.src =
+    "https://www.youtube.com/embed/PSVW7uBlWxI?si=pNZGv9Uj-2hoD-bb&amp;controls=1&amp;autoplay=1";
+  mediaPlayeriFrame.title = "Kollektivt";
+  mediaplayer.style.height = "371px";
+}
+
+function regFileMusicmyworldClick() {
+  var mediaplayer = document.getElementById("window6");
+  mediaplayer.classList.remove("hidden");
+  bringToFront(mediaplayer);
+  document.getElementById("mediaPlayerWindowName").innerHTML =
+    "i feel distressed watching my world just die..mp4";
+  mediaPlayeriFrame.src =
+    "https://www.youtube.com/embed/XrulofG0ryg?si=YvrI1c_JwNAffuOo&amp;controls=1&amp;autoplay=1";
+  mediaPlayeriFrame.title = "i feel distressed watching my world just die.";
+  mediaplayer.style.height = "371px";
+}
+
+function regFileMusicClockworksClick() {
+  var mediaplayer = document.getElementById("window6");
+  mediaplayer.classList.remove("hidden");
+  bringToFront(mediaplayer);
+  document.getElementById("mediaPlayerWindowName").innerHTML =
+    "Bound Clockworks.mp4";
+  mediaPlayeriFrame.src =
+    "https://www.youtube.com/embed/1Q4zIkl_Afg?si=fh3HZ2jxuKr4YF9u&amp;controls=1&amp;autoplay=1";
+  mediaPlayeriFrame.title = "Bound Clockworks";
+  mediaplayer.style.height = "371px";
+}
+
 function stopMediaPlayerPlaying() {
   document.getElementById("mediaPlayeriFrame").src = "";
 }
@@ -342,8 +397,8 @@ function updateTime() {
 
   const formattedMinutes = minutes.toString().padStart(2, "0");
 
-  document.getElementById("userTimeDisplay").textContent =
-    `it is ${hours}:${formattedMinutes} ${ampm} :)`;
+  // document.getElementById("userTimeDisplay").textContent =
+  //   `it is ${hours}:${formattedMinutes} ${ampm} :)`;
 
   document.getElementById("taskbarUserTimeDisplay").textContent =
     `${hours}:${formattedMinutes} ${ampm}`;
@@ -391,4 +446,68 @@ function todoList() {
 
 function normBlog() {
   document.getElementById("webBoxWindowEleven").classList.remove("hidden");
+}
+
+function showContextMenu(e) {
+  e.preventDefault();
+  const menu = document.getElementById("contextMenu");
+  menu.style.animation = "";
+  menu.classList.remove("hidden");
+  menu.style.position = "absolute";
+  menu.style.left = `${e.pageX}px`;
+  menu.style.top = `${e.pageY}px`;
+  bringToFront();
+}
+
+function hideContextMenu() {
+  document.getElementById("contextMenu").style.animation =
+    "fadeOut 0.25s linear 1";
+
+  setTimeout(function () {
+    document.getElementById("contextMenu").classList.add("hidden");
+  }, 250);
+}
+
+function handleContextMenu(e) {
+  showContextMenu(e);
+}
+
+function disableContextMenuListener() {
+  document.removeEventListener("contextmenu", handleContextMenu, false);
+}
+
+function enableContextMenuListener() {
+  document.addEventListener("contextmenu", handleContextMenu, false);
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  enableContextMenuListener();
+
+  document.addEventListener(
+    "click",
+    function (e) {
+      const menu = document.getElementById("contextMenu");
+      if (!menu.contains(e.target)) {
+        hideContextMenu();
+      }
+    },
+    false,
+  );
+});
+
+function enableNormalContextMenu() {
+  hideContextMenu();
+  showContextMenu = function () {};
+}
+
+function enableCustomContextMenu() {
+  showContextMenu = function (e) {
+    e.preventDefault();
+    const menu = document.getElementById("contextMenu");
+    menu.style.animation = "";
+    menu.classList.remove("hidden");
+    menu.style.position = "absolute";
+    menu.style.left = `${e.pageX}px`;
+    menu.style.top = `${e.pageY}px`;
+  };
 }

@@ -815,3 +815,56 @@ textarea,
 [contenteditable="true"] {
   cursor: url("assets/cursors/w98text.cur"), text;
 }
+
+#contextMenu {
+  background-color: rgb(188, 188, 188);
+  height: fit-content;
+  width: fit-content;
+  position: fixed;
+  border-top: 1px solid white;
+  border-left: 1px solid white;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  z-index: 999999999999999999999999;
+}
+
+@keyframes fadeOut {
+  60% {
+    opacity: 50%;
+  }
+
+  100% {
+    opacity: 0%;
+  }
+}
+
+.option {
+  width: 100%;
+  user-select: none;
+  position: relative;
+  border-bottom: 1px solid grey;
+  border-top: 1px solid white;
+  cursor: url("assets/cursors/w98hand.cur"), pointer;
+}
+
+.topOption {
+  width: 100%;
+  user-select: none;
+  position: relative;
+  border-bottom: 1px solid grey;
+  cursor: url("assets/cursors/w98hand.cur"), pointer;
+}
+
+.bottomOption {
+  width: 100%;
+  user-select: none;
+  position: relative;
+  border-top: 1px solid white;
+  cursor: url("assets/cursors/w98hand.cur"), pointer;
+}
+
+.option:hover,
+.topOption:hover,
+.bottomOption:hover {
+  background-color: rgb(157, 157, 157);
+}

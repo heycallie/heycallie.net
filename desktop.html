@@ -37,6 +37,10 @@ before uploading :
       body {
         cursor: url("assets/cursors/w98normal.cur"), auto;
       }
+
+      .userDisplay img {
+        height: 30px;
+      }
     </style>
 
     <script>
@@ -150,11 +154,44 @@ before uploading :
                   value="yes"
                 />No Popups</label
               ><br />
+              <label
+                for="contextMenuCheckbox"
+                style="
+                  margin: auto;
+                  display: flex;
+                  justify-content: left;
+                  align-items: center;
+                "
+                ><input
+                  type="checkbox"
+                  id="contextMenuCheckbox"
+                  name="contextMenuCheckbox"
+                  value="yes"
+                />Default Right-click Menu</label
+              ><br />
+
               <button onclick="userEntry()">enter!</button>
             </div>
           </div>
         </div>
       </div>
+    </div>
+
+    <!-- CUSTOM CONTEXT MENU -->
+    <div id="contextMenu" class="hidden">
+      <div onclick="enableNormalContextMenu()" class="topOption">
+        &NonBreakingSpace;
+        <span style="text-decoration: underline">D</span>isable this
+        menu&ThickSpace;
+      </div>
+      <!-- <div onclick="enableNormalContextMenu()" class="option">
+        &NonBreakingSpace; <span style="text-decoration: underline">C</span>lick
+        Me!
+      </div>
+      <div onclick="enableNormalContextMenu()" class="bottomOption">
+        &NonBreakingSpace; <span style="text-decoration: underline">C</span>lick
+        Me!
+      </div> -->
     </div>
 
     <!-- README.TXT -->
@@ -873,7 +910,7 @@ before uploading :
             <div id="fileMusiccollapse" onclick="regFileMusiccollapseClick()">
               <img
                 src="assets/WMV.png"
-                style="height: 36px; position: absolute; top: 10px; left: 105px"
+                style="height: 36px; position: absolute; top: 10px; left: 109px"
               />
               <span
                 style="
@@ -884,6 +921,77 @@ before uploading :
                   font-size: 12px;
                 "
                 >collapse.mp4</span
+              >
+            </div>
+
+            <div id="fileMusicjoy" onclick="regFileMusicjoyClick()">
+              <img
+                src="assets/WMV.png"
+                style="height: 36px; position: absolute; top: 10px; left: 190px"
+              />
+              <span
+                style="
+                  position: absolute;
+                  text-align: center;
+                  left: 188px;
+                  top: 50px;
+                  font-size: 12px;
+                "
+                >joy.mp4</span
+              >
+            </div>
+
+            <div id="fileMusickollek" onclick="regFileMusickollekClick()">
+              <img
+                src="assets/WMV.png"
+                style="height: 36px; position: absolute; top: 70px; left: 34px"
+              />
+              <span
+                style="
+                  position: absolute;
+                  text-align: center;
+                  left: 10px;
+                  top: 111px;
+                  font-size: 12px;
+                "
+                >Kollektivt.mp4</span
+              >
+            </div>
+
+            <div id="fileMusicmyworld" onclick="regFileMusicmyworldClick()">
+              <img
+                src="assets/WMV.png"
+                style="height: 36px; position: absolute; top: 70px; left: 158px"
+              />
+              <span
+                style="
+                  position: absolute;
+                  text-align: center;
+                  left: 140px;
+                  top: 111px;
+                  font-size: 12px;
+                "
+                >my world.mp4</span
+              >
+            </div>
+
+            <div
+              id="fileMusicClockworks"
+              onclick="regFileMusicClockworksClick()"
+            >
+              <img
+                src="assets/WMV.png"
+                style="height: 36px; position: absolute; top: 130px; left: 33px"
+              />
+              <span
+                style="
+                  position: absolute;
+                  text-align: center;
+                  left: 10px;
+                  top: 171px;
+                  font-size: 12px;
+                "
+                >Clockworks.mp4</span
               >
             </div>
           </div>
@@ -1110,19 +1218,19 @@ before uploading :
           <img src="assets/windows_xp_147.png" />
           <p style="user-select: none">Guest</p>
         </div>
-        <div id="userTime">
-          <span
-            id="userTimeDisplay"
-            style="
-              position: absolute;
-              top: 40%;
-              right: 20px;
-              font-family: Franklin Gothic Regular;
-              color: white;
-              font-size: 22px;
-              user-select: none;
-            "
-          ></span>
+
+        <div
+          style="
+            top: 0px;
+            right: -328px;
+            pointer-events: none;
+            position: relative;
+            width: fit-content;
+          "
+          class="visitor-counter"
+          title="this counts the amount of unique visitors on this site!"
+        >
+          <script src="https://counter.websiteout.com/js/13/0/0/1"></script>
         </div>
       </div>
       <div
