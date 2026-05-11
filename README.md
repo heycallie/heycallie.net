@@ -7,3 +7,5 @@ want to run this website locally? here's how i do it:
 * download all the code in this website
 * navigate to the website's folder in visual studio
 * click go live, and you're done!
+
+![Lines](https://img.shields.io/endpoint?url=https://heycallie.github.io/heycallie.net/.badges/stats.json)
