@@ -9,4 +9,4 @@ want to run this website locally? here's how i do it:
 * click go live, and you're done!
 
 ![Last Commit](https://img.shields.io/github/last-commit/heycallie/heycallie.net?label=last%20updated)
-![Lines](https://img.shields.io/endpoint?url=https://heycallie.github.io/heycallie.net/.badges/stats.json)
+![Lines](https://img.shields.io/endpoint?url=https://heycallie.github.io/heycallie.net/badges/stats.json)
