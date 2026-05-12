@@ -179,19 +179,18 @@ before uploading :
 
     <!-- CUSTOM CONTEXT MENU -->
     <div id="contextMenu" class="hidden">
-      <div onclick="enableNormalContextMenu()" class="topOption">
+      <div onclick="copyHighlighted()" class="topOption" id="contextMenuCopy">
+        &NonBreakingSpace;
+        <span style="text-decoration: underline">C</span>opy
+      </div>
+      <div onclick="pasteHighlighted()" class="option" id="contextMenuPaste">
+        &NonBreakingSpace; <span style="text-decoration: underline">P</span>aste
+      </div>
+      <div onclick="enableNormalContextMenu()" class="bottomOption">
         &NonBreakingSpace;
         <span style="text-decoration: underline">D</span>isable this
         menu&ThickSpace;
       </div>
-      <!-- <div onclick="enableNormalContextMenu()" class="option">
-        &NonBreakingSpace; <span style="text-decoration: underline">C</span>lick
-        Me!
-      </div>
-      <div onclick="enableNormalContextMenu()" class="bottomOption">
-        &NonBreakingSpace; <span style="text-decoration: underline">C</span>lick
-        Me!
-      </div> -->
     </div>
 
     <!-- README.TXT -->
@@ -1374,7 +1373,13 @@ before uploading :
       </div>
     </div>
 
+    <!-- CHATTABLE SCRIPT -->
     <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        enableNormalContextMenu();
+        stopMediaPlayerPlaying();
+      });
+
       chattable.initialize({
         stylesheet: "chattable.css",
       });

@@ -571,6 +571,7 @@ audio {
   text-shadow: 2px 2px 4px #000000;
   font-family: Franklin Gothic Regular;
   color: white;
+  user-select: none !important;
 }
 
 #welcomeBorder {

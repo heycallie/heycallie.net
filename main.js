@@ -1,5 +1,3 @@
-enableNormalContextMenu();
-
 document
   .getElementById("startMenuButton")
   .addEventListener("mousedown", regStartMenuPress);
@@ -438,8 +436,6 @@ document.querySelectorAll(".popup").forEach(function (el) {
   el.style.top = getRandomInt(86) + "vh";
 });
 
-stopMediaPlayerPlaying();
-
 function todoList() {
   document.getElementById("webBoxWindowEleven").classList.add("hidden");
 }
@@ -464,15 +460,16 @@ function showContextMenu(e) {
   menu.style.left = `${e.pageX}px`;
   menu.style.top = `${e.pageY}px`;
   bringToFront();
+  checkSelectedText();
 }
 
 function hideContextMenu() {
   document.getElementById("contextMenu").style.animation =
-    "fadeOut 0.25s linear 1";
+    "fadeOut 0.12s linear 1";
 
   setTimeout(function () {
     document.getElementById("contextMenu").classList.add("hidden");
-  }, 250);
+  }, 120);
 }
 
 function handleContextMenu(e) {
@@ -503,7 +500,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function enableNormalContextMenu() {
-  hideContextMenu();
+  document.getElementById("contextMenu").classList.add("hidden");
   showContextMenu = function () {};
 }
 
@@ -516,5 +513,40 @@ function enableCustomContextMenu() {
     menu.style.position = "absolute";
     menu.style.left = `${e.pageX}px`;
     menu.style.top = `${e.pageY}px`;
+    checkSelectedText();
   };
+}
+
+function copyHighlighted() {
+  document.execCommand("copy");
+  hideContextMenu();
+}
+
+function pasteHighlighted() {
+  document.execCommand("paste");
+  hideContextMenu();
+}
+
+function getSelectedText() {
+  let text = "";
+  if (typeof window.getSelection !== "undefined") {
+    text = window.getSelection().toString();
+  } else if (
+    typeof document.selection !== "undefined" &&
+    document.selection.type == "Text"
+  ) {
+    text = document.selection.createRange().text;
+  }
+  return text;
+}
+
+function checkSelectedText() {
+  let selectedText = getSelectedText();
+  if (selectedText !== "") {
+    console.log("Text selected.");
+    document.getElementById("contextMenuCopy").classList.remove("hidden");
+  } else {
+    console.log("No text selected.");
+    document.getElementById("contextMenuCopy").classList.add("hidden");
+  }
 }
