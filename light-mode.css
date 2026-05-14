@@ -91,8 +91,18 @@
 }
 
 .shortcut {
-  float: right;
-  color: lightGrey;
+  cursor: url("assets/cursors/w98hand.cur"), pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  height: fit-content;
+  width: fit-content;
+  text-align: center;
+}
+
+.shortcut:hover {
+  background-color: rgb(128, 128, 128, 0.5);
+  border-style: dashed;
+  border-width: 1px;
 }
 
 #entryMessage {
@@ -677,6 +687,10 @@ audio {
   font-size: 12px;
 }
 
+.dropMusicRow {
+  cursor: url("assets/cursors/w98hand.cur"), pointer !important;
+}
+
 .dropMusicRow:hover {
   background-color: rgb(202, 202, 202);
 }
@@ -868,4 +882,12 @@ textarea,
 .topOption:hover,
 .bottomOption:hover {
   background-color: rgb(157, 157, 157);
+}
+
+a {
+  color: #008cff;
+}
+
+a:hover {
+  color: red;
 }

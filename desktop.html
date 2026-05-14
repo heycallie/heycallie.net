@@ -253,7 +253,7 @@ before uploading :
     </div>
 
     <!-- CHATROOM -->
-    <div id="window12" class="window draggable hidden">
+    <!-- <div id="window12" class="window draggable hidden">
       <div id="window12Drag" style="width: 100%">
         <img
           src="assets/ie6.png"
@@ -290,7 +290,7 @@ before uploading :
           style="width: 100%; height: 100%; position: relative; left: -2px"
         ></iframe>
       </div>
-    </div>
+    </div> -->
 
     <!-- SHRINES(?) -->
     <div id="window1" class="window draggable hidden">
@@ -759,7 +759,14 @@ before uploading :
                 My Documents
               </p>
               <div id="myDocumentsMusic">
-                <div class="musicRow" onclick="regFileExploreVocaloidClick()">
+                <div
+                  class="musicRow"
+                  onclick="regFileExploreVocaloidClick()"
+                  style="
+                    cursor:
+                      url(&quot;assets/cursors/w98hand.cur&quot;), pointer;
+                  "
+                >
                   <img src="assets/Folder Opened.png" />
                   <p>Vocaloid</p>
                 </div>
@@ -1067,14 +1074,7 @@ before uploading :
             openTab('window1');
             bringToFront(document.getElementById('window1'));
           "
-          style="
-            cursor: url(&quot;assets/cursors/w98hand.cur&quot;), pointer;
-            -webkit-user-select: none;
-            user-select: none;
-            height: fit-content;
-            width: fit-content;
-            text-align: center;
-          "
+          class="shortcut"
         >
           <img
             src="assets/Internet Shortcut.png"
@@ -1089,14 +1089,7 @@ before uploading :
             openTab('window4');
             bringToFront(document.getElementById('window4'));
           "
-          style="
-            cursor: url(&quot;assets/cursors/w98hand.cur&quot;), pointer;
-            -webkit-user-select: none;
-            user-select: none;
-            height: fit-content;
-            width: fit-content;
-            text-align: center;
-          "
+          class="shortcut"
         >
           <img
             src="assets/Notepad.png"
@@ -1111,14 +1104,7 @@ before uploading :
             openTab('window5');
             bringToFront(document.getElementById('window5'));
           "
-          style="
-            cursor: url(&quot;assets/cursors/w98hand.cur&quot;), pointer;
-            -webkit-user-select: none;
-            user-select: none;
-            height: fit-content;
-            width: fit-content;
-            text-align: center;
-          "
+          class="shortcut"
         >
           <img
             src="assets/Explorer.png"
@@ -1132,14 +1118,7 @@ before uploading :
             openTab('window11');
             bringToFront(document.getElementById('window11'));
           "
-          style="
-            cursor: url(&quot;assets/cursors/w98hand.cur&quot;), pointer;
-            -webkit-user-select: none;
-            user-select: none;
-            height: fit-content;
-            width: fit-content;
-            text-align: center;
-          "
+          class="shortcut"
         >
           <img
             src="assets/Internet Shortcut.png"
@@ -1160,27 +1139,19 @@ before uploading :
         "
       >
         <!-- CHATROOM SHORTCUT -->
-        <div
+        <!-- <div
           onclick="
             openTab('window12');
             bringToFront(document.getElementById('window12'));
           "
-          style="
-            cursor: url(&quot;assets/cursors/w98hand.cur&quot;), pointer;
-            -webkit-user-select: none;
-            user-select: none;
-            height: fit-content;
-            width: fit-content;
-            text-align: center;
-            position: relative;
-          "
+          class="shortcut"
         >
           <img
             src="assets/Internet Shortcut.png"
             style="height: 100px; padding: 10px; padding-bottom: 0px"
           />
           <div class="desktopShortcutText">Chatroom</div>
-        </div>
+        </div> -->
       </div>
     </div>
 
@@ -1232,7 +1203,7 @@ before uploading :
           <p style="user-select: none">Guest</p>
         </div>
 
-        <div
+        <!-- <div
           style="
             top: 0px;
             right: -328px;
@@ -1244,7 +1215,7 @@ before uploading :
           title="this counts the amount of unique visitors on this site!"
         >
           <script src="https://counter.websiteout.com/js/13/0/0/1"></script>
-        </div>
+        </div> -->
       </div>
       <div
         id="middleStartMenu"
@@ -1380,9 +1351,9 @@ before uploading :
         stopMediaPlayerPlaying();
       });
 
-      chattable.initialize({
-        stylesheet: "chattable.css",
-      });
+      // chattable.initialize({
+      //   stylesheet: "chattable.css",
+      // });
     </script>
   </body>
 </html>
