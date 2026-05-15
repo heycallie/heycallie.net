@@ -3,32 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Selected Text Example</title>
-    <script>
-      function getSelectedText() {
-        let text = "";
-        if (typeof window.getSelection !== "undefined") {
-          text = window.getSelection().toString();
-        } else if (
-          typeof document.selection !== "undefined" &&
-          document.selection.type == "Text"
-        ) {
-          text = document.selection.createRange().text;
-        }
-        return text;
-      }
-
-      function checkSelectedText() {
-        let selectedText = getSelectedText();
-        if (selectedText !== "") {
-          console.log("Text selected.");
-        } else {
-          console.log("No text selected!");
-        }
-      }
-    </script>
+    <title>Testing Grounds</title>
   </head>
   <body>
-    <button onclick="checkSelectedText()">check if text is selected</button>
+    <textarea id="destination" placeholder="Paste here"></textarea>
+
+    <script>
+      document.getElementById("destination").addEventListener("click", () => {
+        // navigator.clipboard
+        //   .readText()
+        //   .then((text) => {
+        //     document.getElementById("destination").value = text;
+        //     alert("Text pasted!");
+        //   })
+        //   .catch((err) => {
+        //     console.error("Failed to read clipboard contents: ", err);
+        //   });
+
+        document.execCommand("paste");
+      });
+    </script>
   </body>
 </html>
