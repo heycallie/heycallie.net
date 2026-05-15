@@ -6,21 +6,26 @@
     <title>Testing Grounds</title>
   </head>
   <body>
-    <textarea id="destination" placeholder="Paste here"></textarea>
+    <div id="myElement">Click me</div>
+
+    <p contenteditable="true" class="contentEditable">Hello world</p>
+
+    <p contenteditable="true" class="contentEditable">Hello world 2</p>
 
     <script>
-      document.getElementById("destination").addEventListener("click", () => {
-        // navigator.clipboard
-        //   .readText()
-        //   .then((text) => {
-        //     document.getElementById("destination").value = text;
-        //     alert("Text pasted!");
-        //   })
-        //   .catch((err) => {
-        //     console.error("Failed to read clipboard contents: ", err);
-        //   });
-
-        document.execCommand("paste");
+      document.addEventListener("click", (event) => {
+        const editableElements = document.querySelectorAll(".contentEditable");
+        let clickedInside = false;
+        editableElements.forEach((element) => {
+          if (element.contains(event.target)) {
+            clickedInside = true;
+          }
+        });
+        if (clickedInside == true) {
+          console.log("Clicked target");
+        } else {
+          console.log("Did not click target");
+        }
       });
     </script>
   </body>

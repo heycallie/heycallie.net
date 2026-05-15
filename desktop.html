@@ -5,7 +5,7 @@ before uploading :
 -->
 
 <!doctype html>
-<html lang="en" class="fullDocument">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -183,7 +183,11 @@ before uploading :
         &NonBreakingSpace;
         <span style="text-decoration: underline">C</span>opy
       </div>
-      <div onclick="pasteHighlighted()" class="option" id="contextMenuPaste">
+      <div
+        onclick="pasteHighlighted()"
+        class="option hidden"
+        id="contextMenuPaste"
+      >
         &NonBreakingSpace; <span style="text-decoration: underline">P</span>aste
       </div>
       <div onclick="enableNormalContextMenu()" class="bottomOption">
@@ -220,7 +224,11 @@ before uploading :
         <div id="closeWindowButton4" onclick="closeTab('window4')"></div>
       </div>
 
-      <div contenteditable="true" class="webBox" id="webBoxWindowFour">
+      <div
+        contenteditable="true"
+        class="webBox contentEditable"
+        id="webBoxWindowFour"
+      >
         <p style="padding-left: 15px; padding-right: 15px">
           hey! welcome to my website :3<br />this is an interactive webpage--a
           lot of the things you see here, you'll be able to interact with! that
@@ -852,7 +860,11 @@ before uploading :
           "
         >
           <div id="cMyDocumentsMusicFiles" class="hidden">
-            <div id="fileMusicStatic" onclick="regFileMusicStaticClick()">
+            <div
+              id="fileMusicStatic"
+              class="musicFile"
+              onclick="regFileMusicStaticClick()"
+            >
               <img
                 src="assets/WMV.png"
                 style="height: 36px; position: absolute; top: 10px; left: 17px"
@@ -868,7 +880,11 @@ before uploading :
                 >Static.mp4</span
               >
             </div>
-            <div id="fileMusicWhatcha" onclick="regFileMusicWhatchaClick()">
+            <div
+              id="fileMusicWhatcha"
+              class="musicFile"
+              onclick="regFileMusicWhatchaClick()"
+            >
               <img
                 src="assets/WMV.png"
                 style="height: 36px; position: absolute; top: 10px; left: 102px"
@@ -910,7 +926,11 @@ before uploading :
           <div id="eMusicLovejoy" class="hidden"></div>
 
           <div id="eMusicsmeeer" class="hidden">
-            <div id="fileMusicteoeawki" onclick="regFileMusicteoeawkiClick()">
+            <div
+              id="fileMusicteoeawki"
+              class="musicFile"
+              onclick="regFileMusicteoeawkiClick()"
+            >
               <img
                 src="assets/WMV.png"
                 style="height: 36px; position: absolute; top: 10px; left: 22px"
@@ -927,7 +947,11 @@ before uploading :
               >
             </div>
 
-            <div id="fileMusiccollapse" onclick="regFileMusiccollapseClick()">
+            <div
+              id="fileMusiccollapse"
+              class="musicFile"
+              onclick="regFileMusiccollapseClick()"
+            >
               <img
                 src="assets/WMV.png"
                 style="height: 36px; position: absolute; top: 10px; left: 109px"
@@ -944,7 +968,11 @@ before uploading :
               >
             </div>
 
-            <div id="fileMusicjoy" onclick="regFileMusicjoyClick()">
+            <div
+              id="fileMusicjoy"
+              class="musicFile"
+              onclick="regFileMusicjoyClick()"
+            >
               <img
                 src="assets/WMV.png"
                 style="height: 36px; position: absolute; top: 10px; left: 190px"
@@ -961,7 +989,11 @@ before uploading :
               >
             </div>
 
-            <div id="fileMusickollek" onclick="regFileMusickollekClick()">
+            <div
+              id="fileMusickollek"
+              class="musicFile"
+              onclick="regFileMusickollekClick()"
+            >
               <img
                 src="assets/WMV.png"
                 style="height: 36px; position: absolute; top: 70px; left: 34px"
@@ -978,7 +1010,11 @@ before uploading :
               >
             </div>
 
-            <div id="fileMusicmyworld" onclick="regFileMusicmyworldClick()">
+            <div
+              id="fileMusicmyworld"
+              class="musicFile"
+              onclick="regFileMusicmyworldClick()"
+            >
               <img
                 src="assets/WMV.png"
                 style="height: 36px; position: absolute; top: 70px; left: 158px"
@@ -997,6 +1033,7 @@ before uploading :
 
             <div
               id="fileMusicClockworks"
+              class="musicFile"
               onclick="regFileMusicClockworksClick()"
             >
               <img

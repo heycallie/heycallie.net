@@ -59,10 +59,6 @@
   color: white;
 }
 
-.hidden {
-  display: none;
-}
-
 #editButton {
   margin-left: 36px;
 }
@@ -890,4 +886,8 @@ a {
 
 a:hover {
   color: red;
+}
+
+.musicFile {
+  cursor: url("assets/cursors/w98hand.cur"), pointer;
 }

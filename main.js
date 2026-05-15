@@ -543,10 +543,31 @@ function getSelectedText() {
 function checkSelectedText() {
   let selectedText = getSelectedText();
   if (selectedText !== "") {
-    console.log("Text selected.");
     document.getElementById("contextMenuCopy").classList.remove("hidden");
   } else {
-    console.log("No text selected.");
     document.getElementById("contextMenuCopy").classList.add("hidden");
   }
+}
+
+document.addEventListener("click", (event) => {
+  const editableElements = document.querySelectorAll(".contentEditable");
+  let clickedInside = false;
+  editableElements.forEach((element) => {
+    if (element.contains(event.target)) {
+      clickedInside = true;
+    }
+  });
+  if (clickedInside == true) {
+    enablePasteOption();
+  } else {
+    disablePasteOption();
+  }
+});
+
+function enablePasteOption() {
+  document.getElementById("contextMenuPaste").classList.remove("hidden");
+}
+
+function disablePasteOption() {
+  document.getElementById("contextMenuPaste").classList.add("hidden");
 }
