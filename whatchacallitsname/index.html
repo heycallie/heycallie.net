@@ -4,9 +4,26 @@
     <title>Welcome!</title>
     <!-- <link rel="icon" href="start2.png" /> -->
     <script>
-      window.onload = alert(
-        "Make sure autoplay is allowed and you're in fullscreen!",
-      );
+      // window.onload = alert(
+      //   "Make sure autoplay is allowed and you're in fullscreen!",
+      // );
+
+      function openSettings() {
+        if (localStorage.getItem("manSwitch") === "true") {
+          document.getElementById("manSwitch").checked = true;
+        }
+        document.getElementById("settingsWindow").style.display = "";
+      }
+
+      function saveSettings() {
+        if (document.getElementById("manSwitch").checked) {
+          localStorage.setItem("manSwitch", "true");
+        } else {
+          localStorage.setItem("manSwitch", "false");
+        }
+
+        document.getElementById("settingsWindow").style.display = "none";
+      }
     </script>
     <!-- creds:
 https://web.archive.org/web/20010404075543/http://www.geocities.com/MadisonAvenue/8855/karpan.gif
@@ -46,6 +63,37 @@ obviously decoyman themselves
   </head>
   <body>
     <audio src="blank.mp3" autoplay loop></audio>
+    <!-- makes it so the page requests autoplay perms -->
+
+    <div
+      id="settingsWindow"
+      style="
+        height: 75%;
+        width: 40%;
+        border: 3px solid green;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 9999;
+        background-color: #644117;
+        text-align: center;
+        color: white;
+        user-select: none;
+        display: none;
+      "
+    >
+      <h1>Settings</h1>
+      <input type="checkbox" id="manSwitch" name="manSwitch" />
+      <label for="manSwitch">Manual Verse Switching</label>
+
+      <button
+        onclick="saveSettings()"
+        style="position: absolute; top: 1vw; right: 1vw"
+      >
+        Save
+      </button>
+    </div>
 
     <div
       id="leftside"
@@ -159,7 +207,7 @@ obviously decoyman themselves
         src="teto-wave.gif"
         style="position: absolute; top: 31vh; right: 18vh; height: 23vh"
       />
-      <a href="">
+      <a onclick="openSettings()">
         <p
           style="
             text-align: center;
@@ -168,9 +216,11 @@ obviously decoyman themselves
             font-size: 3vh;
             margin-top: 2%;
             margin-bottom: 2%;
+            cursor: pointer;
+            user-select: none;
           "
         >
-          "Click Here To Sign My Guest Book"
+          "Click Here To Open Settings"
         </p></a
       >
       <p style="text-align: center; font-size: 4vh; margin-bottom: 3%">
