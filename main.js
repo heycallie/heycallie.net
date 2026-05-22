@@ -1,3 +1,5 @@
+window.location = "https://heycallie.net/closed";
+
 document
   .getElementById("startMenuButton")
   .addEventListener("mousedown", regStartMenuPress);

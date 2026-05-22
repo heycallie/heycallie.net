@@ -1,32 +1,24 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Testing Grounds</title>
-  </head>
-  <body>
-    <div id="myElement">Click me</div>
+<head>
+  <script>
+    function getRandomInt(max) {
+      return Math.floor(Math.random() * max);
+    }
 
-    <p contenteditable="true" class="contentEditable">Hello world</p>
+    console.log(getRandomInt(3));
+    // Expected output: 0, 1 or 2
 
-    <p contenteditable="true" class="contentEditable">Hello world 2</p>
+    console.log(getRandomInt(1));
+    // Expected output: 0
 
-    <script>
-      document.addEventListener("click", (event) => {
-        const editableElements = document.querySelectorAll(".contentEditable");
-        let clickedInside = false;
-        editableElements.forEach((element) => {
-          if (element.contains(event.target)) {
-            clickedInside = true;
-          }
-        });
-        if (clickedInside == true) {
-          console.log("Clicked target");
-        } else {
-          console.log("Did not click target");
-        }
-      });
-    </script>
-  </body>
-</html>
+    console.log(Math.random());
+    // Expected output: a number from 0 to <1
+
+    function music() {
+      
+    }
+  </script>
+</head>
+<body>
+  <button onclick="music()">run</button>
+</body>
