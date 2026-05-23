@@ -263,7 +263,8 @@ html {
 #window7Drag,
 #window8Drag,
 #window9Drag,
-#window10Drag {
+#window10Drag,
+#window13Drag {
   cursor: url("assets/cursors/w98move.cur"), move;
   z-index: 10;
   background-color: #2196f3;
@@ -359,6 +360,19 @@ html {
   text-align: center;
   height: 83px;
   width: 166px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+#window13 {
+  position: absolute;
+  top: 534px;
+  left: 469px;
+  z-index: 9;
+  background-color: #f1f1f1;
+  text-align: center;
+  height: 82px;
+  width: 163px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
