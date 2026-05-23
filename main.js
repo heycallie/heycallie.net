@@ -1,4 +1,10 @@
-window.location = "https://heycallie.net/closed";
+const today = new Date();
+
+if (today.getDay() === 0) {
+  document.addEventListener("DOMContentLoaded", () => {
+    window.location = "https://heycallie.net/closed";
+  });
+}
 
 document
   .getElementById("startMenuButton")

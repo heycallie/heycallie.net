@@ -6,61 +6,61 @@
 
 @font-face {
   font-family: "DOS";
-  src: url("assets/More Perfect DOS VGA.ttf") format("truetype");
+  src: url(assets/fonts/MorePerfectDOSVGA.ttf) format("truetype");
 }
 
 @font-face {
   font-family: "Cascadia Mono";
-  src: url("assets/CascadiaMono.ttf") format("truetype");
+  src: url(assets/fonts/CascadiaMono.ttf) format("truetype");
 }
 
 @font-face {
   font-family: "Arial Narrow Bold Italic";
-  src: url("assets/arial-narrow-bold-italic.ttf") format("truetype");
+  src: url(assets/fonts/arial-narrow-bold-italic.ttf) format("truetype");
 }
 
 @font-face {
   font-family: "Chewy";
   font-style: normal;
   font-weight: 400;
-  src: url(assets/Chewy-Regular.ttf) format("truetype");
+  src: url(assets/fonts/Chewy-Regular.ttf) format("truetype");
 }
 
 @font-face {
   font-family: "Mohawk";
-  src: url(assets/DeathMohawk.ttf) format("truetype");
+  src: url(assets/fonts/DeathMohawk.ttf) format("truetype");
 }
 
 @font-face {
   font-family: "Franklin Gothic Regular";
   font-style: normal;
   font-weight: normal;
-  src: url("assets/FranklinGothic.woff") format("woff");
+  src: url(assets/fonts/FranklinGothic.woff) format("woff");
 }
 
 @font-face {
   font-family: "Blackbones";
-  src: url("assets/blackbones-demo.regular.otf") format("opentype");
+  src: url(assets/fonts/blackbones-demo.regular.otf) format("opentype");
 }
 
 @font-face {
   font-family: "Pixelify Sans";
-  src: url("assets/PixelifySans-VariableFont_wght.ttf") format("truetype");
+  src: url(assets/fonts/PixelifySans-VariableFont_wght.ttf) format("truetype");
 }
 
 @font-face {
   font-family: "Jetbrains Mono";
-  src: url("assets/JetBrainsMono-Regular.ttf") format("truetype");
+  src: url(assets/fonts/JetBrainsMono-Regular.ttf) format("truetype");
 }
 
 @font-face {
-  font-family: "Chiron";
-  src: url("assets/ChironGoRoundTC-Regular.ttf") format("truetype");
+  font-family: "Chiron GoRound TC";
+  src: url(assets/fonts/ChironGoRoundTC-Regular.ttf) format("truetype");
 }
 
 @font-face {
   font-family: "Interstellar";
-  src: url("assets/LinotypeDidotBold.otf") format ("opentype");
+  src: url(assets/fonts/LinotypeDidotBold.otf) format("opentype");
 }
 
 @keyframes rainbow-color-change {
