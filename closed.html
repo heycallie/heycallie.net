@@ -1,16 +1,144 @@
 <!doctype html>
-<head>
-  <style>
-    * {
-      text-align: center;
-      font-size: 3vw;
-      color: white;
-      background-color: black;
-    }
-  </style>
-</head>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      // Source - https://stackoverflow.com/a/70177543
+      // Posted by Tohid Zamani
+      // Retrieved 2026-05-24, License - CC BY-SA 4.0
 
-<body>
-  <marquee>this website is closed today!</marquee>
-  <img src="assets/cat78.gif" style="height: 5vw" />
-</body>
+      function start() {
+        new mq("scroller");
+        mqRotate(mqr);
+      }
+      window.onload = start;
+
+      function objWidth(obj) {
+        if (obj.offsetWidth) return obj.offsetWidth;
+        if (obj.clip) return obj.clip.width;
+        return 0;
+      }
+      var mqr = [];
+      function mq(id) {
+        this.mqo = document.getElementById(id);
+        var wid = objWidth(this.mqo.getElementsByTagName("span")[0]) + 5;
+        var fulwid = objWidth(this.mqo);
+        var txt = this.mqo.getElementsByTagName("span")[0].innerHTML;
+        this.mqo.innerHTML = "";
+        var heit = this.mqo.style.height;
+        // this.mqo.onmouseout = function () {  <-- disables slowing down when mouse over
+        //   mqRotate(mqr);
+        // };
+        // this.mqo.onmouseover = function () {
+        //   clearTimeout(mqr[0].TO);
+        // };
+        this.mqo.ary = [];
+        var maxw = Math.ceil(fulwid / wid) + 1;
+        for (var i = 0; i < maxw; i++) {
+          this.mqo.ary[i] = document.createElement("div");
+          this.mqo.ary[i].innerHTML = txt;
+          this.mqo.ary[i].style.position = "absolute";
+          this.mqo.ary[i].style.left = wid * i + "px";
+          this.mqo.ary[i].style.width = wid + "px";
+          this.mqo.ary[i].style.height = heit;
+          this.mqo.appendChild(this.mqo.ary[i]);
+        }
+        mqr.push(this.mqo);
+      }
+      function mqRotate(mqr) {
+        if (!mqr) return;
+        for (var j = mqr.length - 1; j > -1; j--) {
+          maxa = mqr[j].ary.length;
+          for (var i = 0; i < maxa; i++) {
+            var x = mqr[j].ary[i].style;
+            x.left = parseInt(x.left, 10) - 1 + "px";
+          }
+          var y = mqr[j].ary[0].style;
+          if (parseInt(y.left, 10) + parseInt(y.width, 10) < 0) {
+            var z = mqr[j].ary.shift();
+            z.style.left =
+              parseInt(z.style.left) + parseInt(z.style.width) * maxa + "px";
+            mqr[j].ary.push(z);
+          }
+        }
+        mqr[0].TO = setTimeout("mqRotate(mqr)", 10);
+      }
+    </script>
+    <style>
+      html {
+        background-color: #000;
+        background-image: url(assets/windows_xp_14.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        min-height: 100vh;
+      }
+
+      .marquee {
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+        margin: 0 auto;
+        width: 100%;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+      }
+
+      #scroller {
+        line-height: 32px;
+        color: white;
+        font-family: "Franklin Gothic Regular";
+        span {
+          font-size: 18px;
+          position: relative;
+          top: 4px;
+        }
+      }
+
+      p {
+        text-align: center;
+        margin: 5px;
+        margin-top: 2px;
+        margin-bottom: 2px;
+        font-family: "DOS";
+      }
+
+      .textbox {
+        border-bottom: 1px solid #8399e9;
+        border-right: 1px solid #8399e9;
+        border-top: 1px solid #d0daff;
+        border-left: 1px solid #d0daff;
+        height: fit-content;
+        background-color: white;
+      }
+
+      .textboxtop {
+        margin-top: 20px;
+        height: 10px;
+        background-color: blue;
+        z-index: 2;
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="scroller" class="marquee">
+      <span style="white-space: nowrap; color: white"
+        >sorry! this website is closed today!</span
+      >
+    </div>
+
+    <div style="width: fit-content; margin: 0 auto">
+      <div class="textboxtop"></div>
+      <div class="textbox">
+        <p>
+          because it's sunday, this website is CLOSED! take this time to be
+          productive :3
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
