@@ -9,8 +9,8 @@ before uploading :
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta property="og:title" content="caged's web adventure" />
-    <meta property="og:description" content="callie's desktop!" />
+    <meta property="og:title" content="Visit HeyCallie.net!" />
+    <meta property="og:description" content="Have fun :3" />
     <meta
       property="og:image"
       content="https://i.ibb.co/FqnS2dz2/il-800x800-7257900675-r49b.webp"
@@ -48,7 +48,7 @@ before uploading :
 
     <script>
       function mobileCheck() {
-        // does not include iPad because its dimensions are computer-like
+        // does not include iPad because its dimensions are computer-like, though an iPad without a mouse will not work for dragging -- everything else *should* be fine.
         return /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(
           navigator.userAgent,
         );
@@ -171,6 +171,21 @@ before uploading :
                   name="contextMenuCheckbox"
                   value="yes"
                 />Default Right-click Menu</label
+              ><br />
+              <label
+                for="keybindsCheckbox"
+                style="
+                  margin: auto;
+                  display: flex;
+                  justify-content: left;
+                  align-items: center;
+                "
+                ><input
+                  type="checkbox"
+                  id="keybindsCheckbox"
+                  name="keybindsCheckbox"
+                  value="yes"
+                />Custom Keybinds for Windows</label
               ><br />
 
               <button onclick="userEntry()">enter!</button>
@@ -601,7 +616,7 @@ before uploading :
     <div id="linuxpopup">
       <div id="window13" class="draggable window popup">
         <div id="window13Drag">
-          <img
+          <!-- <img
             src="assets/linuxmintfavicon.ico"
             style="
               float: left;
@@ -610,7 +625,7 @@ before uploading :
               padding-left: 3px;
               height: 16px;
             "
-          />
+          /> -->
           <span
             style="
               padding-top: 3px;

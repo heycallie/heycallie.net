@@ -171,27 +171,33 @@ function dragElement(elmnt) {
 }
 
 var theme = document.querySelector("#theme-link");
-var cdwpopup = document.getElementById("cdwpopup");
-var buglepopup = document.getElementById("buglepopup");
-var aolpopup = document.getElementById("aolpopup");
-var noaolpopup = document.getElementById("antiaolpopup");
-var netscapepopup = document.getElementById("nspopup");
-var dailymp3popup = document.getElementById("mp3popup");
+var popupsAll = document.querySelectorAll(".popup");
+
+// Source - https://stackoverflow.com/q/48888574
+// Posted by user8782879, modified by community. See post 'Timeline' for change history
+// Retrieved 2026-05-26, License - CC BY-SA 3.0
 
 function userEntry() {
   var darkMode = document.querySelector("#darkMode");
   var popups = document.querySelector("#popupSelector");
   var context = document.querySelector("#contextMenuCheckbox");
+  var keybinds = document.querySelector("#keybindsCheckbox");
+
   if (darkMode.checked == true) {
     console.error("dark mode doesn't work by the way");
     darkModeEnable();
   }
-  darkModeDisable();
+
   if (popups.checked == true) {
-    popupsDisable();
+    popupsAll.forEach(popupsDisable);
   }
+
   if (context.checked == false) {
     enableCustomContextMenu();
+  }
+
+  if (keybinds.checked == true) {
+    enableCustomKeybinds();
   }
   updateTime();
   entryTitleFunction();
@@ -199,7 +205,7 @@ function userEntry() {
 }
 
 function closeEntryMessage() {
-  document.getElementById("entryMessage").classList.toggle("hidden");
+  document.getElementById("entryMessage").classList.add("hidden");
 }
 
 /* function darkModeEnable() {
@@ -210,16 +216,27 @@ function darkModeDisable() {
   theme.href = "light-mode.css";
 }
 
-function popupsDisable() {
-  cdwpopup.classList.add("hidden");
-  buglepopup.classList.add("hidden");
-  aolpopup.classList.add("hidden");
-  noaolpopup.classList.add("hidden");
-  netscapepopup.classList.add("hidden");
-  dailymp3popup.classList.add("hidden");
+function popupsDisable(thisPopup) {
+  thisPopup.classList.add("hidden");
 }
 
-function contextDisable() {}
+function enableCustomKeybinds() {
+  // blog
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "b" || event.key === "B") {
+      document.getElementById("window11").classList.remove("hidden");
+      bringToFront(window11);
+    }
+  });
+
+  // file explorer
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "e" || event.key === "E") {
+      document.getElementById("window5").classList.remove("hidden");
+      bringToFront(window5);
+    }
+  });
+}
 
 function userChoseGuest() {
   document.getElementById("title").innerHTML = "Guest Login";
@@ -415,20 +432,6 @@ function updateTime() {
 }
 
 function entryTitleFunction() {
-  /* var el = document.getElementById("title");
-
-  var message = "   Welcome!!!   ";
-  var viewWidth = 20;
-  var offset = 0;
-
-  var buffer = message.repeat(50);
-
-  setInterval(function () {
-    el.innerHTML = buffer.substr(offset, viewWidth);
-
-    offset = (offset + 1) % buffer.length; // wrap across entire buffer
-  }, 120); */
-
   document.getElementById("title").innerHTML = "Desktop";
 }
 

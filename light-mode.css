@@ -137,7 +137,7 @@ html {
 
 #window5 {
   position: absolute;
-  top: 36vh;
+  top: 18vh;
   left: 14vw;
   z-index: 9;
   background-color: #f1f1f1;
@@ -176,8 +176,8 @@ html {
 
 #window11 {
   position: absolute;
-  top: 20vh;
-  left: 30vw;
+  top: 10vh;
+  left: 20vw;
   z-index: 9;
   background-color: #f1f1f1;
   text-align: center;
