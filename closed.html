@@ -64,13 +64,28 @@
         }
         mqr[0].TO = setTimeout("mqRotate(mqr)", 10);
       }
+
+      var audio = new Audio(
+        "assets/music/Intermission - Cavetown - Edited.mp3",
+      );
+      audio.pause();
+      var audioIsPlaying = false;
+
+      function toggleAudio() {
+        if (audioIsPlaying === false) {
+          audio.play();
+          audioIsPlaying = true;
+        } else if (audioIsPlaying === true) {
+          audio.pause();
+          audioIsPlaying = false;
+        }
+      }
     </script>
     <style>
       html {
         background-color: #000;
-        background-image: url(assets/windows_xp_14.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
+        background-image: url(https://i.ibb.co/PGcj11Vd/starback2.gif);
+        background-repeat: repeat;
         min-height: 100vh;
       }
 
@@ -122,19 +137,30 @@
         border-top-left-radius: 6px;
         border-top-right-radius: 6px;
       }
+
+      #moon {
+        cursor: url("assets/cursors/w98hand.cur"), pointer;
+      }
     </style>
   </head>
 
   <body>
-    <audio
+    <!-- <audio
       src="assets/music/Intermission - Cavetown - Edited.mp3"
       autoplay
-    ></audio>
+    ></audio> -->
     <!-- <div id="scroller" class="marquee">
       <span style="white-space: nowrap; color: white"
         >sorry! this website is closed today!</span
       >
     </div> -->
+
+    <img
+      src="assets/moon-rotating.gif"
+      style="margin: auto; display: block"
+      onclick="toggleAudio()"
+      id="moon"
+    />
 
     <div style="width: fit-content; margin: 0 auto">
       <div class="textboxtop"></div>
@@ -145,5 +171,61 @@
         </p>
       </div>
     </div>
+
+    <div style="width: fit-content; margin: 0 auto">
+      <div class="textboxtop"></div>
+      <div class="textbox">
+        <p style="font-size: 2vw">
+          alternatively, check out this live performance of Aishite Aishite
+          Aishite by Ado:
+        </p>
+      </div>
+    </div>
+
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/HmkbBdD8044"
+      title="YouTube video player"
+      frameborder="1"
+      allow="
+        accelerometer;
+        clipboard-write;
+        encrypted-media;
+        gyroscope;
+        picture-in-picture;
+        web-share;
+      "
+      allowfullscreen
+      style="margin: auto; display: block; margin-top: 2vh"
+    ></iframe>
+
+    <div style="width: fit-content; margin: 0 auto">
+      <div class="textboxtop"></div>
+      <div class="textbox">
+        <p style="font-size: 2vw">
+          desktop / mobile<br />
+          <img
+            style="position: relative; left: -1vw"
+            src="https://img.shields.io/github/last-commit/heycallie/heycallie.net?label=last%20updated"
+          />
+
+          <img
+            style="position: relative; right: -1vw"
+            src="https://img.shields.io/github/last-commit/heycallie/mobile.heycallie.net?label=last%20updated"
+          />
+        </p>
+      </div>
+    </div>
+
+    <img
+      src="assets/ough.webp"
+      style="position: fixed; bottom: 5vw; left: 5vw; height: 20vh"
+    />
+
+    <img
+      src="assets/seal.webp"
+      style="position: fixed; bottom: 5vw; right: 5vw; height: 20vh"
+    />
   </body>
 </html>
