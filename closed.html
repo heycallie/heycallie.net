@@ -3,67 +3,67 @@
   <head>
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="assets/windowsxpfavicon.png" />
-    <title>this webpage is closed!</title>
+    <title>this website is closed!</title>
     <script>
-      // Source - https://stackoverflow.com/a/70177543
-      // Posted by Tohid Zamani
-      // Retrieved 2026-05-24, License - CC BY-SA 4.0
-      function start() {
-        new mq("scroller");
-        mqRotate(mqr);
-      }
-      window.onload = start;
+      // // Source - https://stackoverflow.com/a/70177543
+      // // Posted by Tohid Zamani
+      // // Retrieved 2026-05-24, License - CC BY-SA 4.0
+      // function start() {
+      //   new mq("scroller");
+      //   mqRotate(mqr);
+      // }
+      // window.onload = start;
 
-      function objWidth(obj) {
-        if (obj.offsetWidth) return obj.offsetWidth;
-        if (obj.clip) return obj.clip.width;
-        return 0;
-      }
-      var mqr = [];
-      function mq(id) {
-        this.mqo = document.getElementById(id);
-        var wid = objWidth(this.mqo.getElementsByTagName("span")[0]) + 5;
-        var fulwid = objWidth(this.mqo);
-        var txt = this.mqo.getElementsByTagName("span")[0].innerHTML;
-        this.mqo.innerHTML = "";
-        var heit = this.mqo.style.height;
-        // this.mqo.onmouseout = function () {  <-- comment disables slowing down when mouse over
-        //   mqRotate(mqr);
-        // };
-        // this.mqo.onmouseover = function () {
-        //   clearTimeout(mqr[0].TO);
-        // };
-        this.mqo.ary = [];
-        var maxw = Math.ceil(fulwid / wid) + 1;
-        for (var i = 0; i < maxw; i++) {
-          this.mqo.ary[i] = document.createElement("div");
-          this.mqo.ary[i].innerHTML = txt;
-          this.mqo.ary[i].style.position = "absolute";
-          this.mqo.ary[i].style.left = wid * i + "px";
-          this.mqo.ary[i].style.width = wid + "px";
-          this.mqo.ary[i].style.height = heit;
-          this.mqo.appendChild(this.mqo.ary[i]);
-        }
-        mqr.push(this.mqo);
-      }
-      function mqRotate(mqr) {
-        if (!mqr) return;
-        for (var j = mqr.length - 1; j > -1; j--) {
-          maxa = mqr[j].ary.length;
-          for (var i = 0; i < maxa; i++) {
-            var x = mqr[j].ary[i].style;
-            x.left = parseInt(x.left, 10) - 1 + "px";
-          }
-          var y = mqr[j].ary[0].style;
-          if (parseInt(y.left, 10) + parseInt(y.width, 10) < 0) {
-            var z = mqr[j].ary.shift();
-            z.style.left =
-              parseInt(z.style.left) + parseInt(z.style.width) * maxa + "px";
-            mqr[j].ary.push(z);
-          }
-        }
-        mqr[0].TO = setTimeout("mqRotate(mqr)", 10);
-      }
+      // function objWidth(obj) {
+      //   if (obj.offsetWidth) return obj.offsetWidth;
+      //   if (obj.clip) return obj.clip.width;
+      //   return 0;
+      // }
+      // var mqr = [];
+      // function mq(id) {
+      //   this.mqo = document.getElementById(id);
+      //   var wid = objWidth(this.mqo.getElementsByTagName("span")[0]) + 5;
+      //   var fulwid = objWidth(this.mqo);
+      //   var txt = this.mqo.getElementsByTagName("span")[0].innerHTML;
+      //   this.mqo.innerHTML = "";
+      //   var heit = this.mqo.style.height;
+      //   // this.mqo.onmouseout = function () {  <-- comment disables slowing down when mouse over
+      //   //   mqRotate(mqr);
+      //   // };
+      //   // this.mqo.onmouseover = function () {
+      //   //   clearTimeout(mqr[0].TO);
+      //   // };
+      //   this.mqo.ary = [];
+      //   var maxw = Math.ceil(fulwid / wid) + 1;
+      //   for (var i = 0; i < maxw; i++) {
+      //     this.mqo.ary[i] = document.createElement("div");
+      //     this.mqo.ary[i].innerHTML = txt;
+      //     this.mqo.ary[i].style.position = "absolute";
+      //     this.mqo.ary[i].style.left = wid * i + "px";
+      //     this.mqo.ary[i].style.width = wid + "px";
+      //     this.mqo.ary[i].style.height = heit;
+      //     this.mqo.appendChild(this.mqo.ary[i]);
+      //   }
+      //   mqr.push(this.mqo);
+      // }
+      // function mqRotate(mqr) {
+      //   if (!mqr) return;
+      //   for (var j = mqr.length - 1; j > -1; j--) {
+      //     maxa = mqr[j].ary.length;
+      //     for (var i = 0; i < maxa; i++) {
+      //       var x = mqr[j].ary[i].style;
+      //       x.left = parseInt(x.left, 10) - 1 + "px";
+      //     }
+      //     var y = mqr[j].ary[0].style;
+      //     if (parseInt(y.left, 10) + parseInt(y.width, 10) < 0) {
+      //       var z = mqr[j].ary.shift();
+      //       z.style.left =
+      //         parseInt(z.style.left) + parseInt(z.style.width) * maxa + "px";
+      //       mqr[j].ary.push(z);
+      //     }
+      //   }
+      //   mqr[0].TO = setTimeout("mqRotate(mqr)", 10);
+      // }
 
       var audio = new Audio(
         "assets/music/Intermission - Cavetown - Edited.mp3",
@@ -80,6 +80,26 @@
           audioIsPlaying = false;
         }
       }
+
+      function getRandomInt(max) {
+        return Math.floor(Math.random() * max);
+      }
+
+      window.addEventListener("DOMContentLoaded", function () {
+        var numGen = getRandomInt(3);
+
+        if (numGen === 0) {
+          document.getElementById("video").src =
+            "https://www.youtube.com/embed/HmkbBdD8044";
+        } else if (numGen === 1) {
+          document.getElementById("video").src =
+            "https://www.youtube.com/embed/bzWs0VpYftE";
+          document.getElementById("video").height = "420";
+        } else if (numGen === 2) {
+          document.getElementById("video").src =
+            "https://www.youtube.com/embed/79sXfQsFdyM";
+        }
+      });
     </script>
     <style>
       html {
@@ -175,35 +195,35 @@
     <div style="width: fit-content; margin: 0 auto">
       <div class="textboxtop"></div>
       <div class="textbox">
-        <p style="font-size: 2vw">
-          alternatively, check out this live performance of Aishite Aishite
-          Aishite by Ado:
-        </p>
+        <p style="font-size: 2vw">alternatively, check out this video:</p>
       </div>
     </div>
 
-    <iframe
-      width="560"
-      height="315"
-      src="https://www.youtube.com/embed/HmkbBdD8044"
-      title="YouTube video player"
-      frameborder="1"
-      allow="
-        accelerometer;
-        clipboard-write;
-        encrypted-media;
-        gyroscope;
-        picture-in-picture;
-        web-share;
-      "
-      allowfullscreen
-      style="margin: auto; display: block; margin-top: 2vh"
-    ></iframe>
+    <div>
+      <iframe
+        id="video"
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/HmkbBdD8044"
+        title="YouTube video player"
+        frameborder="1"
+        allow="
+          accelerometer;
+          clipboard-write;
+          encrypted-media;
+          gyroscope;
+          picture-in-picture;
+          web-share;
+        "
+        allowfullscreen
+        style="margin: auto; display: block; margin-top: 2vh"
+      ></iframe>
+    </div>
 
     <div style="width: fit-content; margin: 0 auto">
       <div class="textboxtop"></div>
       <div class="textbox">
-        <p style="font-size: 2vw">
+        <p style="font-size: 1.8vw">
           desktop / mobile<br />
           <img
             style="position: relative; left: -1vw"
@@ -214,6 +234,7 @@
             style="position: relative; right: -1vw"
             src="https://img.shields.io/github/last-commit/heycallie/mobile.heycallie.net?label=last%20updated"
           />
+          <br />
         </p>
       </div>
     </div>
