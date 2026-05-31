@@ -86,7 +86,7 @@
       }
 
       window.addEventListener("DOMContentLoaded", function () {
-        var numGen = getRandomInt(3);
+        var numGen = getRandomInt(4);
 
         if (numGen === 0) {
           document.getElementById("video").src =
@@ -98,6 +98,10 @@
         } else if (numGen === 2) {
           document.getElementById("video").src =
             "https://www.youtube.com/embed/79sXfQsFdyM";
+        } else if (numGen === 3) {
+          document.getElementById("video").src =
+            "https://www.youtube.com/embed/xv86wBexaIg";
+          document.getElementById("video").width = "315";
         }
       });
     </script>
